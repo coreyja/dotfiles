@@ -170,9 +170,7 @@ alias reload="exec $SHELL -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-# Git Current Branch. Mostly for usage in other aliases/functions
-alias current-branch="git rev-parse --abbrev-ref HEAD"
-alias publish="git push --set-upstream origin $(current-branch)"
+alias publish="git push --set-upstream origin $(git current-branch)"
 
 # Docker Aliases
 alias de="docker-compose exec --user '$(id -u):$(id -g)'"
