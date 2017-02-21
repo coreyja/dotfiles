@@ -179,3 +179,6 @@ alias de="docker-compose exec --user '$(id -u):$(id -g)'"
 alias be="bundle exec"
 alias kill-pry-remote="while (echo 'exit' | pry-remote > /dev/null 2>&1); do echo $'/u2620 Killed'; done"
 
+# Tmuxinator to use whatever Ruby version it is installed for
+alias tmuxinator="RBENV_VERSION=(rbenv whence tmuxinator | head -1) tmuxinator"
+
