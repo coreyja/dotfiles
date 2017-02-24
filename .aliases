@@ -170,7 +170,7 @@ alias reload="exec $SHELL -l"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-alias publish="git push --set-upstream origin $(git current-branch)"
+alias publish='git push --set-upstream origin $(git current-branch)'
 
 # Docker Aliases
 alias de="docker-compose exec --user '$(id -u):$(id -g)'"
@@ -178,4 +178,7 @@ alias de="docker-compose exec --user '$(id -u):$(id -g)'"
 # Rails Developing Aliases
 alias be="bundle exec"
 alias kill-pry-remote="while (echo 'exit' | pry-remote > /dev/null 2>&1); do echo $'\u2620 Killed'; done"
+
+# Tmuxinator to use whatever Ruby version it is installed for
+alias tmuxinator='RBENV_VERSION=$(rbenv whence tmuxinator | head -1) tmuxinator'
 

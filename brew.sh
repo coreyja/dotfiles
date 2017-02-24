@@ -75,6 +75,10 @@ brew install figlet
 brew install exercism
 brew install heroku
 
+# Tmux
+brew install tmux
+brew install reattach-to-user-namespace
+
 # Security/Yubikey Stuff
 brew install gpg
 brew install pinentry-mac

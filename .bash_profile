@@ -57,6 +57,10 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 complete -F _fzf_file_completion -o default -o bashdefault rspec
 complete -F _fzf_file_completion -o default -o bashdefault rake
 
+# Add Tmux and tmuxinator bash completion
+[ -f /usr/local/etc/bash_completion.d/tmux ] && source /usr/local/etc/bash_completion.d/tmux
+[ -f ~/bash_completion.d/tmuxinator.bash ] && source ~/bash_completion.d/tmuxinator.bash
+
 # Init RBenv
 eval "$(rbenv init -)"
 
