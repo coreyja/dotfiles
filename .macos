@@ -32,12 +32,10 @@ sudo nvram SystemAudioVolume=" "
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Menu bar: hide the Time Machine, Volume, and User icons
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-	defaults write "${domain}" dontAutoLoad -array \
-		"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-		"/System/Library/CoreServices/Menu Extras/Volume.menu" \
-		"/System/Library/CoreServices/Menu Extras/User.menu"
-done
+defaults -currentHost write dontAutoLoad -array \
+	"/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
+	"/System/Library/CoreServices/Menu Extras/Volume.menu" \
+	"/System/Library/CoreServices/Menu Extras/User.menu"
 defaults write com.apple.systemuiserver menuExtras -array \
 	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
 	"/System/Library/CoreServices/Menu Extras/AirPort.menu" \
@@ -118,11 +116,20 @@ sudo systemsetup -setcomputersleep Off > /dev/null
 # Disable Notification Center and remove the menu bar icon
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
 
-# Disable smart quotes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Set a custom wallpaper image. `DefaultDesktop.jpg` is already a symlink, and
 # all wallpapers are in `/Library/Desktop Pictures/`. The default is `Wave.jpg`.
@@ -143,9 +150,6 @@ sudo rm /private/var/vm/sleepimage
 sudo touch /private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
 sudo chflags uchg /private/var/vm/sleepimage
-
-# Disable the sudden motion sensor as it’s not useful for SSDs
-sudo pmset -a sms 0
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -193,11 +197,11 @@ defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
+# Show language menu in the top right corner of the boot screen
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
-
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
@@ -220,7 +224,8 @@ defaults write com.apple.screencapture type -string "png"
 defaults write com.apple.screencapture disable-shadow -bool true
 
 # Enable subpixel font rendering on non-Apple LCDs
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
+# Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 # Enable HiDPI display modes (requires restart)
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
@@ -515,6 +520,12 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # Block pop-up windows
 defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
+
+# Disable auto-playing video
+#defaults write com.apple.Safari WebKitMediaPlaybackAllowsInline -bool false
+#defaults write com.apple.SafariTechnologyPreview WebKitMediaPlaybackAllowsInline -bool false
+#defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
+#defaults write com.apple.SafariTechnologyPreview com.apple.Safari.ContentPageGroupIdentifier.WebKit2AllowsInlineMediaPlayback -bool false
 
 # Enable “Do Not Track”
 defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
@@ -831,9 +842,15 @@ cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ 
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
 defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Documents/Torrents"
 
+# Use `~/Downloads` to store completed downloads
+defaults write org.m0k.transmission DownloadLocationConstant -bool true
+
 # Don’t prompt for confirmation before downloading
 defaults write org.m0k.transmission DownloadAsk -bool false
 defaults write org.m0k.transmission MagnetOpenAsk -bool false
+
+# Don’t prompt for confirmation before removing non-downloading active transfers
+defaults write org.m0k.transmission CheckRemoveDownloading -bool true
 
 # Trash original torrent files
 defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
@@ -848,6 +865,9 @@ defaults write org.m0k.transmission WarningLegal -bool false
 defaults write org.m0k.transmission BlocklistNew -bool true
 defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+
+# Randomize port on launch
+defaults write org.m0k.transmission RandomPort -bool true
 
 ###############################################################################
 # Twitter.app                                                                 #
@@ -913,10 +933,28 @@ defaults write com.divisiblebyzero.Spectacle UndoLastMove -data 62706c6973743030
 # Kill affected applications                                                  #
 ###############################################################################
 
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-	"Dock" "Finder" "Google Chrome" "Google Chrome Canary" "Mail" "Messages" \
-	"Opera" "Photos" "Safari" "SizeUp" "Spectacle" "SystemUIServer" "Terminal" \
-	"Transmission" "Tweetbot" "Twitter" "iCal"; do
+for app in "Activity Monitor" \
+	"Address Book" \
+	"Calendar" \
+	"cfprefsd" \
+	"Contacts" \
+	"Dock" \
+	"Finder" \
+	"Google Chrome Canary" \
+	"Google Chrome" \
+	"Mail" \
+	"Messages" \
+	"Opera" \
+	"Photos" \
+	"Safari" \
+	"SizeUp" \
+	"Spectacle" \
+	"SystemUIServer" \
+	"Terminal" \
+	"Transmission" \
+	"Tweetbot" \
+	"Twitter" \
+	"iCal"; do
 	killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."
