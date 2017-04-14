@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Make vim the default editor.
+# Make subl the default editor and make it wait till closing to return.
 export EDITOR='subl -n -w';
 
 # Enable persistent REPL history for `node`.
