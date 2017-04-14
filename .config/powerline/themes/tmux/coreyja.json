@@ -1,0 +1,38 @@
+{
+	"segments": {
+		"right": [
+			{
+				"function": "powerline.segments.common.wthr.weather",
+				"args": {
+				    "unit": "F"
+				}	
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"before": "📅  "
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"before": "⌚  ",
+				"args": {
+					"format": "%H:%M",
+					"istime": true
+				}
+			},
+			{
+				"function": "powerline.segments.common.net.hostname"
+			},
+			{
+				"function" : "powerline.segments.common.bat.battery",
+				"args": {
+					"gamify": true,
+					"full_heart": "♥",
+					"empty_heart": "♥",
+					"online": "⚡︎",
+					"offline": " "
+				}
+			}
+		]
+	}
+}
