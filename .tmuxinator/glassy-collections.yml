@@ -1,7 +1,7 @@
-# ~/.tmuxinator/dotfiles.yml
+# ~/.tmuxinator/glassy-collections.yml
 
-name: dotfiles
-root: ~/
+name: glassy-collections
+root: ~/Projects/glassy-collections
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,7 +28,13 @@ root: ~/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t dotfiles
+# post: tmux -CC attach -t glassy-collections
 
 windows:
   - editor:
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+  - logs: powder applog

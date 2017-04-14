@@ -1,7 +1,7 @@
-# ~/.tmuxinator/dotfiles.yml
+# ~/.tmuxinator/boxen.yml
 
-name: dotfiles
-root: ~/
+name: boxen
+root: /opt/boxen/repo
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,7 +28,7 @@ root: ~/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t dotfiles
+# post: tmux -CC attach -t boxen
 
 windows:
-  - editor:
+  - main:

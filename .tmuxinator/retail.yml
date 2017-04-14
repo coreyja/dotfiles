@@ -1,0 +1,20 @@
+# ~/.tmuxinator/retail.yml
+
+name: retail
+root: ~/src/better-core
+
+windows:
+  - main:
+      layout: even-horizontal
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - cd retail && dev
+        - cd retail_core
+  - logs:
+      layout: main-vertical
+      panes:
+        - cd retail && powder applog
+        - clean-debug
+        - cd ../instanbul && ./run-local.sh

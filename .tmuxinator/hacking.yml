@@ -1,6 +1,6 @@
-# ~/.tmuxinator/dotfiles.yml
+# ~/.tmuxinator/hacking.yml
 
-name: dotfiles
+name: hacking
 root: ~/
 
 # Optional tmux socket
@@ -28,7 +28,8 @@ root: ~/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t dotfiles
+# post: tmux -CC attach -t hacking
 
 windows:
-  - editor:
+  - main:
+
