@@ -47,7 +47,7 @@ brew 'tig'
 brew 'pgcli'
 
 tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
-brew 'burntsushi/ripgrep/ripgrep-bin'
+brew 'ripgrep-bin'
 
 # GNU Calendar to replace cal
 brew 'gcal'
