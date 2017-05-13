@@ -1,15 +1,15 @@
 *
 
 !.config/
-!.config/*
+!.config/powerline/**/*
 !.gnupg/gpg.conf
 !.gnupg/gpg-agent.conf
 !.tmuxinator/
-!.tmuxinator/*
+!.tmuxinator/**/*
 !bash_completion.d/
-!bash_completion.d/*
+!bash_completion.d/**/*
 !bin/
-!bin/*
+!bin/**/*
 
 !.aliases
 !.bash_profile
