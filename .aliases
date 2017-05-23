@@ -183,3 +183,17 @@ alias kill-pry-remote="while (echo 'exit' | pry-remote > /dev/null 2>&1); do ech
 # Tmuxinator to use whatever Ruby version it is installed for
 alias tmuxinator='RBENV_VERSION=$(rbenv whence tmuxinator | head -1) tmuxinator'
 
+# Merge specified branch into current branch. Pulls given branch first for up to date version
+function merge () {
+  git checkout $1
+  git pull --ff-only
+  git checkout -
+  git merge $1 --no-edit
+}
+
+# Checkout Branch. merge master into it, then push results
+function update-branch () {
+  CURRENT=$(git current-branch)
+  git checkout $1 && merge master && git push && git checkout $CURRENT
+}
+
