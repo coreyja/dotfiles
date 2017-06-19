@@ -21,7 +21,6 @@ brew 'bash-completion2'
 brew 'wget', args: ['--with-iri'] 
 
 # Install more recent versions of some macOS tools.
-brew 'vim', args: ['--with-override-system-vi']
 brew 'homebrew/dupes/grep'
 brew 'homebrew/dupes/openssh'
 brew 'homebrew/dupes/screen'
@@ -72,3 +71,7 @@ brew 'reattach-to-user-namespace'
 # Security/Yubikey Stuff
 brew 'gpg'
 brew 'pinentry-mac'
+
+# Vim Stuff
+brew 'vim', args: ['--with-override-system-vi']
+brew 'ctags'

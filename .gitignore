@@ -27,6 +27,7 @@
 !.rspec
 !.rspec_helper.rb
 !.tmux.conf
+!.vimrc
 !Brewfile
 !LICENSE.txt
 !README.md
