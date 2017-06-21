@@ -11,6 +11,10 @@ Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'scrooloose/nerdtree'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -22,3 +26,12 @@ command! -bang -nargs=* Rgrex call fzf#vim#grep('rg --column --line-number --no-
 set grepprg=rg\ --vimgrep
 
 set backspace=indent,eol,start
+
+" NerdTree Toggle
+map <C-n> :NERDTreeToggle<CR>
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Enable Mouse Mode (in Tmux)
+set ttymouse=xterm2
+set mouse=a
