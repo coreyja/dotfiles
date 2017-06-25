@@ -1,3 +1,5 @@
+cask_args appdir: "~/Applications"
+
 tap 'homebrew/versions'
 tap 'thoughtbot/formulae'
 
