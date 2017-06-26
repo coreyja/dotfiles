@@ -18,7 +18,7 @@ brew 'bash'
 brew 'bash-completion2'
 
 # Install `wget` with IRI support.
-brew 'wget', args: ['--with-iri'] 
+brew 'wget', args: ['--with-iri']
 
 # Install more recent versions of some macOS tools.
 brew 'homebrew/dupes/grep'
@@ -75,3 +75,4 @@ brew 'pinentry-mac'
 # Vim Stuff
 brew 'vim', args: ['--with-override-system-vi']
 brew 'ctags'
+brew 'editorconfig'

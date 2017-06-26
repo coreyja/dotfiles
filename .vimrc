@@ -15,6 +15,8 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'scrooloose/nerdtree'
 
+Plug 'editorconfig/editorconfig-vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -35,3 +37,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Enable Mouse Mode (in Tmux)
 set ttymouse=xterm2
 set mouse=a
+
+" Set EditorConfig to play nicely with Fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:EditorConfig_core_mode = 'external_command'
+
+" Enable Hybrid (Relative and Absolute) Numbers
+set number
+set relativenumber
