@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -43,9 +44,8 @@ set mouse=a
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:EditorConfig_core_mode = 'external_command'
 
-" Enable Hybrid (Relative and Absolute) Numbers
+" Set Line Numers On (No Relative cause it was laggy and did not help me much)
 set number
-" set relativenumber
 
 " Train myself to use the VIM navigation :sadnerd:
 " inoremap  <Up>     <NOP>
