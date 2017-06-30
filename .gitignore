@@ -10,6 +10,8 @@
 !bash_completion.d/**/*
 !bin/
 !bin/**/*
+!.git_template/
+!.git_template/**/*
 
 !.aliases
 !.bash_profile

@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
