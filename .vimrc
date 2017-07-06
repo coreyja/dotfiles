@@ -37,6 +37,10 @@ map <C-m> :NERDTreeFind<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Open fzf Files
+map <C-f> :Files<CR>
+map <C-d> :GFiles?<CR>
+
 " Enable Mouse Mode (in Tmux)
 set ttymouse=xterm2
 set mouse=a
