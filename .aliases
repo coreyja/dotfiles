@@ -196,4 +196,5 @@ function update-branch () {
   CURRENT=$(git current-branch)
   git checkout $1 && merge master && git push && git checkout $CURRENT
 }
+alias update-me='update-branch $(git current-branch)'
 
