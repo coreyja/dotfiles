@@ -1,3 +1,5 @@
+cask_args appdir: "~/Applications"
+
 tap 'homebrew/versions'
 tap 'thoughtbot/formulae'
 
@@ -44,6 +46,7 @@ brew 'tree'
 brew 'thefuck'
 brew 'tig'
 brew 'pgcli'
+brew 'ffmpeg'
 
 tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
 brew 'ripgrep-bin'
@@ -70,9 +73,16 @@ brew 'reattach-to-user-namespace'
 
 # Security/Yubikey Stuff
 brew 'gpg'
+brew 'gpg-agent'
 brew 'pinentry-mac'
 
 # Vim Stuff
 brew 'vim', args: ['--with-override-system-vi']
 brew 'ctags'
 brew 'editorconfig'
+
+cask 'pencil'
+cask 'paintbrush'
+cask 'dash'
+cask 'alfred'
+cask 'moom'
