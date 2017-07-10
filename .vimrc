@@ -34,8 +34,6 @@ set backspace=indent,eol,start
 " NerdTree Toggle
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :NERDTreeFind<CR>
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Open fzf Files
 map <C-f> :Files<CR>
