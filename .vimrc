@@ -38,6 +38,7 @@ map <C-m> :NERDTreeFind<CR>
 " Open fzf Files
 map <C-f> :Files<CR>
 map <C-d> :GFiles?<CR>
+map <C-b> :Buffers<CR>
 
 " Enable Mouse Mode (in Tmux)
 set ttymouse=xterm2
