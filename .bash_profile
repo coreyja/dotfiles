@@ -1,5 +1,6 @@
-# Add `~/bin` to the `$PATH`
+# Add `~/bin` and `~/.local/bin/` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
+export PATH="$HOME/.local/bin/:$PATH";
 # Add GnuCoreUtils to the Path
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 
@@ -65,8 +66,9 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 [ -f /usr/local/etc/bash_completion.d/tmux ] && source /usr/local/etc/bash_completion.d/tmux
 [ -f ~/bash_completion.d/tmuxinator.bash ] && source ~/bash_completion.d/tmuxinator.bash
 
-# Init RBenv
+# Init RBenv and pyenv
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 
 # TheFuck
 eval $(thefuck --alias)
