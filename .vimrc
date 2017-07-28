@@ -51,6 +51,18 @@ let g:EditorConfig_core_mode = 'external_command'
 " Set Line Numers On (No Relative cause it was laggy and did not help me much)
 set number
 
+" Strip trailing whitespace EXCEPT for markdown files
+fun! StripTrailingWhitespace()
+    " Only strip if the b:noStripeWhitespace variable isn't set
+    if exists('b:noStripWhitespace')
+        return
+    endif
+    %s/\s\+$//e
+endfun
+
+autocmd BufWritePre * call StripTrailingWhitespace()
+autocmd FileType markdown let b:noStripWhitespace=1
+
 " Train myself to use the VIM navigation :sadnerd:
 " inoremap  <Up>     <NOP>
 " inoremap  <Down>   <NOP>
