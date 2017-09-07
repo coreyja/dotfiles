@@ -53,6 +53,9 @@ brew 'awscli'
 tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
 brew 'ripgrep-bin'
 
+tap 'justwatchcom/gopass'
+brew 'gopass'
+
 # GNU Calendar to replace cal
 brew 'gcal'
 
