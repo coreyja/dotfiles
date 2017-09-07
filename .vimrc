@@ -9,6 +9,7 @@ Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-endwise'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -51,6 +52,18 @@ let g:EditorConfig_core_mode = 'external_command'
 " Set Line Numers On (No Relative cause it was laggy and did not help me much)
 set number
 
+" Strip trailing whitespace EXCEPT for markdown files
+fun! StripTrailingWhitespace()
+    " Only strip if the b:noStripeWhitespace variable isn't set
+    if exists('b:noStripWhitespace')
+        return
+    endif
+    %s/\s\+$//e
+endfun
+
+autocmd BufWritePre * call StripTrailingWhitespace()
+autocmd FileType markdown let b:noStripWhitespace=1
+
 " Train myself to use the VIM navigation :sadnerd:
 " inoremap  <Up>     <NOP>
 " inoremap  <Down>   <NOP>
@@ -60,3 +73,11 @@ set number
 " noremap   <Down>   <NOP>
 " noremap   <Left>   <NOP>
 " noremap   <Right>  <NOP>
+
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=1 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)

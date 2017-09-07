@@ -23,9 +23,9 @@ brew 'bash-completion2'
 brew 'wget', args: ['--with-iri']
 
 # Install more recent versions of some macOS tools.
-brew 'homebrew/dupes/grep'
-brew 'homebrew/dupes/openssh'
-brew 'homebrew/dupes/screen'
+brew 'grep'
+brew 'openssh'
+brew 'screen'
 
 # Install other useful binaries.
 brew 'ack'
@@ -68,6 +68,7 @@ brew 'cowsay'
 brew 'no-more-secrets'
 brew 'asciinema'
 brew 'figlet'
+brew 'watch'
 
 brew 'exercism'
 brew 'heroku'
