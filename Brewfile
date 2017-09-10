@@ -87,6 +87,8 @@ brew 'vim', args: ['--with-override-system-vi']
 brew 'ctags'
 brew 'editorconfig'
 
+brew 'chromedriver'
+
 cask 'pencil'
 cask 'paintbrush'
 cask 'dash'

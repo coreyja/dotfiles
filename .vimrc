@@ -10,6 +10,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-endwise'
+Plug 'alvan/vim-closetag'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -81,3 +82,6 @@ python del powerline_setup
 set laststatus=2 " Always display the statusline in all windows
 set showtabline=1 " Always display the tabline, even if there is only one tab
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
+" CloseTag Settings
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.html.erb'
