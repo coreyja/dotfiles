@@ -39,4 +39,4 @@ windows:
       panes:
           - vim: vim
           - bash:
-  - logs: powder applog
+  - logs: tail -f log/development.log
