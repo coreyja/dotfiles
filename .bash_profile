@@ -1,3 +1,5 @@
+[ -n "$PS1" ] && source ~/.bashrc;
+
 # Add `~/bin` and `~/.local/bin/` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.local/bin/:$PATH";
