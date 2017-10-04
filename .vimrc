@@ -10,6 +10,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
