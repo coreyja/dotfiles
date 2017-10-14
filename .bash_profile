@@ -72,6 +72,9 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 
+# Init DirEnv
+eval "$(direnv hook bash)"
+
 # TheFuck
 eval $(thefuck --alias)
 
