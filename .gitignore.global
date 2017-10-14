@@ -16,9 +16,6 @@ Thumbs.db
 # Ignore .rspec_failed_examples files
 .rspec_failed_examples
 
-# Ignore local dir env files
-.env.local
-
 # Ignore vim swp files
 *.swp
 *.swo
