@@ -1,7 +1,7 @@
-# ~/.tmuxinator/glassy-collections.yml
+# ~/.tmuxinator/coreyja.com.yml
 
-name: package-tracker
-root: ~/Projects/package-tracker
+name: glassbambi-blog
+root: ~/Projects/glassbambi-blog
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,7 +28,7 @@ root: ~/Projects/package-tracker
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t glassy-collections
+# post: tmux -CC attach -t coreyja.com
 
 windows:
   - editor:
@@ -37,6 +37,5 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-          - vim: vim
-          - bash:
-  - logs: tail -f log/development.log
+        - vim
+        -

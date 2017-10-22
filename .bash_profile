@@ -3,8 +3,11 @@
 # Add `~/bin` and `~/.local/bin/` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.local/bin/:$PATH";
+export PATH="/usr/local/bin/:$PATH";
 # Add GnuCoreUtils to the Path
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+# Add Cargo to Path
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # No more dups in History
 export HISTCONTROL=ignoreboth:erasedups
@@ -90,3 +93,4 @@ if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 else
     eval $(gpg-agent --daemon --enable-ssh-support --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
+
