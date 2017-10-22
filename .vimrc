@@ -63,7 +63,6 @@ fun! StripTrailingWhitespace()
     endif
     %s/\s\+$//e
 endfun
-
 autocmd BufWritePre * call StripTrailingWhitespace()
 autocmd FileType markdown let b:noStripWhitespace=1
 
