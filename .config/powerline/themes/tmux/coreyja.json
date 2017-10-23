@@ -4,8 +4,8 @@
             {
                 "function": "glassy_collections.pendant_record_status",
                 "before": "Pendant Status: ",
-                "args": {
-                    "base_url": "http://localhost:3000"
+                "args" : {
+                    "base_url": "https://glassycollections.com"
                 }
             },
             {
