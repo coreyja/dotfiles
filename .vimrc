@@ -23,8 +23,12 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'keith/investigate.vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+let g:investigate_use_dash=1
 
 
 " :Rg (Source: https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2)
@@ -39,6 +43,11 @@ set backspace=indent,eol,start
 map <C-n> :NERDTreeToggle<CR>
 map <C-m> :NERDTreeFind<CR>
 
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 " Open fzf Files
 map <C-f> :Files<CR>
 map <C-d> :GFiles?<CR>

@@ -90,3 +90,5 @@ if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 else
     eval $(gpg-agent --daemon --enable-ssh-support --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
