@@ -1,38 +1,45 @@
 {
-	"segments": {
-		"right": [
-			{
-				"function": "powerline.segments.common.wthr.weather",
-				"args": {
-				    "unit": "F"
-				}	
-			},
-			{
-				"function": "powerline.segments.common.time.date",
-				"before": "📅  "
-			},
-			{
-				"function": "powerline.segments.common.time.date",
-				"name": "time",
-				"before": "⌚  ",
-				"args": {
-					"format": "%I:%M %p",
-					"istime": true
-				}
-			},
-			{
-				"function": "powerline.segments.common.net.hostname"
-			},
-			{
-				"function" : "powerline.segments.common.bat.battery",
-				"args": {
-					"gamify": true,
-					"full_heart": "♥",
-					"empty_heart": "♥",
-					"online": "⚡︎",
-					"offline": " "
-				}
-			}
-		]
-	}
+    "segments": {
+        "right": [
+            {
+                "function": "glassy_collections.pendant_record_status",
+                "before": "Pendant Status: ",
+                "args" : {
+                    "base_url": "https://glassycollections.com"
+                }
+            },
+            {
+                "function": "powerline.segments.common.wthr.weather",
+                "args": {
+                    "unit": "F"
+                }
+            },
+            {
+                "function": "powerline.segments.common.time.date",
+                "before": "📅  "
+            },
+            {
+                "function": "powerline.segments.common.time.date",
+                "name": "time",
+                "before": "⌚  ",
+                "args": {
+                    "format": "%I:%M %p",
+                    "istime": true
+                }
+            },
+            {
+                "function": "powerline.segments.common.net.hostname"
+            },
+            {
+                "function" : "powerline.segments.common.bat.battery",
+                "args": {
+                    "gamify": true,
+                    "full_heart": "♥",
+                    "empty_heart": "♥",
+                    "online": "⚡︎",
+                    "offline": " "
+                }
+            }
+        ]
+    }
 }

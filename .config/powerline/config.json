@@ -1,8 +1,11 @@
 {
-	"ext": {
-		"tmux": {
-			"colorscheme": "default",
-			"theme": "coreyja"
-		}
-	}
+    "ext": {
+        "tmux": {
+            "colorscheme": "coreyja",
+            "theme": "coreyja"
+        }
+    },
+    "common": {
+        "paths": [ "~/.config/powerline/segments"]
+    }
 }
