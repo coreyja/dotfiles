@@ -5,8 +5,7 @@
                 "function": "glassy_collections.pendant_record_status",
                 "before": "Pendant Status: ",
                 "args": {
-                    "base_url": "http://localhost:3000",
-                    "auth_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4fQ.zAXjKwzPSnD2m68qsd5RrabCfIiDI8IGWnF1xKutj4Y"
+                    "base_url": "http://localhost:3000"
                 }
             },
             {

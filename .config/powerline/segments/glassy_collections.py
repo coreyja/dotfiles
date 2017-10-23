@@ -1,8 +1,12 @@
 # vim:fileencoding=utf-8:noet
 import os
 import requests
+from os.path import expanduser
 
-def pendant_record_status(pl, base_url='https://glassycollections.com', auth_token=None):
+
+def pendant_record_status(pl, base_url='https://glassycollections.com'):
+	auth_file = open(str(expanduser("~")) + '/.glassy-collections.token', 'r')
+	auth_token = auth_file.read().rstrip()
 	url = base_url + '/api/my/pendant_record_status'
 	response = requests.get(url, headers={'Authorization': auth_token})
 	if response.status_code == 200:
