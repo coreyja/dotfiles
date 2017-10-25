@@ -88,6 +88,9 @@
 		fi \
 	}; f"
 
+    # Show only conflicting files
+    conflicts = diff --name-only --diff-filter=U
+
 [apply]
 
 	# Detect whitespace errors when applying a patch
