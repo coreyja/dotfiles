@@ -34,3 +34,5 @@
 !Brewfile
 !LICENSE.txt
 !README.md
+
+*.pyc
