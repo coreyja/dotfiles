@@ -13,5 +13,5 @@ windows:
       layout: main-vertical
       panes:
         - cd retail && powder applog
-        - clean-debug
+        - cd web-api && ./script/serve.sh
         - cd ../instanbul && git pull --ff-only && ./script/serve.sh
