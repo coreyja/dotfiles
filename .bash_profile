@@ -74,6 +74,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 # Init RBenv and pyenv
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
+export PYENV_ROOT="$(pyenv root)"
 
 # Init DirEnv
 eval "$(direnv hook bash)"
