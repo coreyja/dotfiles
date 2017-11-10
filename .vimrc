@@ -96,3 +96,6 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 
 " CloseTag Settings
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.html.erb'
+
+" Use old RegEx parser that has better Ruby performance
+set regexpengine=1

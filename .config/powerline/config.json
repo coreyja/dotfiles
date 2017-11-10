@@ -1,7 +1,7 @@
 {
     "ext": {
         "tmux": {
-            "colorscheme": "coreyja",
+            "colorscheme": "default",
             "theme": "coreyja"
         }
     },
