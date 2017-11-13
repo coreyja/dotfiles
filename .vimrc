@@ -55,7 +55,9 @@ map <C-d> :GFiles?<CR>
 map <C-b> :Buffers<CR>
 
 " Enable Mouse Mode (in Tmux)
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 set mouse=a
 
 " Set EditorConfig to play nicely with Fugitive
@@ -87,12 +89,15 @@ autocmd FileType markdown let b:noStripWhitespace=1
 " noremap   <Right>  <NOP>
 
 " Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set laststatus=2 " Always display the statusline in all windows
-set showtabline=1 " Always display the tabline, even if there is only one tab
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+" Only works in VIM Proper, not NeoVim
+if !has('nvim')
+    python from powerline.vim import setup as powerline_setup
+    python powerline_setup()
+    python del powerline_setup
+    set laststatus=2 " Always display the statusline in all windows
+    set showtabline=1 " Always display the tabline, even if there is only one tab
+    set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+endif
 
 " CloseTag Settings
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.html.erb'
