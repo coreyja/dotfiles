@@ -44,6 +44,7 @@ call plug#end()
 let g:investigate_use_dash=1
 
 let g:airline_powerline_fonts = 1
+let g:airline_theme='badwolf'
 
 " :Rg (Source: https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2)
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
