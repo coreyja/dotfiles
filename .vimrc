@@ -1,5 +1,7 @@
 let PowerlineEnabled = 0
+
 let PowerlineCompatible = !has('nvim')
+let UsePowerline = PowerlineEnabled && PowerlineCompatible
 
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
@@ -29,8 +31,11 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'keith/investigate.vim'
 
-if !PowerlineCompatible || !PowerlineEnabled
+if !UsePowerline
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'bling/vim-bufferline'
+    Plug 'edkolev/tmuxline.vim'
 endif
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -98,7 +103,7 @@ autocmd FileType markdown let b:noStripWhitespace=1
 
 " Powerline
 " Only works in VIM Proper, not NeoVim
-if PowerlineEnabled && PowerlineCompatible
+if UsePowerline
     python from powerline.vim import setup as powerline_setup
     python powerline_setup()
     python del powerline_setup
@@ -112,3 +117,4 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.html.erb'
 
 " Use old RegEx parser that has better Ruby performance
 set regexpengine=1
+
