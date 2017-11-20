@@ -9,5 +9,5 @@ trap 'rm -f "$dir/$$.tags"' EXIT
 git ls-files | grep ".*\.rb$" | \
     ripper-tags --exclude=vendor --tag-relative -L - -f"$dir/$$.tags"
 git ls-files | \
-  "${CTAGS:-ctags}" --append=yes --tag-relative -L - -f"$dir/$$.tags" --languages=-javascript,sql,ruby
+  "${CTAGS:-ctags}" -a --tag-relative -L - -f"$dir/$$.tags" --languages=-javascript,sql,ruby
 mv "$dir/$$.tags" "$dir/tags"
