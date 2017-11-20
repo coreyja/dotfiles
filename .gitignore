@@ -3,8 +3,6 @@
 !.config/
 !.config/nvim/
 !.config/nvim/**/*
-!.config/powerline/
-!.config/powerline/**/*
 !.gnupg/gpg.conf
 !.gnupg/gpg-agent.conf
 !.tmuxinator/

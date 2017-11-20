@@ -1,8 +1,3 @@
-let PowerlineEnabled = 0
-
-let PowerlineCompatible = !has('nvim')
-let UsePowerline = PowerlineEnabled && PowerlineCompatible
-
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
@@ -31,11 +26,9 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'keith/investigate.vim'
 
-if !UsePowerline
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'edkolev/tmuxline.vim'
-endif
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -106,16 +99,6 @@ autocmd FileType markdown let b:noStripWhitespace=1
 " noremap   <Down>   <NOP>
 " noremap   <Left>   <NOP>
 " noremap   <Right>  <NOP>
-
-" Powerline
-" Only works in VIM Proper, not NeoVim
-if UsePowerline
-    python from powerline.vim import setup as powerline_setup
-    python powerline_setup()
-    python del powerline_setup
-    set laststatus=2 " Always display the statusline in all windows
-    set showtabline=1 " Always display the tabline, even if there is only one tab
-endif
 
 " CloseTag Settings
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.html.erb'
