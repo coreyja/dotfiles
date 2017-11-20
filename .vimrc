@@ -34,7 +34,6 @@ Plug 'keith/investigate.vim'
 if !UsePowerline
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'bling/vim-bufferline'
     Plug 'edkolev/tmuxline.vim'
 endif
 
@@ -43,10 +42,14 @@ call plug#end()
 
 let g:investigate_use_dash=1
 
+" Airline Config
+if !has('nvim')
+    source ~/.config/nvim/autoload/airline/themes/coreyja.vim
+end
+let g:airline_theme='coreyja'
 let g:airline_powerline_fonts = 1
-let g:airline_theme='badwolf'
-let g:bufferline_echo = 0
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+let g:airline#extensions#tabline#enabled = 1
 
 " :Rg (Source: https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2)
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
