@@ -46,6 +46,7 @@ let g:investigate_use_dash=1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='badwolf'
 let g:bufferline_echo = 0
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 " :Rg (Source: https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2)
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
@@ -111,7 +112,6 @@ if UsePowerline
     python del powerline_setup
     set laststatus=2 " Always display the statusline in all windows
     set showtabline=1 " Always display the tabline, even if there is only one tab
-    set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 endif
 
 " CloseTag Settings
