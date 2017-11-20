@@ -15,6 +15,8 @@ Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'kopischke/vim-fetch'
 
+Plug 'majutsushi/tagbar'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -114,3 +116,22 @@ nnoremap <C-p> :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --sele
 " Next and Previous Buffer with tabs
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
+
+" TagBar
+nmap <F8> :TagbarToggle<CR>
+" Use Ripper Tags with Tagbar
+if executable('ripper-tags')
+  let g:tagbar_type_ruby = {
+      \ 'kinds'      : ['m:modules',
+                      \ 'c:classes',
+                      \ 'C:constants',
+                      \ 'F:singleton methods',
+                      \ 'f:methods',
+                      \ 'a:aliases'],
+      \ 'kind2scope' : { 'c' : 'class',
+                       \ 'm' : 'class' },
+      \ 'scope2kind' : { 'class' : 'c' },
+      \ 'ctagsbin'   : 'ripper-tags',
+      \ 'ctagsargs'  : ['-f', '-']
+      \ }
+endif
