@@ -108,3 +108,5 @@ set regexpengine=1
 
 " Unset search Really <C-/> but vim recognizes this :shrug:
 map <C-_> :let @/ = ""<CR>
+
+nnoremap <C-o> :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
