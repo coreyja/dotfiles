@@ -4,10 +4,10 @@ set -e
 
 PATH="/usr/local/bin:$PATH"
 dir="$(git rev-parse --git-dir)"
-trap 'rm -f "$dir/$$.ctags" "$dir/$$.rtags"' EXIT
+trap 'rm -f "$dir/$$.tags"' EXIT
 
+git ls-files | grep ".*\.rb$" | \
+    ripper-tags --exclude=vendor --tag-relative -L - -f"$dir/$$.tags"
 git ls-files | \
-  "${CTAGS:-ctags}" --tag-relative -L - -f"$dir/$$.ctags" --languages=-javascript,sql,ruby
-ripper-tags --exclude=vendor --tag-relative -R -f"$dir/$$.rtags"
-cat "$dir/$$.ctags" "$dir/$$.rtags" > "$dir/$$.tags"
+  "${CTAGS:-ctags}" --append=yes --tag-relative -L - -f"$dir/$$.tags" --languages=-javascript,sql,ruby
 mv "$dir/$$.tags" "$dir/tags"
