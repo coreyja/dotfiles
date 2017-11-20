@@ -106,3 +106,5 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.html.erb'
 " Use old RegEx parser that has better Ruby performance
 set regexpengine=1
 
+" Unset search Really <C-/> but vim recognizes this :shrug:
+map <C-_> :let @/ = ""<CR>
