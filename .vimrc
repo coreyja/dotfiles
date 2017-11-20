@@ -110,3 +110,7 @@ set regexpengine=1
 map <C-_> :let @/ = ""<CR>
 
 nnoremap <C-p> :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1'})<CR>
+
+" Next and Previous Buffer with tabs
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
