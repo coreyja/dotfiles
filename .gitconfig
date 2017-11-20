@@ -95,6 +95,9 @@
     # Show only conflicting files
     conflicts = diff --name-only --diff-filter=U
 
+    # Update ctags for the Project
+    ctags = !.git/hooks/ctags
+
 [apply]
 
     # Detect whitespace errors when applying a patch
