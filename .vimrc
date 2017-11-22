@@ -29,7 +29,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'keith/investigate.vim'
 
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
 " List ends here. Plugins become visible to Vim after this call.

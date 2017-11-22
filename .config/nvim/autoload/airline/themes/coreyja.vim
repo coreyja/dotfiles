@@ -36,9 +36,9 @@ let g:airline#themes#coreyja#palette.insert_paste = {
       \ 'airline_a': [ s:I1[0]   , s:PA[0]   , s:I1[2]   , s:PA[1]   , ''     ] }
 
 
-let g:airline#themes#coreyja#palette.replace = copy(airline#themes#badwolf#palette.insert)
+let g:airline#themes#coreyja#palette.replace = copy(airline#themes#coreyja#palette.insert)
 let g:airline#themes#coreyja#palette.replace.airline_a = [ s:I1[0] , s:RE[0] , s:I1[2] , s:RE[1] , '' ]
-let g:airline#themes#coreyja#palette.replace_modified = g:airline#themes#badwolf#palette.insert_modified
+let g:airline#themes#coreyja#palette.replace_modified = g:airline#themes#coreyja#palette.insert_modified
 
 
 let g:airline#themes#coreyja#palette.visual = airline#themes#generate_color_map(s:V1, s:V2, s:V3)
