@@ -15,6 +15,8 @@ Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'kopischke/vim-fetch'
 
+Plug 'majutsushi/tagbar'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -26,11 +28,22 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'keith/investigate.vim'
 
+Plug 'vim-airline/vim-airline'
+Plug 'edkolev/tmuxline.vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 let g:investigate_use_dash=1
 
+" Airline Config
+if !has('nvim')
+    source ~/.config/nvim/autoload/airline/themes/coreyja.vim
+end
+let g:airline_theme='coreyja'
+let g:airline_powerline_fonts = 1
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+let g:airline#extensions#tabline#enabled = 1
 
 " :Rg (Source: https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2)
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
@@ -88,16 +101,36 @@ autocmd FileType markdown let b:noStripWhitespace=1
 " noremap   <Left>   <NOP>
 " noremap   <Right>  <NOP>
 
-" Powerline
-" Only works in VIM Proper, not NeoVim
-if !has('nvim')
-    python from powerline.vim import setup as powerline_setup
-    python powerline_setup()
-    python del powerline_setup
-    set laststatus=2 " Always display the statusline in all windows
-    set showtabline=1 " Always display the tabline, even if there is only one tab
-    set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-endif
-
 " CloseTag Settings
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.html.erb'
+
+" Use old RegEx parser that has better Ruby performance
+set regexpengine=1
+
+" Unset search Really <C-/> but vim recognizes this :shrug:
+map <C-_> :let @/ = ""<CR>
+
+nnoremap <C-p> :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1'})<CR>
+
+" Next and Previous Buffer with tabs
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+" TagBar
+nmap <F8> :TagbarToggle<CR>
+" Use Ripper Tags with Tagbar
+if executable('ripper-tags')
+  let g:tagbar_type_ruby = {
+      \ 'kinds'      : ['m:modules',
+                      \ 'c:classes',
+                      \ 'C:constants',
+                      \ 'F:singleton methods',
+                      \ 'f:methods',
+                      \ 'a:aliases'],
+      \ 'kind2scope' : { 'c' : 'class',
+                       \ 'm' : 'class' },
+      \ 'scope2kind' : { 'class' : 'c' },
+      \ 'ctagsbin'   : 'ripper-tags',
+      \ 'ctagsargs'  : ['-f', '-']
+      \ }
+endif

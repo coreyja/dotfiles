@@ -1,18 +1,20 @@
 *
 
 !.config/
-!.config/powerline/
-!.config/powerline/**/*
-!.gnupg/gpg.conf
+!.config/nvim/
+!.config/nvim/**/*
+!.config/tmux/
+!.config/tmux/**/*
+!.git_template/
+!.git_template/**/*
 !.gnupg/gpg-agent.conf
+!.gnupg/gpg.conf
 !.tmuxinator/
 !.tmuxinator/**/*
 !bash_completion.d/
 !bash_completion.d/**/*
 !bin/
 !bin/**/*
-!.git_template/
-!.git_template/**/*
 
 !.aliases
 !.bash_profile
