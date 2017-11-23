@@ -170,8 +170,6 @@ alias reload="source ~/.bash_profile"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-alias publish='git push --set-upstream origin $(git current-branch)'
-
 # Docker Aliases
 alias de="docker-compose exec --user '$(id -u):$(id -g)'"
 

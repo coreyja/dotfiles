@@ -31,6 +31,9 @@
     # Pull in remote changes for the current repository and all its submodules
     p = !"git pull; git submodule foreach git pull origin master"
 
+    # Publish a branch to origin
+    publish = !"git push --set-upstream origin $(git current-branch)"
+
     # Clone a repository including all submodules
     c = clone --recursive
 
