@@ -2,8 +2,8 @@
 
 # Add `~/bin` and `~/.local/bin/` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
-export PATH="$HOME/.local/bin/:$PATH";
-export PATH="/usr/local/bin/:$PATH";
+export PATH="$HOME/.local/bin:$PATH";
+export PATH="/usr/local/bin:$PATH";
 # Add GnuCoreUtils to the Path
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 # Add Cargo to Path
