@@ -31,16 +31,22 @@ Plug 'keith/investigate.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 
+Plug 'skielbasa/vim-material-monokai'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 let g:investigate_use_dash=1
 
+" Theme
+colorscheme material-monokai
+" let g:airline_theme='coreyja'
+let g:airline_theme='materialmonokai'
+
 " Airline Config
 if !has('nvim')
     source ~/.config/nvim/autoload/airline/themes/coreyja.vim
 end
-let g:airline_theme='coreyja'
 let g:airline_powerline_fonts = 1
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 let g:airline#extensions#tabline#enabled = 1
