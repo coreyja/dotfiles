@@ -32,6 +32,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 
 Plug 'skielbasa/vim-material-monokai'
+Plug 'thiagoalessio/rainbow_levels.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
