@@ -14,7 +14,7 @@ Thumbs.db
 .Trashes
 
 # Ignore .rspec_failed_examples files
-.rspec_failed_examples
+.rspec_example_statuses
 
 # Ignore vim swp files
 *.swp
