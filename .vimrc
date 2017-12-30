@@ -38,7 +38,11 @@ Plug 'thiagoalessio/rainbow_levels.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+let mapleader = ' '
+
 let g:investigate_use_dash=1
+nnoremap <leader>i :call investigate#Investigate('n')<CR>
+vnoremap <leader>i :call investigate#Investigate('v')<CR>
 
 " Theme
 colorscheme material-monokai
