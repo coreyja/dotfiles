@@ -142,3 +142,6 @@ if executable('ripper-tags')
       \ 'ctagsargs'  : ['-f', '-']
       \ }
 endif
+
+" Toggle Rainbow Levels
+map <F5> :RainbowLevelsToggle<cr>
