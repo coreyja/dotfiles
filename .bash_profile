@@ -8,6 +8,8 @@ export PATH="/usr/local/bin:$PATH";
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 # Add Cargo to Path
 export PATH="$HOME/.cargo/bin:$PATH"
+# Add Go bin dir to path
+export PATH=$PATH:$(go env GOPATH)/bin
 
 # No more dups in History
 export HISTCONTROL=ignoreboth:erasedups
