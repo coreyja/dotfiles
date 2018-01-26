@@ -15,6 +15,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'kopischke/vim-fetch'
+Plug 'thoughtbot/vim-rspec'
 
 Plug 'majutsushi/tagbar'
 
@@ -77,6 +78,7 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Open fzf Files
 map <C-f> :Files<CR>
 map <C-d> :GFiles?<CR>
+map <C-g> :GFiles<CR>
 map <C-b> :Buffers<CR>
 
 " Enable Mouse Mode (in Tmux)
@@ -149,3 +151,11 @@ endif
 
 " Toggle Rainbow Levels
 map <F5> :RainbowLevelsToggle<cr>
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+let g:rspec_command = "Dispatch rspec {spec}"
