@@ -88,6 +88,10 @@ brew 'vim', args: ['--with-override-system-vi']
 brew 'ctags'
 brew 'editorconfig'
 
+# FAC (Git fix all commits)
+tap 'mkchoi212/fac', 'https://github.com/mkchoi212/fac.git'
+brew 'fac'
+
 brew 'chromedriver'
 
 cask 'pencil'
@@ -95,3 +99,4 @@ cask 'paintbrush'
 cask 'dash'
 cask 'alfred'
 cask 'moom'
+cask 'vlc'

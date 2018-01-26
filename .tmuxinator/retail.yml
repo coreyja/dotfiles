@@ -7,7 +7,7 @@ windows:
   - main:
       layout: even-horizontal
       panes:
-        - dev
+        - dev && nvim
         - cd retail
   - logs:
       layout: main-vertical

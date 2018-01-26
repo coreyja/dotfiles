@@ -1,0 +1,11 @@
+# ~/.tmuxinator/sleet.yml
+
+name: sleet
+root: ~/Projects/sleet
+
+windows:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - nvim
+        - git status

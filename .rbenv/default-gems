@@ -1,2 +1,4 @@
-gem-ctags
+gem-browse
+gem-ripper-tags
+pry
 ripper-tags
