@@ -20,3 +20,7 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+
+# Project Specfic Ignores
+.sleet.yml

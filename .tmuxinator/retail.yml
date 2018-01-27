@@ -12,6 +12,6 @@ windows:
   - logs:
       layout: main-vertical
       panes:
-        - cd retail && powder applog
-        - cd web-api && ./script/serve.sh
+        - cd retail && tail -f logs/development.txt
+        - cd web-api && ./script/setup.sh && ./script/serve.sh
         - cd ../instanbul && git pull --ff-only && ./script/serve.sh
