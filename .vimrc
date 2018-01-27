@@ -36,6 +36,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'skielbasa/vim-material-monokai'
 Plug 'thiagoalessio/rainbow_levels.vim'
 
+Plug 'w0rp/ale'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -159,3 +160,12 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = "Dispatch rspec {spec}"
+
+" Double Space to Save
+map <Leader><Leader> :write<CR>
+
+" Config ALE
+let g:ale_fixers = {
+\   'ruby': ['rubocop'],
+\}
+map <Leader>c :ALEFix<CR>
