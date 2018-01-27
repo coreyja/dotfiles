@@ -58,7 +58,6 @@ end
 let g:airline_powerline_fonts = 1
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#ale#enabled = 1
 
 " :Rg (Source: https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2)
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
@@ -170,3 +169,5 @@ let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \}
 map <Leader>c :ALEFix<CR>
+let g:ale_sign_column_always = 1
+let g:airline#extensions#ale#enabled = 1
