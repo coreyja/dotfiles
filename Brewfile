@@ -64,11 +64,12 @@ brew 'gcal'
 brew 'fzf'
 
 # Fun Stuff with No Purpose
-brew 'fortune'
-brew 'cowsay'
-brew 'no-more-secrets'
 brew 'asciinema'
+brew 'blink1'
+brew 'cowsay'
 brew 'figlet'
+brew 'fortune'
+brew 'no-more-secrets'
 brew 'watch'
 
 brew 'exercism'
