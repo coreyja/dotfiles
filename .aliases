@@ -197,3 +197,6 @@ function update-branch () {
 }
 alias update-me='update-branch $(git current-branch)'
 
+# Easier blink1-tool
+alias blink='blink1-tool'
+
