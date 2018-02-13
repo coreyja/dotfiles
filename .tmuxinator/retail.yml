@@ -5,13 +5,13 @@ root: ~/src/better-core
 
 windows:
   - main:
-      layout: even-horizontal
+      layout: even-vertical
       panes:
         - dev && nvim
         - cd retail
   - logs:
       layout: main-vertical
       panes:
-        - cd retail && tail -f logs/development.txt
+        - cd retail && tail -f logs/development.log
         - cd web-api && ./script/setup.sh && ./script/serve.sh
         - cd ../instanbul && git pull --ff-only && ./script/serve.sh
