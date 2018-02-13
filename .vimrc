@@ -33,7 +33,7 @@ Plug 'keith/investigate.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 
-Plug 'coreyja/vim-material-monokai' ", { 'dir': '~/Projects/vim-material-monokai' }
+Plug 'coreyja/vim-material-monokai', { 'dir': '~/Projects/vim-material-monokai' }
 
 Plug 'thiagoalessio/rainbow_levels.vim'
 
