@@ -33,7 +33,7 @@ Plug 'keith/investigate.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 
-Plug 'coreyja/vim-material-monokai' ", { 'dir': '~/Projects/vim-material-monokai' }
+Plug 'skielbasa/vim-material-monokai' ", { 'dir': '~/Projects/vim-material-monokai' }
 
 Plug 'thiagoalessio/rainbow_levels.vim'
 
@@ -48,6 +48,7 @@ nnoremap <leader>i :call investigate#Investigate('n')<CR>
 vnoremap <leader>i :call investigate#Investigate('v')<CR>
 
 " Theme
+set termguicolors
 colorscheme material-monokai
 " let g:airline_theme='coreyja'
 let g:airline_theme='materialmonokai'
