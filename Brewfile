@@ -86,6 +86,7 @@ brew 'pinentry-mac'
 
 # Vim Stuff
 brew 'vim', args: ['--with-override-system-vi']
+brew 'nvim'
 brew 'ctags'
 brew 'editorconfig'
 
