@@ -1,0 +1,11 @@
+# ~/.tmuxinator/style-closet.yml
+
+name: style-closet
+root: ~/src/style-closet
+
+windows:
+  - main:
+      layout: even-vertical
+      panes:
+        - nvim
+        -

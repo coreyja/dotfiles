@@ -171,6 +171,9 @@ map <Leader><Leader> :write<CR>
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \}
+let g:ale_linters = {
+\   'eruby': [],
+\}
 map <Leader>c :ALEFix<CR>
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
