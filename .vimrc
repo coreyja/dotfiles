@@ -156,11 +156,18 @@ endif
 " Toggle Rainbow Levels
 map <F5> :RainbowLevelsToggle<cr>
 
+fun! RunFromGemfileDirWrapper(function)
+  let dir = getcwd()
+  execute 'cd' fnamemodify(findfile("Gemfile"), ':p:h')
+  call a:function()
+  execute 'cd' dir
+endfun
+
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>t :call RunFromGemfileDirWrapper(function('RunCurrentSpecFile'))<CR>
+map <Leader>s :call RunFromGemfileDirWrapper(function('RunNearestSpec'))<CR>
+map <Leader>l :call RunFromGemfileDirWrapper(function('RunLastSpec'))<CR>
+map <Leader>a :call RunFromGemfileDirWrapper(function('RunAllSpecs'))<CR>
 
 let g:rspec_command = "Dispatch rspec {spec}"
 
