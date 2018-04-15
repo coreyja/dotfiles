@@ -79,6 +79,7 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
 " Open fzf Files
 map <C-f> :Files<CR>
 map <C-d> :GFiles?<CR>
@@ -158,9 +159,14 @@ map <F5> :RainbowLevelsToggle<cr>
 
 fun! RunFromGemfileDirWrapper(function)
   let dir = getcwd()
-  execute 'cd' fnamemodify(findfile("Gemfile"), ':p:h')
-  call a:function()
-  execute 'cd' dir
+  let gemfile_dir = fnamemodify(findfile("Gemfile"), ':p:h')
+  if gemfile_dir ==? ''
+    call a:function()
+  else
+    execute 'cd' gemfile_dir
+    call a:function()
+    execute 'cd' dir
+  endif
 endfun
 
 " RSpec.vim mappings
