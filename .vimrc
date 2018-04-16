@@ -182,7 +182,8 @@ map <Leader>s :call RunFromGemfileDir(function('RunNearestSpec'))<CR>
 map <Leader>l :call RunFromGemfileDir(function('RunLastSpec'))<CR>
 map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
 
-let g:rspec_command = "Dispatch rspec {spec}"
+autocmd! BufRead,BufNewFile,BufEnter retail/spec/features/*.rb let b:rspecEnvVars="FEATURES=1"
+let g:rspec_command = "execute 'Dispatch' get(b:, 'rspecEnvVars', '') . ' rspec {spec}'"
 
 " Double Space to Save
 map <Leader><Leader> :write<CR>
