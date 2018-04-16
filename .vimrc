@@ -80,6 +80,7 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
 " Open fzf Files
 map <C-f> :Files<CR>
 map <C-d> :GFiles?<CR>
@@ -157,11 +158,29 @@ endif
 " Toggle Rainbow Levels
 map <F5> :RainbowLevelsToggle<cr>
 
+fun! SafeCD(dir)
+  execute 'cd' fnameescape(a:dir)
+endfun
+fun! RunFromDir(dir, function)
+  let current_dir = getcwd()
+  if !(a:dir ==? '')
+    call SafeCD(a:dir)
+    call a:function()
+    call SafeCD(current_dir)
+  else
+    call a:function()
+  endif
+endfun
+fun! RunFromGemfileDir(function)
+  let gemfile_dir = fnamemodify(findfile("Gemfile"), ':p:h')
+  call RunFromDir(gemfile_dir, a:function)
+endfun
+
 " RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>t :call RunFromGemfileDir(function('RunCurrentSpecFile'))<CR>
+map <Leader>s :call RunFromGemfileDir(function('RunNearestSpec'))<CR>
+map <Leader>l :call RunFromGemfileDir(function('RunLastSpec'))<CR>
+map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
 
 let g:rspec_command = "Dispatch rspec {spec}"
 
