@@ -157,23 +157,29 @@ endif
 " Toggle Rainbow Levels
 map <F5> :RainbowLevelsToggle<cr>
 
-fun! RunFromGemfileDirWrapper(function)
-  let dir = getcwd()
-  let gemfile_dir = fnamemodify(findfile("Gemfile"), ':p:h')
-  if gemfile_dir ==? ''
+fun! SafeCD(dir)
+  execute 'cd' fnameescape(a:dir)
+endfun
+fun! RunFromDir(dir, function)
+  let current_dir = getcwd()
+  if !(a:dir ==? '')
+    call SafeCD(a:dir)
     call a:function()
+    call SafeCD(current_dir)
   else
-    execute 'cd' gemfile_dir
     call a:function()
-    execute 'cd' dir
   endif
+endfun
+fun! RunFromGemfileDir(function)
+  let gemfile_dir = fnamemodify(findfile("Gemfile"), ':p:h')
+  call RunFromDir(gemfile_dir, a:function)
 endfun
 
 " RSpec.vim mappings
-map <Leader>t :call RunFromGemfileDirWrapper(function('RunCurrentSpecFile'))<CR>
-map <Leader>s :call RunFromGemfileDirWrapper(function('RunNearestSpec'))<CR>
-map <Leader>l :call RunFromGemfileDirWrapper(function('RunLastSpec'))<CR>
-map <Leader>a :call RunFromGemfileDirWrapper(function('RunAllSpecs'))<CR>
+map <Leader>t :call RunFromGemfileDir(function('RunCurrentSpecFile'))<CR>
+map <Leader>s :call RunFromGemfileDir(function('RunNearestSpec'))<CR>
+map <Leader>l :call RunFromGemfileDir(function('RunLastSpec'))<CR>
+map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
 
 let g:rspec_command = "Dispatch rspec {spec}"
 
