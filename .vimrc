@@ -196,3 +196,8 @@ let g:ale_linters = {
 map <Leader>c :ALEFix<CR>
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
+
+" Spellcheck
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd FileType gitcommit setlocal spell
+set complete+=kspell
