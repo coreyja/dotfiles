@@ -13,6 +13,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'alvan/vim-closetag'
 Plug 'kopischke/vim-fetch'
 Plug 'thoughtbot/vim-rspec'
@@ -181,7 +182,8 @@ map <Leader>s :call RunFromGemfileDir(function('RunNearestSpec'))<CR>
 map <Leader>l :call RunFromGemfileDir(function('RunLastSpec'))<CR>
 map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
 
-let g:rspec_command = "Dispatch rspec {spec}"
+autocmd! BufRead,BufNewFile,BufEnter retail/spec/features/*.rb let b:rspecEnvVars="FEATURES=1"
+let g:rspec_command = "execute 'Dispatch' get(b:, 'rspecEnvVars', '') . ' rspec {spec}'"
 
 " Double Space to Save
 map <Leader><Leader> :write<CR>
