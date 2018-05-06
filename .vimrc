@@ -40,6 +40,9 @@ Plug 'skielbasa/vim-material-monokai'
 Plug 'thiagoalessio/rainbow_levels.vim'
 
 Plug 'w0rp/ale'
+
+Plug 'jparise/vim-graphql'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -203,3 +206,6 @@ let g:airline#extensions#ale#enabled = 1
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd FileType gitcommit setlocal spell
 set complete+=kspell
+
+" Fix CronTab
+autocmd filetype crontab setlocal nobackup nowritebackup

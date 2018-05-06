@@ -54,9 +54,6 @@ brew 'direnv'
 tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
 brew 'ripgrep-bin'
 
-tap 'justwatchcom/gopass'
-brew 'gopass'
-
 # GNU Calendar to replace cal
 brew 'gcal'
 
@@ -89,6 +86,8 @@ brew 'vim', args: ['--with-override-system-vi']
 brew 'nvim'
 brew 'ctags'
 brew 'editorconfig'
+tap 'ValeLint/vale'
+brew 'vale'
 
 # FAC (Git fix all commits)
 tap 'mkchoi212/fac', 'https://github.com/mkchoi212/fac.git'
