@@ -81,9 +81,6 @@ export PYENV_ROOT="$(pyenv root)"
 # Init DirEnv
 eval "$(direnv hook bash)"
 
-# TheFuck
-eval $(thefuck --alias)
-
 # In order for gpg to find gpg-agent, gpg-agent must be running,
 # and there must be an env variable pointing GPG to the gpg-agent socket.
 # This little script, which must be sourced
