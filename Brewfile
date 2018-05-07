@@ -44,7 +44,6 @@ brew 'autojump'
 brew 'rbenv'
 brew 'pyenv'
 brew 'tree'
-brew 'thefuck'
 brew 'tig'
 brew 'pgcli'
 brew 'ffmpeg'
@@ -53,9 +52,6 @@ brew 'direnv'
 
 tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
 brew 'ripgrep-bin'
-
-tap 'justwatchcom/gopass'
-brew 'gopass'
 
 # GNU Calendar to replace cal
 brew 'gcal'
@@ -89,6 +85,8 @@ brew 'vim', args: ['--with-override-system-vi']
 brew 'nvim'
 brew 'ctags'
 brew 'editorconfig'
+tap 'ValeLint/vale'
+brew 'vale'
 
 # TLDR Man Pages
 brew 'tldr'

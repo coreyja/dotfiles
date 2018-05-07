@@ -179,9 +179,6 @@ alias bes="bundle exec spring"
 alias besr="bundle exec spring rspec"
 alias kill-pry-remote="while (echo 'exit' | pry-remote > /dev/null 2>&1); do echo $'\u2620 Killed'; done"
 
-# Tmuxinator to use whatever Ruby version it is installed for
-alias tmuxinator='RBENV_VERSION=$(rbenv whence tmuxinator | head -1) tmuxinator'
-
 # Merge specified branch into current branch. Pulls given branch first for up to date version
 function merge () {
   git checkout $1
@@ -200,3 +197,5 @@ alias update-me='update-branch $(git current-branch)'
 # Easier blink1-tool
 alias blink='blink1-tool'
 
+# I always want nvim
+alias vim='nvim'
