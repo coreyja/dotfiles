@@ -101,6 +101,9 @@
     # Update ctags for the Project
     ctags = !.git/hooks/ctags
 
+    # No more blaming
+    context = blame
+
 [apply]
 
     # Detect whitespace errors when applying a patch
