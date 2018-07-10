@@ -209,3 +209,7 @@ set complete+=kspell
 
 " Fix CronTab
 autocmd filetype crontab setlocal nobackup nowritebackup
+
+" Copy/Paste
+vnoremap p "_dP
+vnoremap <Leader>c "zy<Esc>:call system('pbcopy', @z)<CR>
