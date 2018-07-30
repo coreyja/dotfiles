@@ -96,6 +96,9 @@ if !has('nvim')
 endif
 set mouse=a
 
+" Use Spaces Instead of Tabs
+set expandtab
+
 " Set EditorConfig to play nicely with Fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:EditorConfig_core_mode = 'external_command'
