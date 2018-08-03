@@ -216,3 +216,9 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 " Copy/Paste
 vnoremap p "_dP
 vnoremap <Leader>c "zy<Esc>:call system('pbcopy', @z)<CR>
+
+" Delete Current File
+fun! DeleteCurrentFile()
+  call delete(expand('%')) | bdelete!
+endfun
+nnoremap <Del><Del> :call DeleteCurrentFile()<CR>
