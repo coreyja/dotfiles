@@ -1,2 +1,2 @@
 --color
---require ~/.rspec_helper.rb
+--require /Users/coreyja/.rspec_helper.rb
