@@ -2,21 +2,22 @@
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'tpope/vim-rails'
-Plug 'thoughtbot/vim-rspec'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rbenv'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
 Plug 'alvan/vim-closetag'
 Plug 'kopischke/vim-fetch'
 Plug 'thoughtbot/vim-rspec'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby'
 
 Plug 'majutsushi/tagbar'
 
@@ -95,9 +96,6 @@ if !has('nvim')
     set ttymouse=xterm2
 endif
 set mouse=a
-
-" Use Spaces Instead of Tabs
-set expandtab
 
 " Set EditorConfig to play nicely with Fugitive
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
@@ -189,7 +187,7 @@ map <Leader>l :call RunFromGemfileDir(function('RunLastSpec'))<CR>
 map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
 
 autocmd! BufRead,BufNewFile,BufEnter retail/spec/features/*.rb let b:rspecEnvVars="FEATURES=1"
-let g:rspec_command = "execute 'Dispatch' get(b:, 'rspecEnvVars', '') . ' rspec {spec}'"
+let g:rspec_command = "execute 'compiler rspec | let &makeprg=\"env ' . get(b:, 'rspecEnvVars', '') . ' spring\" | Make rspec {spec}'"
 
 " Double Space to Save
 map <Leader><Leader> :write<CR>
@@ -222,3 +220,8 @@ fun! DeleteCurrentFile()
   call delete(expand('%')) | bdelete!
 endfun
 nnoremap <Del><Del> :call DeleteCurrentFile()<CR>
+
+" VIM Autocorrects
+if exists(':Abolish')
+  Abolish FactoryGirl FactoryBot
+endif
