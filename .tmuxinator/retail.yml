@@ -1,7 +1,7 @@
 # ~/.tmuxinator/retail.yml
 
 name: retail
-root: ~/src/better-core
+root: ~/src/retail
 
 windows:
   - main:
@@ -13,5 +13,4 @@ windows:
       layout: main-vertical
       panes:
         - cd retail && tail -f log/development.log
-        - cd web-api && ./script/setup.sh && ./script/serve.sh
         - cd ../instanbul && git pull --ff-only && ./script/serve.sh
