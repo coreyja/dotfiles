@@ -19,6 +19,15 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 
+" Rust Support
+Plug 'rust-lang/rust.vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Rust
+
 Plug 'majutsushi/tagbar'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -225,3 +234,10 @@ nnoremap <Del><Del> :call DeleteCurrentFile()<CR>
 if exists(':Abolish')
   Abolish FactoryGirl FactoryBot
 endif
+
+" Rust
+let g:autofmt_autosave = 1
+
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ }

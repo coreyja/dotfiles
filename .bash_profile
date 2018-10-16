@@ -73,13 +73,15 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 [ -f /usr/local/etc/bash_completion.d/tmux ] && source /usr/local/etc/bash_completion.d/tmux
 [ -f ~/bash_completion.d/tmuxinator.bash ] && source ~/bash_completion.d/tmuxinator.bash
 
-# Init RBenv and pyenv
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
-export PYENV_ROOT="$(pyenv root)"
+# Init RBenv, pyenv and nodenv
+which rbenv &> /dev/null && eval "$(rbenv init -)"
+
+which pyenv &> /dev/null && eval "$(pyenv init -)" && export PYENV_ROOT="$(pyenv root)"
+
+which nodenv &> /dev/null && eval "$(nodenv init -)"
 
 # Init DirEnv
-eval "$(direnv hook bash)"
+which direnv &> /dev/null && eval "$(direnv hook bash)"
 
 # In order for gpg to find gpg-agent, gpg-agent must be running,
 # and there must be an env variable pointing GPG to the gpg-agent socket.
