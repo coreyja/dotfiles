@@ -14,3 +14,4 @@ windows:
       panes:
         - cd retail && tail -f log/development.log
         - cd ../instanbul && git pull --ff-only && ./script/serve.sh
+        - cd retail && webpack-dev-server

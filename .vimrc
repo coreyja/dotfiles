@@ -53,6 +53,9 @@ Plug 'w0rp/ale'
 
 Plug 'jparise/vim-graphql'
 
+" TypeScript
+Plug 'leafgarland/typescript-vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -204,6 +207,7 @@ map <Leader><Leader> :write<CR>
 " Config ALE
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
+\   'typescript': ['tslint'],
 \}
 let g:ale_linters = {
 \   'eruby': [],
@@ -238,6 +242,11 @@ endif
 " Rust
 let g:autofmt_autosave = 1
 
+" ## LanguageClient
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+    \ 'javascript': ['javascript-typescript-langserver'],
     \ }
+let g:deoplete#enable_at_startup = 1
