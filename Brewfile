@@ -49,6 +49,7 @@ brew 'pgcli'
 brew 'ffmpeg'
 brew 'awscli'
 brew 'direnv'
+brew 'bat'
 
 tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
 brew 'ripgrep-bin'
