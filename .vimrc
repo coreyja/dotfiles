@@ -222,6 +222,17 @@ autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd FileType gitcommit setlocal spell
 set complete+=kspell
 
+function! FzfSpellSink(word)
+  exe 'normal! "_ciw'.a:word
+endfunction
+
+function! FzfSpell(...)
+  let suggestions = spellsuggest(expand("<cword>"))
+  return fzf#run({'source': suggestions, 'sink': function("FzfSpellSink"), 'down': 10, 'prompt': expand('<cword>') . ' >'})
+endfunction
+nnoremap z= :call FzfSpell()<CR>
+" Spellcheck
+
 " Fix CronTab
 autocmd filetype crontab setlocal nobackup nowritebackup
 
