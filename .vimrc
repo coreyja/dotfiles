@@ -19,6 +19,9 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 
+Plug 'kana/vim-textobj-user'
+Plug 'tek/vim-textobj-ruby'
+
 " Rust Support
 Plug 'rust-lang/rust.vim'
 Plug 'autozimu/LanguageClient-neovim', {
@@ -158,7 +161,15 @@ set regexpengine=1
 " Unset search Really <C-/> but vim recognizes this :shrug:
 map <C-_> :let @/ = ""<CR>
 
-nnoremap <C-p> :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1'})<CR>
+function! CurrentWord()
+  if exists("b:current_syntax") && b:current_syntax == 'ruby'
+    normal "wyan
+    return getreg('w')
+  else
+    return expand('<cword>')
+  endif
+endfunction
+nnoremap <C-p> :call fzf#vim#tags(CurrentWord(), {'options': '--exact --select-1'})<CR>
 
 " Next and Previous Buffer with tabs
 nnoremap <Tab> :bnext<CR>
