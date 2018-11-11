@@ -75,6 +75,7 @@ brew 'heroku'
 # Tmux
 brew 'tmux'
 brew 'reattach-to-user-namespace'
+brew 'rainbarf'
 
 # Security/Yubikey Stuff
 brew 'gpg'
