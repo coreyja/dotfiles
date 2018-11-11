@@ -93,10 +93,6 @@ brew 'vale'
 # TLDR Man Pages
 brew 'tldr'
 
-# FAC (Git fix all commits)
-tap 'mkchoi212/fac', 'https://github.com/mkchoi212/fac.git'
-brew 'fac'
-
 brew 'chromedriver'
 
 cask 'pencil'
