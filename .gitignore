@@ -7,6 +7,7 @@
 !.config/tmux/**/*
 !.git_template/
 !.git_template/**/*
+!.gnupg/
 !.gnupg/gpg-agent.conf
 !.gnupg/gpg.conf
 !.tmuxinator/
@@ -17,6 +18,10 @@
 !bin/**/*
 !.rbenv/
 !.rbenv/default-gems
+!.vim/
+!.vim/after/
+!.vim/after/plugin/
+!.vim/after/plugin/abolish.vim
 
 !.aliases
 !.bash_profile

@@ -257,10 +257,6 @@ fun! DeleteCurrentFile()
 endfun
 nnoremap <Del><Del> :call DeleteCurrentFile()<CR>
 
-" VIM Autocorrects
-if exists(':Abolish')
-  Abolish FactoryGirl FactoryBot
-endif
 
 " Rust
 let g:autofmt_autosave = 1
