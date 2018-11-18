@@ -58,8 +58,12 @@ Plug 'w0rp/ale'
 
 Plug 'jparise/vim-graphql'
 
+Plug 'itspriddle/vim-marked'
+
 " TypeScript
 Plug 'leafgarland/typescript-vim'
+
+Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -113,10 +117,46 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
+" Files + devicons
+function! Fzf_files_with_dev_icons(command)
+  let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
+
+  function! s:edit_devicon_prepended_file(item)
+    let l:file_path = a:item[4:-1]
+    execute 'silent e' l:file_path
+  endfunction
+
+  call fzf#run({
+        \ 'source': a:command.' | devicon-lookup',
+        \ 'sink':   function('s:edit_devicon_prepended_file'),
+        \ 'options': '-m ' . l:fzf_files_options,
+        \ 'down':    '40%' })
+endfunction
+
+function! Fzf_git_diff_files_with_dev_icons()
+  let l:fzf_files_options = '--ansi --preview "sh -c \"(git diff --color=always -- {3..} | sed 1,4d; bat --color always --style numbers {3..}) | head -'.&lines.'\""'
+
+  function! s:edit_devicon_prepended_file_diff(item)
+    echom a:item
+    let l:file_path = a:item[7:-1]
+    echom l:file_path
+    let l:first_diff_line_number = system("git diff -U0 ".l:file_path." | rg '^@@.*\+' -o | rg '[0-9]+' -o | head -1")
+
+    execute 'silent e' l:file_path
+    execute l:first_diff_line_number
+  endfunction
+
+  call fzf#run({
+        \ 'source': 'git -c color.status=always status --short --untracked-files=all | devicon-lookup',
+        \ 'sink':   function('s:edit_devicon_prepended_file_diff'),
+        \ 'options': '-m ' . l:fzf_files_options,
+        \ 'down':    '40%' })
+endfunction
+
 " Open fzf Files
-map <C-f> :Files<CR>
-map <C-d> :GFiles?<CR>
-map <C-g> :GFiles<CR>
+map <C-f> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR>
+map <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR>
+map <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
 map <C-b> :Buffers<CR>
 
 " Enable Mouse Mode (in Tmux)
@@ -268,7 +308,6 @@ fun! DeleteCurrentFile()
   call delete(expand('%')) | bdelete!
 endfun
 nnoremap <Del><Del> :call DeleteCurrentFile()<CR>
-
 
 " Rust
 let g:autofmt_autosave = 1

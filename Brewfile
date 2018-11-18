@@ -83,7 +83,6 @@ brew 'gpg-agent'
 brew 'pinentry-mac'
 
 # Vim Stuff
-brew 'vim', args: ['--with-override-system-vi']
 brew 'nvim'
 brew 'ctags'
 brew 'editorconfig'
@@ -101,3 +100,7 @@ cask 'dash'
 cask 'alfred'
 cask 'moom'
 cask 'vlc'
+
+# Install Hack Nerd Font
+tap 'caskroom/fonts'
+cask 'font-hack-nerd-font'
