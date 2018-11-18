@@ -216,7 +216,6 @@ nnoremap <C-p> :call fzf#vim#tags(CurrentWord(), {'options': '--exact --select-1
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
-
 " TagBar
 nmap <F8> :TagbarToggle<CR>
 " Use Ripper Tags with Tagbar
