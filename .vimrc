@@ -58,6 +58,8 @@ Plug 'w0rp/ale'
 
 Plug 'jparise/vim-graphql'
 
+Plug 'itspriddle/vim-marked'
+
 " TypeScript
 Plug 'leafgarland/typescript-vim'
 
@@ -120,13 +122,12 @@ function! Fzf_files_with_dev_icons(command)
   let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
 
   function! s:edit_devicon_prepended_file(item)
-    let l:pos = stridx(a:item, ' ')
-    let l:file_path = a:item[pos+1:-1]
+    let l:file_path = a:item[4:-1]
     execute 'silent e' l:file_path
   endfunction
 
   call fzf#run({
-        \ 'source': a:command.' | rust-devicon-lookup',
+        \ 'source': a:command.' | devicon-lookup',
         \ 'sink':   function('s:edit_devicon_prepended_file'),
         \ 'options': '-m ' . l:fzf_files_options,
         \ 'down':    '40%' })
@@ -136,9 +137,9 @@ function! Fzf_git_diff_files_with_dev_icons()
   let l:fzf_files_options = '--ansi --preview "sh -c \"(git diff --color=always -- {3..} | sed 1,4d; bat --color always --style numbers {3..}) | head -'.&lines.'\""'
 
   function! s:edit_devicon_prepended_file_diff(item)
-    let l:first_pos = stridx(a:item, ' ')
-    let l:second_pos = stridx(a:item, ' ', first_pos+1)
-    let l:file_path = a:item[second_pos+1:-1]
+    echom a:item
+    let l:file_path = a:item[7:-1]
+    echom l:file_path
     let l:first_diff_line_number = system("git diff -U0 ".l:file_path." | rg '^@@.*\+' -o | rg '[0-9]+' -o | head -1")
 
     execute 'silent e' l:file_path
@@ -146,7 +147,7 @@ function! Fzf_git_diff_files_with_dev_icons()
   endfunction
 
   call fzf#run({
-        \ 'source': 'git -c color.status=always status --short --untracked-files=all | rust-devicon-lookup',
+        \ 'source': 'git -c color.status=always status --short --untracked-files=all | devicon-lookup',
         \ 'sink':   function('s:edit_devicon_prepended_file_diff'),
         \ 'options': '-m ' . l:fzf_files_options,
         \ 'down':    '40%' })
@@ -214,6 +215,7 @@ nnoremap <C-p> :call fzf#vim#tags(CurrentWord(), {'options': '--exact --select-1
 " Next and Previous Buffer with tabs
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
+
 
 " TagBar
 nmap <F8> :TagbarToggle<CR>
