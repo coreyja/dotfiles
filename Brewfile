@@ -92,6 +92,8 @@ brew 'vale'
 # TLDR Man Pages
 brew 'tldr'
 
+brew 'nnn'
+
 brew 'chromedriver'
 
 cask 'pencil'
