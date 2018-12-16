@@ -39,3 +39,6 @@ windows:
       panes:
         - nvim
         -
+  - server:
+      panes:
+        - middleman serve
