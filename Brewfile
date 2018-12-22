@@ -68,6 +68,7 @@ brew 'figlet'
 brew 'fortune'
 brew 'no-more-secrets'
 brew 'watch'
+brew 'asciiquarium'
 
 brew 'exercism'
 brew 'heroku'
