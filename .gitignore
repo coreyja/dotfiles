@@ -3,6 +3,8 @@
 !.config/
 !.config/nvim/
 !.config/nvim/**/*
+!.config/pet/
+!.config/pet/**/*
 !.config/tmux/
 !.config/tmux/**/*
 !.git_template/
