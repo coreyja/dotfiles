@@ -97,6 +97,8 @@ brew 'nnn'
 
 brew 'chromedriver'
 
+brew 'knqyf263/pet/pet'
+
 cask 'pencil'
 cask 'paintbrush'
 cask 'dash'
