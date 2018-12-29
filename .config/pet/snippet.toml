@@ -1,0 +1,44 @@
+[[snippets]]
+  description = "Retail Rspec Test DB Prepare"
+  command = "bundle exec rake retail:test:prepare bettermentdb:test:prepare"
+  output = ""
+
+[[snippets]]
+  description = "RetailCore Rspec Test DB Prepare"
+  command = "bundle exec rake app:retail:test:prepare app:bettermentdb:test:prepare"
+  output = ""
+
+[[snippets]]
+  description = "Bundle Install in each SubDir if Neccesary"
+  command = "for dir in $(ls); do if [[ -d $dir ]]; then pushd $dir; [[ -f \"./Gemfile\" ]] && (bundle check || bundle install); popd; fi ; done"
+  output = ""
+
+[[snippets]]
+  description = "Do Bundler things in all projects that depend on RetailCore"
+  command = "for dir in $(ls); do if [[ -d $dir ]]; then pushd $dir; if [[ -f \"./Gemfile\" ]] && grep -q 'retail_core' Gemfile.lock; then [[ -f \"./Gemfile\" ]] && BUNDLE_GEMFILE=Gemfile bundle update rubocop-betterment; [[ -f \"./Gemfile.next\" ]] && BUNDLE_GEMFILE=Gemfile.next bundle update rubocop-betterment; fi; popd; fi ; done"
+  output = ""
+
+[[snippets]]
+  description = "Do thing in all SubDirs"
+  command = "for dir in $(ls); do if [[ -d $dir ]]; then pushd $dir; <action>; popd; fi ; done"
+  output = ""
+
+[[snippets]]
+  description = "Find and Replace in Dir"
+  command = "find ./ -type f -name \"*.<filetype>\" -exec sed -i s'/<find>/<replace_with>/g' {} \\;"
+  output = ""
+
+[[snippets]]
+  description = "Name and Shame for number of Open Branchs (Requires INITIAILS/BRANCH/FEATURE branch naming)"
+  command = "git branch -r | awk -F/ '{print $2}' | sort | uniq -c | sort -k1nr | head"
+  output = ""
+
+[[snippets]]
+  description = "Run Last Command Until Fail"
+  command = "while !!; do :; done"
+  output = ""
+
+[[snippets]]
+  description = "Run given command for each installed ruby version"
+  command = "for version in $(rbenv versions --bare); do RBENV_VERSION=$version <command>; done; unset RBENV_VERSION"
+  output = ""

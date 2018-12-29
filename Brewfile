@@ -6,6 +6,8 @@ tap 'thoughtbot/formulae'
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew 'coreutils'
+brew 'gnu-sed', args: ['--with-default-names']
+brew 'grep', args: ['--with-default-names']
 
 # Install some other useful utilities like `sponge`.
 brew 'moreutils'
