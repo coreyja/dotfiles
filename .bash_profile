@@ -83,15 +83,11 @@ which nodenv &> /dev/null && eval "$(nodenv init -)"
 # Init DirEnv
 which direnv &> /dev/null && eval "$(direnv hook bash)"
 
-# In order for gpg to find gpg-agent, gpg-agent must be running,
-# and there must be an env variable pointing GPG to the gpg-agent socket.
-# This little script, which must be sourced
-# in your shell's init script (ie, .bash_profile, .zshrc, whatever),
-# will either start gpg-agent or set up the
-# GPG_AGENT_INFO variable if it's already running.
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-else
-    eval $(gpg-agent --daemon --enable-ssh-support --write-env-file ~/.gnupg/.gpg-agent-info)
-fi
+ # Since v2.1 GnuPG have changed the method a daemon starts. They are all started
+ # on demand now. For more information see:
+ #   https://www.gnupg.org/faq/whats-new-in-2.1.html#autostart
+ # Found this: https://www.linuxquestions.org/questions/slackware-14/gpg-agent-write-env-file-obsolete-4175608513/
+GPG_TTY=$(/usr/bin/tty)
+SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+export GPG_TTY SSH_AUTH_SOCK
+gpgconf --launch gpg-agent
