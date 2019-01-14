@@ -265,6 +265,7 @@ map <Leader>l :call RunFromGemfileDir(function('RunLastSpec'))<CR>
 map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
 
 autocmd! BufRead,BufNewFile,BufEnter retail/spec/features/*.rb let b:rspecEnvVars="FEATURES=1"
+autocmd! BufRead,BufNewFile,BufEnter retail/spec/system/*.rb let b:rspecEnvVars="SYSTEM=1"
 let g:rspec_command = "execute 'compiler rspec | let &makeprg=\"env ' . get(b:, 'rspecEnvVars', '') . ' spring\" | Make rspec {spec}'"
 
 " Double Space to Save
