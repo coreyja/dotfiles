@@ -91,3 +91,5 @@ GPG_TTY=$(/usr/bin/tty)
 SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 export GPG_TTY SSH_AUTH_SOCK
 gpgconf --launch gpg-agent
+eval $(/home/coreyja/.linuxbrew/bin/brew shellenv)
+PATH="/home/coreyja/.linuxbrew/bin:$PATH"PATH="/home/coreyja/.linuxbrew/bin:$PATH"

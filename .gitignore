@@ -14,6 +14,8 @@
 !.gnupg/gpg.conf
 !.tmuxinator/
 !.tmuxinator/**/*
+!.tmux/
+!.tmux/**/*
 !bash_completion.d/
 !bash_completion.d/**/*
 !bin/
