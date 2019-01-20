@@ -3,6 +3,10 @@
 # Add `~/bin` and `~/.local/bin/` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.local/bin:$PATH";
+
+eval $(/home/coreyja/.linuxbrew/bin/brew shellenv)
+PATH="/home/coreyja/.linuxbrew/bin:$PATH"PATH="/home/coreyja/.linuxbrew/bin:$PATH"
+
 export PATH="/usr/local/bin:$PATH";
 # Add GnuCoreUtils to the Path
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
@@ -91,5 +95,5 @@ GPG_TTY=$(/usr/bin/tty)
 SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 export GPG_TTY SSH_AUTH_SOCK
 gpgconf --launch gpg-agent
-eval $(/home/coreyja/.linuxbrew/bin/brew shellenv)
-PATH="/home/coreyja/.linuxbrew/bin:$PATH"PATH="/home/coreyja/.linuxbrew/bin:$PATH"
+
+
