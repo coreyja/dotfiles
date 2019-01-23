@@ -101,6 +101,9 @@ brew 'chromedriver'
 
 brew 'knqyf263/pet/pet'
 
+brew 'task'
+brew 'tasksh'
+
 cask 'pencil'
 cask 'paintbrush'
 cask 'dash'
