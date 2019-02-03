@@ -40,7 +40,8 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-eunuch'
 
 Plug 'editorconfig/editorconfig-vim'
 
