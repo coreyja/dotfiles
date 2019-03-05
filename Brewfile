@@ -52,6 +52,14 @@ brew 'ffmpeg'
 brew 'awscli'
 brew 'direnv'
 brew 'bat'
+brew 'hyperfine' # Benchmarking tool
+brew 'fd' # Find replacement
+brew 'asciinema'
+brew 'blink1'
+brew 'svg-term'
+brew 'ncdu'
+brew 'httpie'
+brew 'blink1'
 
 tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
 brew 'ripgrep-bin'
@@ -63,8 +71,6 @@ brew 'gcal'
 brew 'fzf'
 
 # Fun Stuff with No Purpose
-brew 'asciinema'
-brew 'blink1'
 brew 'cowsay'
 brew 'figlet'
 brew 'fortune'
@@ -72,7 +78,6 @@ brew 'no-more-secrets'
 brew 'watch'
 brew 'asciiquarium'
 
-brew 'exercism'
 brew 'heroku'
 
 # Tmux
