@@ -41,6 +41,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'scrooloose/nerdtree'
+Plug 'mcchrish/nnn.vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -328,3 +329,6 @@ let g:deoplete#enable_at_startup = 1
 
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
+
+" nnn Config
+let g:nnn#layout = { 'left': '~20%' }
