@@ -132,9 +132,9 @@ function! Fzf_files_with_dev_icons(command)
   endfunction
 
   call fzf#run({
-        \ 'source': a:command.' | devicon-lookup',
+        \ 'source': a:command.' | devicon-lookup --color',
         \ 'sink':   function('s:edit_devicon_prepended_file'),
-        \ 'options': '-m ' . l:fzf_files_options,
+        \ 'options': '--ansi -m ' . l:fzf_files_options,
         \ 'down':    '40%' })
 endfunction
 
@@ -152,14 +152,14 @@ function! Fzf_git_diff_files_with_dev_icons()
   endfunction
 
   call fzf#run({
-        \ 'source': 'git -c color.status=always status --short --untracked-files=all | devicon-lookup',
+        \ 'source': 'git -c color.status=always status --short --untracked-files=all | devicon-lookup --color',
         \ 'sink':   function('s:edit_devicon_prepended_file_diff'),
         \ 'options': '-m ' . l:fzf_files_options,
         \ 'down':    '40%' })
 endfunction
 
 " Open fzf Files
-map <C-f> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<CR>
+map <C-f> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND . " --color always")<CR>
 map <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR>
 map <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
 map <C-b> :Buffers<CR>
