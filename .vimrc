@@ -31,6 +31,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+Plug 'fszymanski/deoplete-emoji'
+Plug 'wellle/tmux-complete.vim'
 " Rust
 
 Plug 'majutsushi/tagbar'
@@ -324,6 +326,7 @@ let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ 'javascript': ['javascript-typescript-langserver'],
+    \ 'ruby': ['solargraph', 'stdio'],
     \ }
 let g:deoplete#enable_at_startup = 1
 
