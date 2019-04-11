@@ -24,6 +24,8 @@
 !.vim/after/
 !.vim/after/plugin/
 !.vim/after/plugin/abolish.vim
+!.cargo/
+!.cargo/config
 
 !.aliases
 !.bash_profile
