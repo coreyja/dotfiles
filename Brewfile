@@ -108,6 +108,7 @@ cask 'moom'
 cask 'vlc'
 cask 'chromedriver'
 cask 'google-backup-and-sync'
+cask 'bartender'
 
 # Install Hack Nerd Font
 tap 'caskroom/fonts'
