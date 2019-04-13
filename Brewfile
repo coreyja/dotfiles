@@ -95,6 +95,9 @@ brew 'tldr'
 
 brew 'nnn'
 
+brew 'rustup'
+
+brew 'go'
 brew 'knqyf263/pet/pet'
 
 cask 'pencil'
