@@ -95,8 +95,6 @@ brew 'tldr'
 
 brew 'nnn'
 
-brew 'chromedriver'
-
 brew 'knqyf263/pet/pet'
 
 cask 'pencil'
@@ -105,6 +103,7 @@ cask 'dash'
 cask 'alfred'
 cask 'moom'
 cask 'vlc'
+cask 'chromedriver'
 
 # Install Hack Nerd Font
 tap 'caskroom/fonts'
