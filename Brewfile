@@ -53,7 +53,6 @@ brew 'hyperfine' # Benchmarking tool
 brew 'fd' # Find replacement
 brew 'asciinema'
 brew 'blink1'
-brew 'svg-term'
 brew 'ncdu'
 brew 'httpie'
 brew 'blink1'
@@ -74,8 +73,6 @@ brew 'fortune'
 brew 'no-more-secrets'
 brew 'watch'
 brew 'asciiquarium'
-
-brew 'heroku'
 
 # Tmux
 brew 'tmux'
