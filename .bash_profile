@@ -6,6 +6,13 @@ export PATH="$HOME/.local/bin:$PATH";
 export PATH="/usr/local/bin:$PATH";
 # Add GnuCoreUtils to the Path
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnubin:$MANPATH"
+# Add grep to the Path
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/grep/libexec/gnubin:$MANPATH"
+# Add sed to the Path
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 # Add Cargo to Path
 export PATH="$HOME/.cargo/bin:$PATH"
 # Add Go bin dir to path
