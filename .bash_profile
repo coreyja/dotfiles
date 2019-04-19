@@ -5,7 +5,7 @@ export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.local/bin:$PATH";
 export PATH="/usr/local/bin:$PATH";
 # Add GnuCoreUtils to the Path
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # Add Cargo to Path
 export PATH="$HOME/.cargo/bin:$PATH"
 # Add Go bin dir to path
