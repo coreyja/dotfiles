@@ -109,6 +109,7 @@ cask 'vlc'
 cask 'chromedriver'
 cask 'google-backup-and-sync'
 cask 'bartender'
+cask 'openshot-video-editor'
 
 # Install Hack Nerd Font
 tap 'caskroom/fonts'
