@@ -40,6 +40,7 @@
 !.hushlogin
 !.ignore
 !.inputrc
+!.pryrc
 !.rspec
 !.rspec_helper.rb
 !.tmux.conf
