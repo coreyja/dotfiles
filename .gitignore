@@ -43,6 +43,7 @@
 !.pryrc
 !.rspec
 !.rspec_helper.rb
+!.ruby-version
 !.tmux.conf
 !.vimrc
 !Brewfile

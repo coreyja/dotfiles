@@ -1,20 +1,17 @@
 cask_args appdir: "~/Applications"
 
-tap 'homebrew/versions'
 tap 'thoughtbot/formulae'
 
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew 'coreutils'
-brew 'gnu-sed', args: ['--with-default-names']
-brew 'grep', args: ['--with-default-names']
+brew 'gnu-sed'
+brew 'grep'
 
 # Install some other useful utilities like `sponge`.
 brew 'moreutils'
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew 'findutils'
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew 'gnu-sed', args: ['--with-default-names']
 # Install Bash 4.
 # running `chsh`.
 brew 'bash'
@@ -22,7 +19,7 @@ brew 'bash'
 brew 'bash-completion2'
 
 # Install `wget` with IRI support.
-brew 'wget', args: ['--with-iri']
+brew 'wget'
 
 # Install more recent versions of some macOS tools.
 brew 'grep'
@@ -37,7 +34,7 @@ brew 'git'
 brew 'gitsh'
 brew 'hub'
 brew 'git-lfs'
-brew 'imagemagick', args: ['--with-webp']
+brew 'imagemagick'
 brew 'lua'
 brew 'p7zip'
 brew 'pigz'
@@ -56,7 +53,6 @@ brew 'hyperfine' # Benchmarking tool
 brew 'fd' # Find replacement
 brew 'asciinema'
 brew 'blink1'
-brew 'svg-term'
 brew 'ncdu'
 brew 'httpie'
 brew 'blink1'
@@ -78,8 +74,6 @@ brew 'no-more-secrets'
 brew 'watch'
 brew 'asciiquarium'
 
-brew 'heroku'
-
 # Tmux
 brew 'tmux'
 brew 'reattach-to-user-namespace'
@@ -87,7 +81,6 @@ brew 'rainbarf'
 
 # Security/Yubikey Stuff
 brew 'gpg'
-brew 'gpg-agent'
 brew 'pinentry-mac'
 
 # Vim Stuff
@@ -102,8 +95,9 @@ brew 'tldr'
 
 brew 'nnn'
 
-brew 'chromedriver'
+brew 'rustup'
 
+brew 'go'
 brew 'knqyf263/pet/pet'
 
 cask 'pencil'
@@ -112,6 +106,10 @@ cask 'dash'
 cask 'alfred'
 cask 'moom'
 cask 'vlc'
+cask 'chromedriver'
+cask 'google-backup-and-sync'
+cask 'bartender'
+cask 'openshot-video-editor'
 
 # Install Hack Nerd Font
 tap 'caskroom/fonts'
