@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'alvan/vim-closetag'
 Plug 'kopischke/vim-fetch'
 Plug 'thoughtbot/vim-rspec'
-Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'

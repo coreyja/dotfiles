@@ -12,6 +12,6 @@ windows:
   - logs:
       layout: main-vertical
       panes:
-        - cd retail && tail -f log/development.log
-        - cd ../instanbul && git pull --ff-only && ./script/serve.sh
-        - cd retail && ./bin/webpack-dev-server
+        - cd retail && bundle install && tail -f log/development.log
+        - cd ../instanbul && git pull --ff-only && ./script/setup.sh && ./script/serve.sh
+        - cd retail &&  yarn install && ./bin/webpack-dev-server
