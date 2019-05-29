@@ -334,6 +334,9 @@ let g:deoplete#enable_at_startup = 1
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
+let g:ruby_host_prog = 'RBENV_VERSION=$(cat ~/.ruby-version) ~/.rbenv/shims/ruby'
+let g:nodejs_host_prog = 'NODENV_VERSION=$(cat ~/.node-version) ~/.nodenv/shims/node'
+
 " nnn Config
 let g:nnn#command = 'nnn -l'
 let g:nnn#layout = { 'left': '~20%' }
