@@ -100,6 +100,8 @@ brew 'rustup'
 brew 'go'
 brew 'knqyf263/pet/pet'
 
+brew 'yarn'
+
 cask 'pencil'
 cask 'paintbrush'
 cask 'dash'
