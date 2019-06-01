@@ -53,6 +53,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 
 Plug 'skielbasa/vim-material-monokai'
+Plug 'flrnprz/plastic.vim'
 " Plug 'coreyja/vim-material-monokai', { 'dir': '~/Projects/vim-material-monokai' }
 
 Plug 'thiagoalessio/rainbow_levels.vim'
@@ -90,7 +91,6 @@ vnoremap <leader>i :call investigate#Investigate('v')<CR>
 " Theme
 set termguicolors
 colorscheme material-monokai
-" let g:airline_theme='coreyja'
 let g:airline_theme='materialmonokai'
 
 " Airline Config
@@ -108,9 +108,9 @@ let g:tmuxline_preset = {
       \'x'    : ['%F', '%I:%M %p'],
       \'y'    : '#H',
       \'z'    : '#(rainbarf --battery --remaining --rgb --tmux)',
-      \ 'options': {
-      \ 'status-justify': 'left'}
-      \ }
+      \'options': {
+      \  'status-justify': 'left'}
+      \}
 
 " :Rg (Source: https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2)
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
