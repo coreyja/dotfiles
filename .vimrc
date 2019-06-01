@@ -72,6 +72,10 @@ Plug 'unblevable/quick-scope'
 
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
 
+Plug 'sheerun/vim-polyglot'
+Plug 'google/vim-jsonnet'
+" Plug 'ludovicchabant/vim-gutentags'
+
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -289,6 +293,8 @@ let g:ale_linters = {
 map <Leader>c :ALEFix<CR>
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
 
 " Spellcheck
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us

@@ -17,7 +17,7 @@
 !bash_completion.d/
 !bash_completion.d/**/*
 !bin/
-!bin/**/*
+!bin/subl
 !.rbenv/
 !.rbenv/default-gems
 !.vim/

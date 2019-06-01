@@ -25,3 +25,5 @@ Thumbs.db
 # Project Specfic Ignores
 .sleet.yml
 .solargraph.yml
+
+tags*
