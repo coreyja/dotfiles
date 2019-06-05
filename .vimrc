@@ -58,6 +58,7 @@ Plug 'skielbasa/vim-material-monokai'
 Plug 'flrnprz/plastic.vim'
 " Plug 'coreyja/vim-material-monokai', { 'dir': '~/Projects/vim-material-monokai' }
 
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'thiagoalessio/rainbow_levels.vim'
 
 Plug 'w0rp/ale'
