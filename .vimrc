@@ -43,6 +43,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-eunuch'
 Plug 'mcchrish/nnn.vim'
 
 Plug 'editorconfig/editorconfig-vim'
@@ -53,8 +55,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 
 Plug 'skielbasa/vim-material-monokai'
+Plug 'flrnprz/plastic.vim'
 " Plug 'coreyja/vim-material-monokai', { 'dir': '~/Projects/vim-material-monokai' }
 
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'thiagoalessio/rainbow_levels.vim'
 
 Plug 'w0rp/ale'
@@ -74,6 +78,10 @@ Plug 'meain/vim-package-info', { 'do': 'npm install' }
 
 Plug 'stefandtw/quickfix-reflector.vim'
 
+Plug 'sheerun/vim-polyglot'
+Plug 'google/vim-jsonnet'
+" Plug 'ludovicchabant/vim-gutentags'
+
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -88,7 +96,6 @@ vnoremap <leader>i :call investigate#Investigate('v')<CR>
 " Theme
 set termguicolors
 colorscheme material-monokai
-" let g:airline_theme='coreyja'
 let g:airline_theme='materialmonokai'
 
 " Airline Config
@@ -106,9 +113,9 @@ let g:tmuxline_preset = {
       \'x'    : ['%F', '%I:%M %p'],
       \'y'    : '#H',
       \'z'    : '#(rainbarf --battery --remaining --rgb --tmux)',
-      \ 'options': {
-      \ 'status-justify': 'left'}
-      \ }
+      \'options': {
+      \  'status-justify': 'left'}
+      \}
 
 " :Rg (Source: https://medium.com/@crashybang/supercharge-vim-with-fzf-and-ripgrep-d4661fc853d2)
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
@@ -291,6 +298,8 @@ let g:ale_linters = {
 map <Leader>c :ALEFix<CR>
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
 
 " Spellcheck
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
