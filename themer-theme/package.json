@@ -14,6 +14,12 @@
     "themer-wallpaper-trianglify": "^1.0.4"
   },
   "scripts": {
-    "build": "themer -c ./colors.js -t themer-alfred -t themer-chrome -t themer-iterm -t themer-slack -t themer-tmux -t themer-vim -t themer-wallpaper-block-wave --themer-wallpaper-block-wave-size 3840x2160 -t themer-wallpaper-octagon -t themer-wallpaper-triangles -t themer-wallpaper-trianglify -o output"
+    "build": "themer -c ./colors.js -t themer-alfred -t themer-chrome -t themer-iterm -t themer-slack -t themer-tmux -t themer-vim -t themer-wallpaper-block-wave --themer-wallpaper-block-wave-size 3840x2160 -t themer-wallpaper-octagon -t themer-wallpaper-triangles -t themer-wallpaper-trianglify -t ./airline-vim.js -o output"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0"
   }
 }
