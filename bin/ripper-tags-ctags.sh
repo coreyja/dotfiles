@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 POSITIONAL=()
 while [[ $# -gt 0 ]]
 do
@@ -22,7 +24,7 @@ if [[ $* = *"--append"* ]]; then
     | (cat && ripper-tags --ignore-unsupported-options -f - ${*/--append}) \
     | grep -v '^!_' \
     | sort \
-    > tags~ && mv tags~ ${TAGS_FILE_NAME}
+    > tags~ && mv tags~ "${TAGS_FILE_NAME}"
 else
   ripper-tags --ignore-unsupported-options $*
 fi

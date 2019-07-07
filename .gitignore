@@ -30,7 +30,7 @@
 !bash_completion.d/**/*
 !bin/
 !bin/subl
-!bin/ripper-tags-ctags
+!bin/ripper-tags-ctags.sh
 !.rbenv/
 !.rbenv/default-gems
 !.vim/

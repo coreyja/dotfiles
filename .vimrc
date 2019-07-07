@@ -84,7 +84,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'google/vim-jsonnet'
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_define_advanced_commands=1
-let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags'
+let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
 
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
