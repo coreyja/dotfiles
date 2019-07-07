@@ -28,5 +28,5 @@ if [[ $* = *"--append"* ]]; then
     | sort \
     > tags~ && mv tags~ "${TAGS_FILE_NAME}"
 else
-  ripper-tags --ignore-unsupported-options $*
+  ripper-tags --recursive --exclude=vendor --ignore-unsupported-options $*
 fi
