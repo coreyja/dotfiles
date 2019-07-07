@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3840" height="2160" viewBox="-1920 -1080 3840 2160">
+          <defs>
+            <pattern id="bg" width="35.88785046728972" height="35.88785046728972" patternUnits="userSpaceOnUse" patternTransform="rotate(22.5)">
+              <path d="
+  M 5.981308411214953 0
+  l 3.9875389408099684 3.9875389408099684
+  l 15.950155763239874 0
+  l 3.9875389408099684 -3.9875389408099684
+  l 5.981308411214953 5.981308411214953
+  l -3.9875389408099684 3.9875389408099684
+  l 0 15.950155763239874
+  l 3.9875389408099684 3.9875389408099684
+  l -5.981308411214953 5.981308411214953
+  l -3.9875389408099684 -3.9875389408099684
+  l -15.950155763239874 0
+  l -3.9875389408099684 3.9875389408099684
+  l -5.981308411214953 -5.981308411214953
+  l 3.9875389408099684 -3.9875389408099684
+  l 0 -15.950155763239874
+  l -3.9875389408099684 -3.9875389408099684
+  z
+  " stroke="#3a3a39" stroke-width="1" fill="none"/>
+            </pattern>
+            <pattern id="bg-large" width="358.8785046728972" height="358.8785046728972" patternUnits="userSpaceOnUse" patternTransform="rotate(-22.5)">
+              <path d="
+  M 59.81308411214953 0
+  l 39.875389408099686 39.875389408099686
+  l 159.50155763239874 0
+  l 39.875389408099686 -39.875389408099686
+  l 59.81308411214953 59.81308411214953
+  l -39.875389408099686 39.875389408099686
+  l 0 159.50155763239874
+  l 39.875389408099686 39.875389408099686
+  l -59.81308411214953 59.81308411214953
+  l -39.875389408099686 -39.875389408099686
+  l -159.50155763239874 0
+  l -39.875389408099686 39.875389408099686
+  l -59.81308411214953 -59.81308411214953
+  l 39.875389408099686 -39.875389408099686
+  l 0 -159.50155763239874
+  l -39.875389408099686 -39.875389408099686
+  z
+  " stroke="#595958" stroke-width="2" fill="none"/>
+            </pattern>
+            <radialGradient id="accent-bg">
+              <stop offset="25%" stop-color="#1a1a1a"/>
+              <stop offset="100%" stop-color="#1a1a1a" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="fill-0" x1="0" y1="0" x2="1" y2="1"><stop offset="25%" stop-color="#ff4444" stop-opacity="0"/><stop offset="90%" stop-color="#ff4444"/></linearGradient>
+<linearGradient id="fill-1" x1="0" y1="0" x2="1" y2="1"><stop offset="25%" stop-color="#ffbb33" stop-opacity="0"/><stop offset="90%" stop-color="#ffbb33"/></linearGradient>
+<linearGradient id="fill-2" x1="0" y1="0" x2="1" y2="1"><stop offset="25%" stop-color="#fff43a" stop-opacity="0"/><stop offset="90%" stop-color="#fff43a"/></linearGradient>
+<linearGradient id="fill-3" x1="0" y1="0" x2="1" y2="1"><stop offset="25%" stop-color="#99cc00" stop-opacity="0"/><stop offset="90%" stop-color="#99cc00"/></linearGradient>
+<linearGradient id="fill-4" x1="0" y1="0" x2="1" y2="1"><stop offset="25%" stop-color="#15cc66" stop-opacity="0"/><stop offset="90%" stop-color="#15cc66"/></linearGradient>
+<linearGradient id="fill-5" x1="0" y1="0" x2="1" y2="1"><stop offset="25%" stop-color="#33b5e5" stop-opacity="0"/><stop offset="90%" stop-color="#33b5e5"/></linearGradient>
+<linearGradient id="fill-6" x1="0" y1="0" x2="1" y2="1"><stop offset="25%" stop-color="#aa66cc" stop-opacity="0"/><stop offset="90%" stop-color="#aa66cc"/></linearGradient>
+<linearGradient id="fill-7" x1="0" y1="0" x2="1" y2="1"><stop offset="25%" stop-color="#6e45a6" stop-opacity="0"/><stop offset="90%" stop-color="#6e45a6"/></linearGradient>
+          </defs>
+          <rect x="-1920" y="-1080" width="3840" height="2160" fill="#1a1a1a" />
+          <rect x="-1920" y="-1080" width="3840" height="2160" fill="url(#bg)"/>
+          <rect x="-1920" y="-1080" width="3840" height="2160" fill="url(#bg-large)"/>
+          <circle r="1200" fill="url(#accent-bg)"/>
+          <path d="M 0 -300 L 212.13 -212.13 L 212.13 212.13 Z" stroke="#ff4444" stroke-width="0" fill="url(#fill-0)" transform="rotate(0)"/>
+<path d="M 0 -300 L 212.13 -212.13 L 212.13 212.13 Z" stroke="#ffbb33" stroke-width="0" fill="url(#fill-1)" transform="rotate(-45)"/>
+<path d="M 0 -300 L 212.13 -212.13 L 212.13 212.13 Z" stroke="#fff43a" stroke-width="0" fill="url(#fill-2)" transform="rotate(-90)"/>
+<path d="M 0 -300 L 212.13 -212.13 L 212.13 212.13 Z" stroke="#99cc00" stroke-width="0" fill="url(#fill-3)" transform="rotate(-135)"/>
+<path d="M 0 -300 L 212.13 -212.13 L 212.13 212.13 Z" stroke="#15cc66" stroke-width="0" fill="url(#fill-4)" transform="rotate(-180)"/>
+<path d="M 0 -300 L 212.13 -212.13 L 212.13 212.13 Z" stroke="#33b5e5" stroke-width="0" fill="url(#fill-5)" transform="rotate(-225)"/>
+<path d="M 0 -300 L 212.13 -212.13 L 212.13 212.13 Z" stroke="#aa66cc" stroke-width="0" fill="url(#fill-6)" transform="rotate(-270)"/>
+<path d="M 0 -300 L 212.13 -212.13 L 212.13 212.13 Z" stroke="#6e45a6" stroke-width="0" fill="url(#fill-7)" transform="rotate(-315)"/>
+        </svg>

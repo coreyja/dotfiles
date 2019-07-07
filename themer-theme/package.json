@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "convert-svg-to-png": "^0.5.0",
     "themer": "^3.1.6",
     "themer-alfred": "^1.0.9",
     "themer-chrome": "^1.1.0",
@@ -7,6 +8,7 @@
     "themer-slack": "^2.0.2",
     "themer-tmux": "^1.0.4",
     "themer-vim": "^3.0.2",
+    "themer-vim-lightline": "^3.0.2",
     "themer-wallpaper-block-wave": "^3.0.3",
     "themer-wallpaper-octagon": "^3.0.3",
     "themer-wallpaper-shirts": "^1.0.3",
@@ -14,7 +16,7 @@
     "themer-wallpaper-trianglify": "^1.0.4"
   },
   "scripts": {
-    "build": "themer -c ./colors.js -t themer-alfred -t themer-chrome -t themer-iterm -t themer-slack -t themer-tmux -t themer-vim -t themer-wallpaper-block-wave --themer-wallpaper-block-wave-size 3840x2160 -t themer-wallpaper-octagon -t themer-wallpaper-triangles -t themer-wallpaper-trianglify -t ./airline-vim.js -o output"
+    "build": "themer -c ./colors.js -t themer-alfred -t themer-chrome -t themer-iterm -t themer-slack -t themer-tmux -t themer-vim -t themer-wallpaper-block-wave --themer-wallpaper-block-wave-size 3840x2160 -t themer-wallpaper-octagon --themer-wallpaper-octagon-size 3840x2160 -t themer-wallpaper-triangles --themer-wallpaper-triangles-size 3840x2160 -t themer-wallpaper-trianglify --themer-wallpaper-trianglify-size 3840x2160 -t themer-vim-lightline -o output && convert-svg-to-png output/*wallpaper*/**/*.svg"
   },
   "devDependencies": {
     "eslint": "^6.0.1",

@@ -54,8 +54,9 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'keith/investigate.vim'
 
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
+Plug 'itchyny/lightline.vim'
 
 Plug 'skielbasa/vim-material-monokai'
 Plug 'flrnprz/plastic.vim'
@@ -99,15 +100,19 @@ vnoremap <leader>i :call investigate#Investigate('v')<CR>
 " Theme
 set termguicolors
 colorscheme ThemerVim
-let g:airline_theme='materialmonokai'
 
 " Airline Config
-if !has('nvim')
-    source ~/.config/nvim/autoload/airline/themes/coreyja.vim
-end
-let g:airline_powerline_fonts = 1
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-let g:airline#extensions#tabline#enabled = 1
+" if !has('nvim')
+"     source ~/.config/nvim/autoload/airline/themes/coreyja.vim
+" end
+" let g:airline_powerline_fonts = 1
+" set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='materialmonokai'
+
+" Lightline Config
+let g:lightline = { 'colorscheme': 'ThemerVimLightline' }
+
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
