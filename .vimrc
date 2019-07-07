@@ -25,6 +25,7 @@ Plug 'tek/vim-textobj-ruby'
 
 " Rust Support
 Plug 'rust-lang/rust.vim'
+Plug 'pest-parser/pest.vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -34,6 +35,8 @@ Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'fszymanski/deoplete-emoji'
 Plug 'wellle/tmux-complete.vim'
 " Rust
+
+Plug 'janko/vim-test'
 
 Plug 'majutsushi/tagbar'
 
@@ -78,7 +81,9 @@ Plug 'meain/vim-package-info', { 'do': 'npm install' }
 
 Plug 'sheerun/vim-polyglot'
 Plug 'google/vim-jsonnet'
-" Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_define_advanced_commands=1
+let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags'
 
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
@@ -339,7 +344,10 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-langserver'],
     \ 'ruby': ['solargraph', 'stdio'],
     \ }
+
+" Deoplete
 let g:deoplete#enable_at_startup = 1
+autocmd CompleteDone * silent! pclose!
 
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -351,3 +359,11 @@ let g:nodejs_host_prog = 'NODENV_VERSION=$(cat ~/.node-version) ~/.nodenv/shims/
 let g:nnn#command = 'nnn -l'
 let g:nnn#layout = { 'left': '~20%' }
 nnoremap <leader>m :NnnPicker '%:p:h'<CR>
+
+" test.vim config
+let test#strategy = "dispatch"
+nmap <silent> tn :TestNearest<CR>
+nmap <silent> tf :TestFile<CR>
+nmap <silent> ts :TestSuite<CR>
+nmap <silent> tl :TestLast<CR>
+nmap <silent> tg :TestVisit<CR>
