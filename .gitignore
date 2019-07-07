@@ -1,6 +1,8 @@
 *
 
 !.config/
+!.config/iterm/
+!.config/iterm/**/*
 !.config/nvim/
 !.config/nvim/**/*
 !.config/pet/
@@ -65,3 +67,5 @@
 !Brewfile
 !LICENSE.txt
 !README.md
+
+**/.DS_Store
