@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# From: https://github.com/tmm1/ripper-tags/issues/49#issuecomment-386535936
+
 POSITIONAL=()
 while [[ $# -gt 0 ]]
 do
