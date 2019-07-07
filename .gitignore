@@ -37,6 +37,9 @@
 !.vim/after/plugin/abolish.vim
 !.cargo/
 !.cargo/config
+!themer-theme/
+!themer-theme/**/*
+
 
 !.aliases
 !.bash_profile

@@ -98,7 +98,7 @@ vnoremap <leader>i :call investigate#Investigate('v')<CR>
 
 " Theme
 set termguicolors
-colorscheme material-monokai
+colorscheme ThemerVim
 let g:airline_theme='materialmonokai'
 
 " Airline Config
