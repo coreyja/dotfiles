@@ -71,6 +71,8 @@ Plug 'unblevable/quick-scope'
 
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
 
+Plug 'stefandtw/quickfix-reflector.vim'
+
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
 " List ends here. Plugins become visible to Vim after this call.
