@@ -24,6 +24,7 @@ Plug 'tek/vim-textobj-ruby'
 
 " Rust Support
 Plug 'rust-lang/rust.vim'
+Plug 'pest-parser/pest.vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -33,6 +34,8 @@ Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'fszymanski/deoplete-emoji'
 Plug 'wellle/tmux-complete.vim'
 " Rust
+
+Plug 'janko/vim-test'
 
 Plug 'majutsushi/tagbar'
 
@@ -50,8 +53,9 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'keith/investigate.vim'
 
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'edkolev/tmuxline.vim'
+Plug 'itchyny/lightline.vim'
 
 Plug 'skielbasa/vim-material-monokai'
 Plug 'flrnprz/plastic.vim'
@@ -79,7 +83,9 @@ Plug 'stefandtw/quickfix-reflector.vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'google/vim-jsonnet'
-" Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_define_advanced_commands=1
+let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
 
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
@@ -94,16 +100,20 @@ vnoremap <leader>i :call investigate#Investigate('v')<CR>
 
 " Theme
 set termguicolors
-colorscheme material-monokai
-let g:airline_theme='materialmonokai'
+colorscheme ThemerVim
 
 " Airline Config
-if !has('nvim')
-    source ~/.config/nvim/autoload/airline/themes/coreyja.vim
-end
-let g:airline_powerline_fonts = 1
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-let g:airline#extensions#tabline#enabled = 1
+" if !has('nvim')
+"     source ~/.config/nvim/autoload/airline/themes/coreyja.vim
+" end
+" let g:airline_powerline_fonts = 1
+" set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme='materialmonokai'
+
+" Lightline Config
+let g:lightline = { 'colorscheme': 'ThemerVimLightline' }
+
 
 let g:tmuxline_preset = {
       \'a'    : '#S',
@@ -340,7 +350,10 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['javascript-typescript-langserver'],
     \ 'ruby': ['solargraph', 'stdio'],
     \ }
+
+" Deoplete
 let g:deoplete#enable_at_startup = 1
+autocmd CompleteDone * silent! pclose!
 
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -352,3 +365,11 @@ let g:nodejs_host_prog = 'NODENV_VERSION=$(cat ~/.node-version) ~/.nodenv/shims/
 let g:nnn#command = 'nnn -l'
 let g:nnn#layout = { 'left': '~20%' }
 nnoremap <leader>m :NnnPicker '%:p:h'<CR>
+
+" test.vim config
+let test#strategy = "dispatch"
+nmap <silent> tn :TestNearest<CR>
+nmap <silent> tf :TestFile<CR>
+nmap <silent> ts :TestSuite<CR>
+nmap <silent> tl :TestLast<CR>
+nmap <silent> tg :TestVisit<CR>

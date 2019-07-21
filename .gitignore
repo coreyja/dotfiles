@@ -1,6 +1,8 @@
 *
 
 !.config/
+!.config/iterm/
+!.config/iterm/**/*
 !.config/nvim/
 !.config/nvim/**/*
 !.config/pet/
@@ -13,11 +15,22 @@
 !.gnupg/gpg-agent.conf
 !.gnupg/gpg.conf
 !.tmuxinator/
-!.tmuxinator/**/*
+!.tmuxinator/coreyja-blog.yml
+!.tmuxinator/dev.to.yml
+!.tmuxinator/devicon-lookup.yml
+!.tmuxinator/dotfiles.yml
+!.tmuxinator/glassbambi-blog.yml
+!.tmuxinator/glassy-collections.yml
+!.tmuxinator/hacking.yml
+!.tmuxinator/octobox.yml
+!.tmuxinator/package-tracker.yml
+!.tmuxinator/rubocop-coreyja.yml
+!.tmuxinator/sleet.yml
 !bash_completion.d/
 !bash_completion.d/**/*
 !bin/
 !bin/subl
+!bin/ripper-tags-ctags.sh
 !.rbenv/
 !.rbenv/default-gems
 !.vim/
@@ -26,6 +39,9 @@
 !.vim/after/plugin/abolish.vim
 !.cargo/
 !.cargo/config
+!themer-theme/
+!themer-theme/**/*
+
 
 !.aliases
 !.bash_profile
@@ -41,6 +57,7 @@
 !.ignore
 !.inputrc
 !.node-version
+!.notags
 !.pryrc
 !.rspec
 !.rspec_helper.rb
@@ -50,3 +67,5 @@
 !Brewfile
 !LICENSE.txt
 !README.md
+
+**/.DS_Store
