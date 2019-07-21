@@ -5,7 +5,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'alvan/vim-closetag'
 Plug 'kopischke/vim-fetch'
 Plug 'thoughtbot/vim-rspec'
-Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
@@ -79,6 +78,8 @@ Plug 'blindFS/vim-taskwarrior'
 Plug 'unblevable/quick-scope'
 
 Plug 'meain/vim-package-info', { 'do': 'npm install' }
+
+Plug 'stefandtw/quickfix-reflector.vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'google/vim-jsonnet'

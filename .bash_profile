@@ -74,7 +74,7 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 complete -F _fzf_file_completion -o default -o bashdefault rspec
 complete -F _fzf_file_completion -o default -o bashdefault rake
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" 2> /dev/null'
 
 # Add Tmux and tmuxinator bash completion
 [ -f /usr/local/etc/bash_completion.d/tmux ] && source /usr/local/etc/bash_completion.d/tmux
