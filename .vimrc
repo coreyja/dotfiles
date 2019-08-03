@@ -87,6 +87,8 @@ Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_define_advanced_commands=1
 let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
 
+Plug 'segeljakt/vim-silicon'
+
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
 " List ends here. Plugins become visible to Vim after this call.
