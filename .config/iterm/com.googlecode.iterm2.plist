@@ -1246,7 +1246,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 165 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>910 675 796 486 0 0 2560 1417 </string>
+	<string>910 649 796 486 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 2560 1417 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -2421,7 +2421,7 @@
 			<key>HotKey Window Floats</key>
 			<false/>
 			<key>HotKey Window Reopens On Activation</key>
-			<false/>
+			<true/>
 			<key>Idle Code</key>
 			<integer>0</integer>
 			<key>Initial Text</key>
