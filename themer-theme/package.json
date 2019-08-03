@@ -17,7 +17,7 @@
     "themer-wallpaper-trianglify": "^1.0.4"
   },
   "scripts": {
-    "build": "themer -c ./colors.js -t themer-alfred -t themer-chrome -t themer-iterm -t themer-terminal -t themer-slack -t themer-tmux -t themer-vim -t themer-wallpaper-block-wave --themer-wallpaper-block-wave-size 3840x2160 -t themer-wallpaper-octagon --themer-wallpaper-octagon-size 3840x2160 -t themer-wallpaper-triangles --themer-wallpaper-triangles-size 3840x2160 -t themer-wallpaper-trianglify --themer-wallpaper-trianglify-size 3840x2160 -t themer-vim-lightline -o output && convert-svg-to-png output/*wallpaper*/**/*.svg"
+    "build": "themer -c ./colors.js -t themer-alfred -t themer-chrome -t themer-iterm -t themer-terminal -t themer-slack -t themer-tmux -t themer-vim -t themer-wallpaper-block-wave --themer-wallpaper-block-wave-size 3840x2160 -t themer-wallpaper-octagon --themer-wallpaper-octagon-size 3840x2160 -t themer-wallpaper-triangles --themer-wallpaper-triangles-size 3840x2160 -t themer-wallpaper-trianglify --themer-wallpaper-trianglify-size 3840x2160 -t themer-vim-lightline -o output && convert-svg-to-png output/*wallpaper*/**/*.svg && rm -rf output/wallpapers/ && mkdir -p output/wallpapers && ln output/**/*.png output/wallpapers/"
   },
   "devDependencies": {
     "eslint": "^6.0.1",
