@@ -83,9 +83,9 @@ Plug 'stefandtw/quickfix-reflector.vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'google/vim-jsonnet'
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_define_advanced_commands=1
-let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
+" Plug 'ludovicchabant/vim-gutentags'
+" let g:gutentags_define_advanced_commands=1
+" let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
 
 Plug 'segeljakt/vim-silicon'
 
@@ -301,7 +301,7 @@ map <Leader><Leader> :write<CR>
 " Config ALE
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
-\   'typescript': ['tslint'],
+\   'typescript': ['eslint'],
 \}
 let g:ale_linters = {
 \   'eruby': [],
