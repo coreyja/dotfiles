@@ -43,6 +43,8 @@
 !.cargo/config
 !themer-theme/
 !themer-theme/**/*
+!scripts/
+!scripts/install_from_cargo.sh
 
 
 !.aliases
@@ -67,6 +69,7 @@
 !.tmux.conf
 !.vimrc
 !Brewfile
+!Cargofile
 !LICENSE.txt
 !README.md
 
