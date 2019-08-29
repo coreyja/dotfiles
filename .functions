@@ -221,3 +221,11 @@ n()
   fi
   unset NNN_TMPFILE
 }
+
+
+# function that selects and return a random element from the EMOJIS set
+function random_cat_emoji() {
+  local emojis=(😺 😸 😹 😻 😼 😽 🙀 😿 😾)
+  local selected=${emojis[$RANDOM % ${#emojis[@]}]};
+  echo "$selected";
+}
