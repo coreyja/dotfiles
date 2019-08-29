@@ -82,15 +82,32 @@ else
 	hostStyle="${yellow}";
 fi;
 
-# Set the terminal title and prompt.
-PS1="\[\033]0;\W\007\]"; # working directory base name
-PS1+="\[${bold}\]\n"; # newline
-PS1+="\[${userStyle}\]\u"; # username
-PS1+="\[${white}\] in ";
-PS1+="\[${green}\]\w"; # working directory full path
-PS1+="\$(prompt_git \"\[${white}\] on \[${purple}\]\" \"\[${blue}\]\")"; # Git repository details
-PS1+="\n";
-PS1+=$'\[${white}\]\u2605  \[${reset}\]'; # `★` (and reset color)
+function last_status_indicator() {
+  local last_status=$?
+
+  if [ "$last_status" -eq "0" ] ; then
+    echo "🚀"
+  else
+    echo "💩"
+  fi
+}
+
+function prompt() {
+  local PS1='';
+  PS1+="$bold\n"
+  PS1+='$(last_status_indicator) '
+  PS1+="$userStyle\u"
+  PS1+="$white in "
+  PS1+="$green\w"
+  PS1+='$(prompt_git "$white on $purple" $blue)'
+  PS1+='\n'
+  PS1+="$reset$white"
+  PS1+='💜 '
+  PS1+="$reset"
+  echo "$PS1"
+}
+
+PS1="$(prompt)";
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
