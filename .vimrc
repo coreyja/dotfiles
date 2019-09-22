@@ -127,6 +127,8 @@ let g:lightline = {
   \   'component_function': {
   \     'gutentagsstatus': 'gutentags#statusline'
   \   },
+  \   'separator': { 'left': '', 'right': '' },
+  \   'subseparator': { 'left': '', 'right': '' },
   \ }
 
 
