@@ -199,7 +199,7 @@ alias blink='blink1-tool'
 
 # I always want nvim
 alias vim='nvim'
-alias nvim-update="nvim +PlugUpgrade +PlugInstall +PlugUpdate +qa"
+alias nvim-update="nvim +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qa"
 
 # Dokku
 alias dokku@coreyja="ssh -o LogLevel=QUIET -t dokku@dokku.coreyja.com"
