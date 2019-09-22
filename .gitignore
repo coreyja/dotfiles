@@ -45,6 +45,7 @@
 !themer-theme/**/*
 !scripts/
 !scripts/install_from_cargo.sh
+!scripts/sort_cargofile.sh
 
 
 !.aliases
