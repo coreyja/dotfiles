@@ -83,11 +83,14 @@ Plug 'stefandtw/quickfix-reflector.vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'google/vim-jsonnet'
-" Plug 'ludovicchabant/vim-gutentags'
-" let g:gutentags_define_advanced_commands=1
-" let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
+Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_define_advanced_commands=1
+let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
 
 Plug 'segeljakt/vim-silicon'
+let g:silicon = {
+      \ 'default-file-pattern': '~/images/silicon-{time:%Y-%m-%d-%H%M%S}.png',
+      \ }
 
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
@@ -114,7 +117,17 @@ colorscheme ThemerVim
 " let g:airline_theme='materialmonokai'
 
 " Lightline Config
-let g:lightline = { 'colorscheme': 'ThemerVimLightline' }
+let g:lightline = {
+  \   'colorscheme': 'ThemerVimLightline',
+  \   'active': {
+  \     'right': [ [ 'lineinfo' ],
+  \                [ 'percent' ],
+  \                [ 'gutentagsstatus', 'fileformat', 'fileencoding', 'filetype' ] ]
+  \   },
+  \   'component_function': {
+  \     'gutentagsstatus': 'gutentags#statusline'
+  \   },
+  \ }
 
 
 let g:tmuxline_preset = {
