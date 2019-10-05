@@ -217,8 +217,8 @@ colors:
   bright:
     black:   '0x3a3a39'
     red:     '0xc30000'
-    green:   '0x394d00'
-    yellow:  '0xbaaf00'
+    green:   '0x608000'
+    yellow:  '0xa09700'
     blue:    '0x116787'
     magenta: '0x2e204c' # Purple
     cyan:    '0xb37700' # Orange
