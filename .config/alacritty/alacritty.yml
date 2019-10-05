@@ -209,19 +209,19 @@ colors:
     green:   '0x99cc00'
     yellow:  '0xfff43a'
     blue:    '0x33b5e5'
-    magenta: '0x6e45a6'
-    cyan:    '0x15cc66'
+    magenta: '0x6e45a6' # Purple
+    cyan:    '0xffbb33' # Orange
     white:   '0xd8d8d3'
 
   # Bright colors
   bright:
     black:   '0x3a3a39'
-    red:     '0xffbb33'
-    green:   '0x15cc66'
-    yellow:  '0xfff43a'
-    blue:    '0x33b5e5'
-    magenta: '0x6e45a6'
-    cyan:    '0x15cc66'
+    red:     '0xc30000'
+    green:   '0x394d00'
+    yellow:  '0xbaaf00'
+    blue:    '0x116787'
+    magenta: '0x2e204c' # Purple
+    cyan:    '0xb37700' # Orange
     white:   '0xf8f8f2'
 
   # Dim colors
