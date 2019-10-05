@@ -38,7 +38,7 @@ window:
     y: 0
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -87,7 +87,7 @@ scrolling:
   faux_multiplier: 3
 
   # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
+  auto_scroll: true
 
 # Spaces per Tab (changes require restart)
 #
