@@ -1,3 +1,10 @@
+" Install vim-plugged in needed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
@@ -86,6 +93,7 @@ Plug 'google/vim-jsonnet'
 Plug 'ludovicchabant/vim-gutentags'
 let g:gutentags_define_advanced_commands=1
 let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
+let g:gutentags_ctags_exclude = ['node_modules/*', 'public/*', 'coverage/*']
 
 Plug 'segeljakt/vim-silicon'
 let g:silicon = {
@@ -308,7 +316,8 @@ map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
 
 autocmd! BufRead,BufNewFile,BufEnter retail/spec/features/*.rb let b:rspecEnvVars="FEATURES=1"
 autocmd! BufRead,BufNewFile,BufEnter retail/spec/system/*.rb let b:rspecEnvVars="SYSTEM=1"
-let g:rspec_command = "execute 'compiler rspec | let &makeprg=\"env ' . get(b:, 'rspecEnvVars', '') . ' spring\" | Make rspec {spec}'"
+" let g:rspec_command = "execute 'compiler rspec | let &makeprg=\"env ' . get(b:, 'rspecEnvVars', '') . ' spring\" | Make rspec {spec}'"
+let g:rspec_command = "Dispatch rspec {spec}"
 
 " Double Space to Save
 map <Leader><Leader> :write<CR>

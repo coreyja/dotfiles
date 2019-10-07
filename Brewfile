@@ -89,6 +89,8 @@ brew 'ctags'
 brew 'editorconfig'
 tap 'ValeLint/vale'
 brew 'vale'
+brew 'python2'
+brew 'python3'
 
 # TLDR Man Pages
 brew 'tldr'
@@ -114,6 +116,9 @@ cask 'chromedriver'
 cask 'google-backup-and-sync'
 cask 'bartender'
 cask 'openshot-video-editor'
+cask 'alacritty'
+cask 'pock'
+cask 'dash'
 
 # Install Hack Nerd Font
 tap 'caskroom/fonts'
