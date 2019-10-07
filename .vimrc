@@ -146,7 +146,7 @@ let g:tmuxline_preset = {
       \'cwin' : '#I #W',
       \'x'    : ['%F', '%I:%M %p'],
       \'y'    : '#H',
-      \'z'    : '#(rainbarf --battery --remaining --rgb --tmux)',
+      \'z'    : '#(rainbarf --battery --remaining --tmux --bright)',
       \'options': {
       \  'status-justify': 'left'}
       \}
