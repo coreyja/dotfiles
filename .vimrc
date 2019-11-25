@@ -138,10 +138,7 @@ let g:lightline = {
   \   'active': {
   \     'right': [ [ 'lineinfo' ],
   \                [ 'percent' ],
-  \                [ 'gutentagsstatus', 'fileformat', 'fileencoding', 'filetype' ] ]
-  \   },
-  \   'component_function': {
-  \     'gutentagsstatus': 'gutentags#statusline'
+  \                [ 'fileformat', 'fileencoding', 'filetype' ] ]
   \   },
   \   'separator': { 'left': '', 'right': '' },
   \   'subseparator': { 'left': '', 'right': '' },
