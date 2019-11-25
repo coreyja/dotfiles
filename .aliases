@@ -204,3 +204,6 @@ alias nvim-update="nvim +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qa"
 # Dokku
 alias dokku@coreyja="ssh -o LogLevel=QUIET -t dokku@dokku.coreyja.com"
 alias dokku="dokku@coreyja"
+
+alias wip="git commit -am wip"
+alias unwip="git reset HEAD~1"

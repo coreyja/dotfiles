@@ -326,6 +326,7 @@ map <Leader><Leader> :write<CR>
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'typescript': ['eslint'],
+\   'javascript': ['eslint'],
 \}
 let g:ale_linters = {
 \   'eruby': [],
@@ -399,3 +400,14 @@ nmap <silent> tf :TestFile<CR>
 nmap <silent> ts :TestSuite<CR>
 nmap <silent> tl :TestLast<CR>
 nmap <silent> tg :TestVisit<CR>
+
+" Find and Replace in all files
+function! FindAndReplace( ... )
+  if a:0 != 2
+    echo "Need two arguments"
+    return
+  endif
+  execute printf('args `rg --files-with-matches ''%s'' .`', a:1)
+  execute printf('argdo %%substitute/%s/%s/g | update', a:1, a:2)
+endfunction
+command! -nargs=+ Jangle call FindAndReplace(<f-args>)
