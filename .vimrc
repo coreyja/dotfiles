@@ -98,12 +98,17 @@ Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'stefandtw/quickfix-reflector.vim'
 
 Plug 'sheerun/vim-polyglot'
+let g:polyglot_disabled = ['typescript', 'javascript']
 Plug 'google/vim-jsonnet'
 
 Plug 'segeljakt/vim-silicon'
 let g:silicon = {
       \ 'default-file-pattern': '~/images/silicon-{time:%Y-%m-%d-%H%M%S}.png',
       \ }
+
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+let g:typescript_indent_disable = 1
 
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
