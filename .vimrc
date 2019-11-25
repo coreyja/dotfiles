@@ -89,9 +89,6 @@ Plug 'jparise/vim-graphql'
 
 Plug 'itspriddle/vim-marked'
 
-" TypeScript
-Plug 'leafgarland/typescript-vim'
-
 Plug 'blindFS/vim-taskwarrior'
 
 Plug 'unblevable/quick-scope'
