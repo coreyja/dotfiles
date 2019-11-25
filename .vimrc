@@ -102,10 +102,6 @@ Plug 'stefandtw/quickfix-reflector.vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'google/vim-jsonnet'
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_define_advanced_commands=1
-let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
-let g:gutentags_ctags_exclude = ['node_modules/*', 'public/*', 'coverage/*']
 
 Plug 'segeljakt/vim-silicon'
 let g:silicon = {
