@@ -46,6 +46,7 @@
 !scripts/
 !scripts/install_from_cargo.sh
 !scripts/sort_cargofile.sh
+!scripts/install_rbenv_plugins.sh
 
 
 !.aliases
