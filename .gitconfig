@@ -3,6 +3,7 @@
 [user]
     name = Corey Alexander
     email = coreyja@gmail.com
+    signingkey = 6CE33F86461BAF1DDDEC19C62803A46741DF1405
 [alias]
 
     # View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -217,3 +218,6 @@
 
 [hub]
     protocol = git
+
+[tag]
+	forceSignAnnotated = true
