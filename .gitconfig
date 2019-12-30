@@ -159,7 +159,7 @@
 [commit]
 
     # https://help.github.com/articles/signing-commits-using-gpg/
-    gpgsign = true
+    ; gpgsign = true
 
 [diff]
 
@@ -208,9 +208,9 @@
 
     insteadOf = "gist:"
 
-# Force SSH auth for GitHub
-[url "git@github.com:"]
-  insteadOf = https://github.com/
+; # Force SSH auth for GitHub
+; [url "git@github.com:"]
+;   insteadOf = https://github.com/
 
 [include]
     path = ./.gitconfig.local
