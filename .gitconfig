@@ -209,10 +209,6 @@
 
     insteadOf = "gist:"
 
-# Force SSH auth for GitHub
-[url "git@github.com:"]
-  insteadOf = https://github.com/
-
 [include]
     path = ./.gitconfig.local
 
