@@ -207,3 +207,5 @@ alias dokku="dokku@coreyja"
 
 alias wip="git commit -am wip"
 alias unwip="git reset HEAD~1"
+
+alias run_last_until_fail="while !!; do :; done"
