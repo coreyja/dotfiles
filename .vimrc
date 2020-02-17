@@ -376,6 +376,7 @@ endfun
 nnoremap <Del><Del> :call DeleteCurrentFile()<CR>
 
 " Rust
+let g:rustfmt_options = '--edition 2018'
 let g:rustfmt_autosave = 1
 
 " " ## LanguageClient
