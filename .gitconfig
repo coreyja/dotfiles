@@ -17,7 +17,7 @@
     co = checkout
 
     # Fuzzy Checkout using FZF
-    fuzzy-checkout = !"git checkout $(git branches | fzf)"
+    fuzzy-checkout = !"git checkout $(git branch --sort=-committerdate | fzf)"
     fco = fuzzy-checkout
 
     # Current Branch

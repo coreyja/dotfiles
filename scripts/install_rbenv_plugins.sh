@@ -9,5 +9,6 @@ function clone_or_pull() {
 }
 
 clone_or_pull https://github.com/ianheggie/rbenv-binstubs.git "$(rbenv root)/plugins/rbenv-binstubs"
+clone_or_pull https://github.com/rbenv/rbenv-default-gems.git "$(rbenv root)/plugins/rbenv-default-gems"
 
-bundle install --binstubs .bundle/bin
+# bundle install --binstubs .bundle/bin
