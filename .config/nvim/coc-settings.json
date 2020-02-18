@@ -51,5 +51,8 @@
         "!Join scalar",
         "!Join mapping",
         "!Join sequence"
-    ]
+    ],
+    "eslint.autoFixOnSave": true,
+    "jest.watchman": true,
+    "jest.forceExit": true
 }
