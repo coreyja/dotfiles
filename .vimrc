@@ -25,6 +25,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
+Plug 'dbeniamine/todo.txt-vim'
 
 Plug 'kana/vim-textobj-user'
 Plug 'tek/vim-textobj-ruby'

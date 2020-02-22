@@ -89,8 +89,7 @@ brew 'ctags'
 brew 'editorconfig'
 tap 'ValeLint/vale'
 brew 'vale'
-brew 'python2'
-brew 'python3'
+brew 'python'
 
 # TLDR Man Pages
 brew 'tldr'
@@ -121,5 +120,5 @@ cask 'pock'
 cask 'dash'
 
 # Install Hack Nerd Font
-tap 'caskroom/fonts'
+tap 'homebrew/cask-fonts'
 cask 'font-hack-nerd-font'
