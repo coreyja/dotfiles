@@ -69,6 +69,7 @@
 !.node-version
 !.notags
 !.pryrc
+!.railsrc
 !.rspec
 !.rspec_helper.rb
 !.ruby-version
