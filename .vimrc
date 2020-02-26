@@ -62,8 +62,6 @@ Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'janko/vim-test'
 
-Plug 'majutsushi/tagbar'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -280,25 +278,6 @@ nnoremap <C-p> :call fzf#vim#tags(CurrentWord(), {'options': '--exact --select-1
 " Next and Previous Buffer with tabs
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
-
-" TagBar
-nmap <F8> :TagbarToggle<CR>
-" Use Ripper Tags with Tagbar
-if executable('ripper-tags')
-  let g:tagbar_type_ruby = {
-      \ 'kinds'      : ['m:modules',
-                      \ 'c:classes',
-                      \ 'C:constants',
-                      \ 'F:singleton methods',
-                      \ 'f:methods',
-                      \ 'a:aliases'],
-      \ 'kind2scope' : { 'c' : 'class',
-                       \ 'm' : 'class' },
-      \ 'scope2kind' : { 'class' : 'c' },
-      \ 'ctagsbin'   : 'ripper-tags',
-      \ 'ctagsargs'  : ['-f', '-']
-      \ }
-endif
 
 " Toggle Rainbow Levels
 map <F5> :RainbowLevelsToggle<cr>
