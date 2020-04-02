@@ -65,6 +65,7 @@ Plug 'janko/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'coreyja/fzf.devicon.vim'
+" Plug '~/Projects/fzf.devicon.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
