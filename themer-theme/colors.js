@@ -9,13 +9,13 @@ module.exports.colors = {
     // accent0-7 should be the main accent colors of your theme. See the table
     // in the "Color mappings" section for how the colors will be used in your
     // new themes.
-    accent0: 'rgb(255, 68, 68)',
-    accent1: 'rgb(255, 187, 51)',
+    accent0: '#ff4444',
+    accent1: '#15cc66',
     accent2: '#fff43a',
-    accent3: 'rgb(153, 204, 0)',
-    accent4: '#15cc66',
-    accent5: 'rgb(51, 181, 229)',
-    accent6: 'rgb(170, 102, 204)',
+    accent3: '#99cc00',
+    accent4: '#ffbb33',
+    accent5: '#33b5e5',
+    accent6: '#aa66cc',
     accent7: '#6e45a6',
 
     // shade0-7 should be shades of the same hue, with shade0 being the

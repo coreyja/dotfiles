@@ -1,1 +1,1 @@
-/Users/coreyja/themer-theme/output/themer-vim/ThemerVim.vim
+/Users/coreyja/themer-theme/output/vim/ThemerVim.vim
