@@ -89,6 +89,7 @@ brew 'ctags'
 brew 'editorconfig'
 tap 'ValeLint/vale'
 brew 'vale'
+brew 'python'
 
 # TLDR Man Pages
 brew 'tldr'
@@ -114,7 +115,13 @@ cask 'chromedriver'
 cask 'google-backup-and-sync'
 cask 'bartender'
 cask 'openshot-video-editor'
+cask 'alacritty'
+cask 'pock'
+cask 'dash'
+
+cask 'kitty'
 
 # Install Hack Nerd Font
-tap 'caskroom/fonts'
-cask 'font-hack-nerd-font'
+tap 'homebrew/cask-fonts'
+cask 'homebrew/cask-fonts/font-hack-nerd-font'
+cask 'homebrew/cask-fonts/font-jetbrainsmono-nerd-font'

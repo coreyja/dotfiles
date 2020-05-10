@@ -1,3 +1,10 @@
+" Install vim-plugged in needed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
@@ -18,6 +25,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
+Plug 'dbeniamine/todo.txt-vim'
 
 Plug 'kana/vim-textobj-user'
 Plug 'tek/vim-textobj-ruby'
@@ -25,22 +33,39 @@ Plug 'tek/vim-textobj-ruby'
 " Rust Support
 Plug 'rust-lang/rust.vim'
 Plug 'pest-parser/pest.vim'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-Plug 'fszymanski/deoplete-emoji'
-Plug 'wellle/tmux-complete.vim'
 " Rust
+
+" Language Server
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+" Plug 'fszymanski/deoplete-emoji'
+" Plug 'wellle/tmux-complete.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-rls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-marketplace', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-sql', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-jest', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'janko/vim-test'
 
-Plug 'majutsushi/tagbar'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'coreyja/fzf.devicon.vim'
+" Plug '~/Projects/fzf.devicon.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -70,9 +95,6 @@ Plug 'jparise/vim-graphql'
 
 Plug 'itspriddle/vim-marked'
 
-" TypeScript
-Plug 'leafgarland/typescript-vim'
-
 Plug 'blindFS/vim-taskwarrior'
 
 Plug 'unblevable/quick-scope'
@@ -82,10 +104,8 @@ Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'stefandtw/quickfix-reflector.vim'
 
 Plug 'sheerun/vim-polyglot'
+let g:polyglot_disabled = ['typescript', 'javascript']
 Plug 'google/vim-jsonnet'
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_define_advanced_commands=1
-let g:gutentags_ctags_executable_ruby = 'ripper-tags-ctags.sh'
 
 Plug 'segeljakt/vim-silicon'
 let g:silicon = {
@@ -96,6 +116,10 @@ Plug 'APZelos/blamer.nvim'
 let g:blamer_enabled = 1
 let g:blamer_delay = 250
 let g:blamer_prefix = '    '
+
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+let g:typescript_indent_disable = 1
 
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
@@ -127,11 +151,10 @@ let g:lightline = {
   \   'active': {
   \     'right': [ [ 'lineinfo' ],
   \                [ 'percent' ],
-  \                [ 'gutentagsstatus', 'fileformat', 'fileencoding', 'filetype' ] ]
+  \                [ 'fileformat', 'fileencoding', 'filetype' ] ]
   \   },
-  \   'component_function': {
-  \     'gutentagsstatus': 'gutentags#statusline'
-  \   },
+  \   'separator': { 'left': '', 'right': '' },
+  \   'subseparator': { 'left': '', 'right': '' },
   \ }
 
 
@@ -141,7 +164,7 @@ let g:tmuxline_preset = {
       \'cwin' : '#I #W',
       \'x'    : ['%F', '%I:%M %p'],
       \'y'    : '#H',
-      \'z'    : '#(rainbarf --battery --remaining --rgb --tmux)',
+      \'z'    : '#(rainbarf --battery --remaining --tmux --bright)',
       \'options': {
       \  'status-justify': 'left'}
       \}
@@ -164,46 +187,10 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-" Files + devicons
-function! Fzf_files_with_dev_icons(command)
-  let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
-
-  function! s:edit_devicon_prepended_file(item)
-    let l:file_path = a:item[4:-1]
-    execute 'silent e' l:file_path
-  endfunction
-
-  call fzf#run({
-        \ 'source': a:command.' | devicon-lookup --color',
-        \ 'sink':   function('s:edit_devicon_prepended_file'),
-        \ 'options': '--ansi -m ' . l:fzf_files_options,
-        \ 'down':    '40%' })
-endfunction
-
-function! Fzf_git_diff_files_with_dev_icons()
-  let l:fzf_files_options = '--ansi --preview "sh -c \"(git diff --color=always -- {3..} | sed 1,4d; bat --color always --style numbers {3..}) | head -'.&lines.'\""'
-
-  function! s:edit_devicon_prepended_file_diff(item)
-    echom a:item
-    let l:file_path = a:item[7:-1]
-    echom l:file_path
-    let l:first_diff_line_number = system("git diff -U0 ".l:file_path." | rg '^@@.*\+' -o | rg '[0-9]+' -o | head -1")
-
-    execute 'silent e' l:file_path
-    execute l:first_diff_line_number
-  endfunction
-
-  call fzf#run({
-        \ 'source': 'git -c color.status=always status --short --untracked-files=all | devicon-lookup --color',
-        \ 'sink':   function('s:edit_devicon_prepended_file_diff'),
-        \ 'options': '-m ' . l:fzf_files_options,
-        \ 'down':    '40%' })
-endfunction
-
-" Open fzf Files
-map <C-f> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND . " --color always")<CR>
-map <C-d> :call Fzf_git_diff_files_with_dev_icons()<CR>
-map <C-g> :call Fzf_files_with_dev_icons("git ls-files \| uniq")<CR>
+" " Open fzf Files
+map <C-f> :FilesWithDevicons<CR>
+map <C-d> :GFilesWithDevicons?<CR>
+map <C-g> :GFilesWithDevicons<CR>
 map <C-b> :Buffers<CR>
 
 " Enable Mouse Mode (in Tmux)
@@ -263,25 +250,6 @@ nnoremap <C-p> :call fzf#vim#tags(CurrentWord(), {'options': '--exact --select-1
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
-" TagBar
-nmap <F8> :TagbarToggle<CR>
-" Use Ripper Tags with Tagbar
-if executable('ripper-tags')
-  let g:tagbar_type_ruby = {
-      \ 'kinds'      : ['m:modules',
-                      \ 'c:classes',
-                      \ 'C:constants',
-                      \ 'F:singleton methods',
-                      \ 'f:methods',
-                      \ 'a:aliases'],
-      \ 'kind2scope' : { 'c' : 'class',
-                       \ 'm' : 'class' },
-      \ 'scope2kind' : { 'class' : 'c' },
-      \ 'ctagsbin'   : 'ripper-tags',
-      \ 'ctagsargs'  : ['-f', '-']
-      \ }
-endif
-
 " Toggle Rainbow Levels
 map <F5> :RainbowLevelsToggle<cr>
 
@@ -311,7 +279,8 @@ map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
 
 autocmd! BufRead,BufNewFile,BufEnter retail/spec/features/*.rb let b:rspecEnvVars="FEATURES=1"
 autocmd! BufRead,BufNewFile,BufEnter retail/spec/system/*.rb let b:rspecEnvVars="SYSTEM=1"
-let g:rspec_command = "execute 'compiler rspec | let &makeprg=\"env ' . get(b:, 'rspecEnvVars', '') . ' spring\" | Make rspec {spec}'"
+" let g:rspec_command = "execute 'compiler rspec | let &makeprg=\"env ' . get(b:, 'rspecEnvVars', '') . ' spring\" | Make rspec {spec}'"
+let g:rspec_command = "Dispatch rspec {spec}"
 
 " Double Space to Save
 map <Leader><Leader> :write<CR>
@@ -320,6 +289,7 @@ map <Leader><Leader> :write<CR>
 let g:ale_fixers = {
 \   'ruby': ['rubocop'],
 \   'typescript': ['eslint'],
+\   'javascript': ['eslint'],
 \}
 let g:ale_linters = {
 \   'eruby': [],
@@ -362,18 +332,138 @@ nnoremap <Del><Del> :call DeleteCurrentFile()<CR>
 " Rust
 let g:rustfmt_autosave = 1
 
-" ## LanguageClient
-" Automatically start language servers.
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-    \ 'javascript': ['javascript-typescript-langserver'],
-    \ 'ruby': ['solargraph', 'stdio'],
-    \ }
+" " ## LanguageClient
+" " Automatically start language servers.
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+"     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
+"     \ 'javascript': ['javascript-typescript-langserver'],
+"     \ 'ruby': ['solargraph', 'stdio'],
+"     \ }
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-autocmd CompleteDone * silent! pclose!
+" " Deoplete
+" let g:deoplete#enable_at_startup = 1
+" autocmd CompleteDone * silent! pclose!
+
+"""""""" COC.nvim
+" if hidden is not set, TextEdit might fail.
+set hidden
+
+" Some servers have issues with backup files, see #649
+set nobackup
+set nowritebackup
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
+
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
+
+" always show signcolumns
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <silent><expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" Integrate with vim-endwise
+" From: https://github.com/tpope/vim-endwise/issues/22#issuecomment-554685904
+let g:endwise_no_mappings = v:true
+inoremap <expr> <Plug>CustomCocCR pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
+
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+" nmap <silent> <C-d> <Plug>(coc-range-select)
+" xmap <silent> <C-d> <Plug>(coc-range-select)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+"""""""" END COC.nvim
 
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -393,3 +483,14 @@ nmap <silent> tf :TestFile<CR>
 nmap <silent> ts :TestSuite<CR>
 nmap <silent> tl :TestLast<CR>
 nmap <silent> tg :TestVisit<CR>
+
+" Find and Replace in all files
+function! FindAndReplace( ... )
+  if a:0 != 2
+    echo "Need two arguments"
+    return
+  endif
+  execute printf('args `rg --files-with-matches ''%s'' .`', a:1)
+  execute printf('argdo %%substitute/%s/%s/g | update', a:1, a:2)
+endfunction
+command! -nargs=+ Jangle call FindAndReplace(<f-args>)

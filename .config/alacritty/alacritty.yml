@@ -11,6 +11,55 @@
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   #TERM: xterm-256color
+  #
+# Themer Alacritty
+
+
+# Themer Alacritty
+
+schemes:
+  themer-dark: &dark
+    primary:
+      background: '#1a1a1a'
+      foreground: '#d8d8d3'
+
+    cursor:
+      text: '#1a1a1a'
+      cursor: '#aa66cc'
+
+    selection:
+      text: '#1a1a1a'
+      background: '#33b5e5'
+
+    normal:
+      black: '#595958'
+      red: '#ff4444'
+      green: '#99cc00'
+      yellow: '#fff43a'
+      blue: '#33b5e5'
+      magenta: '#6e45a6'
+      cyan: '#ffbb33'
+      white: '#d8d8d3'
+
+    bright:
+      black: '#797977'
+      red: '#FE6867'
+      green: '#ACD530'
+      yellow: '#FEF55F'
+      blue: '#5AC2E8'
+      magenta: '#8A69B5'
+      cyan: '#FEC759'
+      white: '#f8f8f2'
+
+    dim:
+      black: '#3a3a39'
+      red: '#D13C3C'
+      green: '#80A805'
+      yellow: '#D1C834'
+      blue: '#2E96BC'
+      magenta: '#5D3C8A'
+      cyan: '#D19B2E'
+      white: '#b9b9b4'
 
 window:
   # Window dimensions (changes require restart)
@@ -38,7 +87,7 @@ window:
     y: 0
 
   # Spread additional padding evenly around the terminal content.
-  dynamic_padding: false
+  dynamic_padding: true
 
   # Window decorations
   #
@@ -84,19 +133,7 @@ scrolling:
   # to allow mouse scrolling for applications like `man`.
   #
   # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
-
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
-# Spaces per Tab (changes require restart)
-#
-# This setting defines the width of a tab in cells.
-#
-# Some applications, like Emacs, rely on knowing about the width of a tab.
-# To prevent unexpected behavior in these applications, it's also required to
-# change the `it` value in terminfo when altering this setting.
-tabspaces: 8
+  # faux_multiplier: 3
 
 # Font configuration (changes require restart)
 font:
@@ -136,7 +173,7 @@ font:
     #style: Italic
 
   # Point size
-  size: 12.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -171,82 +208,82 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night Bright)
-colors:
-  # Default colors
-  primary:
-    background: '0x1a1a1a'
-    foreground: '0xf8f8f2'
+colors: *dark
+  ## Default colors
+  #primary:
+  #  background: '0x1a1a1a'
+  #  foreground: '0xf8f8f2'
 
-    # Bright and dim foreground colors
-    #
-    # The dimmed foreground color is calculated automatically if it is not present.
-    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
-    # is `false`, the normal foreground color will be used.
-    #dim_foreground: '0x9a9a9a'
-    #bright_foreground: '0xffffff'
+  #  # Bright and dim foreground colors
+  #  #
+  #  # The dimmed foreground color is calculated automatically if it is not present.
+  #  # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+  #  # is `false`, the normal foreground color will be used.
+  #  #dim_foreground: '0x9a9a9a'
+  #  #bright_foreground: '0xffffff'
 
-  # Cursor colors
-  #
-  # Colors which should be used to draw the terminal cursor. If these are unset,
-  # the cursor color will be the inverse of the cell color.
-  #cursor:
-  #  text: '0x000000'
-  #  cursor: '0xffffff'
+  ## Cursor colors
+  ##
+  ## Colors which should be used to draw the terminal cursor. If these are unset,
+  ## the cursor color will be the inverse of the cell color.
+  ##cursor:
+  ##  text: '0x000000'
+  ##  cursor: '0xffffff'
 
-  # Selection colors
-  #
-  # Colors which should be used to draw the selection area. If selection
-  # background is unset, selection color will be the inverse of the cell colors.
-  # If only text is unset the cell text color will remain the same.
-  selection:
-   text: '0xf8f8f2'
-   background: '0x6e45a6'
+  ## Selection colors
+  ##
+  ## Colors which should be used to draw the selection area. If selection
+  ## background is unset, selection color will be the inverse of the cell colors.
+  ## If only text is unset the cell text color will remain the same.
+  #selection:
+  # text: '0xf8f8f2'
+  # background: '0x6e45a6'
 
-  # Normal colors
-  normal:
-    black:   '0x1a1a1a'
-    red:     '0xff4444'
-    green:   '0x99cc00'
-    yellow:  '0xfff43a'
-    blue:    '0x33b5e5'
-    magenta: '0x6e45a6'
-    cyan:    '0x15cc66'
-    white:   '0xd8d8d3'
+  ## Normal colors
+  #normal:
+  #  black:   '0x1a1a1a'
+  #  red:     '0xff4444'
+  #  green:   '0x99cc00'
+  #  yellow:  '0xfff43a'
+  #  blue:    '0x33b5e5'
+  #  magenta: '0x6e45a6' # Purple
+  #  cyan:    '0xffbb33' # Orange
+  #  white:   '0xd8d8d3'
 
-  # Bright colors
-  bright:
-    black:   '0x3a3a39'
-    red:     '0xffbb33'
-    green:   '0x15cc66'
-    yellow:  '0xfff43a'
-    blue:    '0x33b5e5'
-    magenta: '0x6e45a6'
-    cyan:    '0x15cc66'
-    white:   '0xf8f8f2'
+  ## Bright colors
+  #bright:
+  #  black:   '0x3a3a39'
+  #  red:     '0xc30000'
+  #  green:   '0x608000'
+  #  yellow:  '0xa09700'
+  #  blue:    '0x116787'
+  #  magenta: '0x2e204c' # Purple
+  #  cyan:    '0xb37700' # Orange
+  #  white:   '0xf8f8f2'
 
-  # Dim colors
-  #
-  # If the dim colors are not set, they will be calculated automatically based
-  # on the `normal` colors.
-  #dim:
-  #  black:   '0x000000'
-  #  red:     '0x8c3336'
-  #  green:   '0x7a8530'
-  #  yellow:  '0x97822e'
-  #  blue:    '0x506d8f'
-  #  magenta: '0x80638e'
-  #  cyan:    '0x497e7a'
-  #  white:   '0x9a9a9a'
+  ## Dim colors
+  ##
+  ## If the dim colors are not set, they will be calculated automatically based
+  ## on the `normal` colors.
+  ##dim:
+  ##  black:   '0x000000'
+  ##  red:     '0x8c3336'
+  ##  green:   '0x7a8530'
+  ##  yellow:  '0x97822e'
+  ##  blue:    '0x506d8f'
+  ##  magenta: '0x80638e'
+  ##  cyan:    '0x497e7a'
+  ##  white:   '0x9a9a9a'
 
-  # Indexed Colors
-  #
-  # The indexed colors include all colors from 16 to 256.
-  # When these are not set, they're filled with sensible defaults.
-  #
-  # Example:
-  #   `- { index: 16, color: '0xff00ff' }`
-  #
-  indexed_colors: []
+  ## Indexed Colors
+  ##
+  ## The indexed colors include all colors from 16 to 256.
+  ## When these are not set, they're filled with sensible defaults.
+  ##
+  ## Example:
+  ##   `- { index: 16, color: '0xff00ff' }`
+  ##
+  #indexed_colors: []
 
 # Visual Bell
 #

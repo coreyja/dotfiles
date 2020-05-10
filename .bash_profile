@@ -46,10 +46,8 @@ for option in autocd globstar; do
 done;
 
 # Add tab completion for many Bash commands
-if which brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+if command -v brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
 	source "$(brew --prefix)/share/bash-completion/bash_completion";
-elif [ -f /etc/bash_completion ]; then
-	source /etc/bash_completion;
 fi;
 
 # Enable tab completion for `g` by marking it as an alias for `git`
@@ -81,14 +79,14 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 [ -f ~/bash_completion.d/tmuxinator.bash ] && source ~/bash_completion.d/tmuxinator.bash
 
 # Init RBenv, pyenv and nodenv
-which rbenv &> /dev/null && eval "$(rbenv init -)"
+command -v rbenv &> /dev/null && eval "$(rbenv init -)"
 
-which pyenv &> /dev/null && eval "$(pyenv init -)" && export PYENV_ROOT="$(pyenv root)"
+command -v pyenv &> /dev/null && eval "$(pyenv init -)" && export PYENV_ROOT="$(pyenv root)"
 
-which nodenv &> /dev/null && eval "$(nodenv init -)"
+command -v nodenv &> /dev/null && eval "$(nodenv init -)"
 
 # Init DirEnv
-which direnv &> /dev/null && eval "$(direnv hook bash)"
+command -v direnv &> /dev/null && eval "$(direnv hook bash)"
 
  # Since v2.1 GnuPG have changed the method a daemon starts. They are all started
  # on demand now. For more information see:
