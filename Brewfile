@@ -119,6 +119,9 @@ cask 'alacritty'
 cask 'pock'
 cask 'dash'
 
+cask 'kitty'
+
 # Install Hack Nerd Font
 tap 'homebrew/cask-fonts'
-cask 'font-hack-nerd-font'
+cask 'homebrew/cask-fonts/font-hack-nerd-font'
+cask 'homebrew/cask-fonts/font-jetbrainsmono-nerd-font'
