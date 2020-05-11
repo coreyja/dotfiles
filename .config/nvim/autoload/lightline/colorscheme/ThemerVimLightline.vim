@@ -1,1 +1,1 @@
-/Users/coreyja/themer-theme/output/themer-vim-lightline/ThemerVimLightline.vim
+/Users/coreyja/themer-theme/output/vim-lightline/ThemerVimLightline.vim

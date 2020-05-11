@@ -112,6 +112,13 @@ let g:silicon = {
       \ 'default-file-pattern': '~/images/silicon-{time:%Y-%m-%d-%H%M%S}.png',
       \ }
 
+Plug 'APZelos/blamer.nvim'
+let g:blamer_enabled = 1
+let g:blamer_delay = 250
+let g:blamer_prefix = '    '
+let g:blamer_show_in_visual_modes = 0
+let g:blamer_relative_time = 1
+
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 let g:typescript_indent_disable = 1

@@ -30,14 +30,14 @@ set -g status-right "#[fg=#595958,bg=#3a3a39]#[fg=#999995,bg=#595958] %H:%M:%
 
 # Window status
 set -g window-status-format "#[fg=#f8f8f2]#[bg=#3a3a39] #I:#W#F "
-set -g window-status-current-format "#[fg=#ffbb33,bg=black] #I:#W#F "
+set -g window-status-current-format "#[fg=#15cc66,bg=black] #I:#W#F "
 
 # Current window status
 set -g window-status-current-bg "#ff4444"
 set -g window-status-current-fg "#1a1a1a"
 
 # Window with activity status
-set -g window-status-activity-bg "#ffbb33"  # fg and bg are flipped here due to
+set -g window-status-activity-bg "#15cc66"  # fg and bg are flipped here due to
 set -g window-status-activity-fg "#3a3a39" # a bug in tmux
 
 # Window separator
