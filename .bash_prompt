@@ -88,14 +88,14 @@ function prompt() {
   local PS1='';
   PS1+="\n"
   PS1+='$(last_status_indicator) '
-  PS1+="$userStyle\u$reset"
-  PS1+="$white in "
-  PS1+="$green\w$reset"
-  PS1+='$(prompt_git "$white on $purple" $blue)'
+  PS1+="\[$userStyle\]\u\[$reset\]"
+  PS1+="\[$white\] in "
+  PS1+="\[$green\]\w\[$reset\]"
+  PS1+='$(prompt_git "\[$white\] on \[$purple\]" \[$blue\])'
   PS1+='\n'
-  PS1+="$reset"
+  PS1+="\[$reset\]"
   PS1+='💜 '
-  PS1+="$reset"
+  PS1+="\[$reset\]"
   echo "$PS1"
 }
 
