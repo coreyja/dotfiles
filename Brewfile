@@ -105,6 +105,9 @@ brew 'yarn'
 brew 'task'
 brew 'tasksh'
 
+tap 'brianp/homebrew-muxed'
+brew 'brianp/homebrew-muxed/muxed_bin'
+
 cask 'pencil'
 cask 'paintbrush'
 cask 'dash'
@@ -118,8 +121,6 @@ cask 'openshot-video-editor'
 cask 'alacritty'
 cask 'pock'
 cask 'dash'
-
-cask 'kitty'
 
 # Install Hack Nerd Font
 tap 'homebrew/cask-fonts'
