@@ -219,3 +219,5 @@
 
 [tag]
 	forceSignAnnotated = true
+[pull]
+	rebase = true
