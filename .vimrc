@@ -110,6 +110,7 @@ Plug 'google/vim-jsonnet'
 Plug 'segeljakt/vim-silicon'
 let g:silicon = {
       \ 'default-file-pattern': '~/images/silicon-{time:%Y-%m-%d-%H%M%S}.png',
+      \ 'theme': '/Users/coreyja/themer-theme/output/sublime-text/themer-sublime-text-dark.tmTheme',
       \ }
 
 Plug 'APZelos/blamer.nvim'

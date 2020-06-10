@@ -44,6 +44,11 @@ Then set the colorscheme in `.vimrc`:
     " The background option must be set before running this command.
     colo ThemerVim
 
+## sublime-text
+
+1. Copy (or symlink) the generated theme files (`sublime-text/themer-sublime-text-dark.tmTheme`) to the `User/` packages folder (you can see where this folder is located by choosing the "Browse Packages..." menu option in Sublime Text).
+2. Choose the theme from the list of available color themes.
+
 ## vim-lightline
 
 Make sure that the `background` option is set in `.vimrc`.
