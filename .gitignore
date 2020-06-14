@@ -51,6 +51,8 @@
 !scripts/setup.sh
 !pub/
 !pub/**/*
+!.muxed/
+!.muxed/dotfiles.yml
 
 
 !.aliases
