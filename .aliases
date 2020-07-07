@@ -205,7 +205,7 @@ alias nvim-update="nvim +PlugUpgrade +PlugClean! +PlugInstall +PlugUpdate +qa"
 alias dokku@coreyja="ssh -o LogLevel=QUIET -t dokku@dokku.coreyja.com"
 alias dokku="dokku@coreyja"
 
-alias wip="git commit -am wip --no-verify"
+alias wip="git add -A && git commit -am wip --no-verify"
 alias unwip="git reset HEAD~1"
 
 alias run_last_until_fail="while !!; do :; done"
