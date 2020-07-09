@@ -209,3 +209,5 @@ alias wip="git add -A && git commit -am wip --no-verify"
 alias unwip="git reset HEAD~1"
 
 alias run_last_until_fail="while !!; do :; done"
+
+alias lab='vim ~/journal/$(date -I)'

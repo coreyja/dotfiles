@@ -77,6 +77,7 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 # Add Tmux and tmuxinator bash completion
 [ -f /usr/local/etc/bash_completion.d/tmux ] && source /usr/local/etc/bash_completion.d/tmux
 [ -f ~/bash_completion.d/tmuxinator.bash ] && source ~/bash_completion.d/tmuxinator.bash
+[ -f ~/bash_completion.d/muxed.bash ] && source ~/bash_completion.d/muxed.bash
 
 # Init RBenv, pyenv and nodenv
 command -v rbenv &> /dev/null && eval "$(rbenv init -)"
