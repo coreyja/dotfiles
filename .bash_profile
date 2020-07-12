@@ -1,8 +1,5 @@
 [ -n "$PS1" ] && source ~/.bashrc;
 
-# Add `~/bin` and `~/.local/bin/` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
-export PATH="$HOME/.local/bin:$PATH";
 export PATH="/usr/local/bin:$PATH";
 # Add GnuCoreUtils to the Path
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -97,3 +94,8 @@ GPG_TTY=$(/usr/bin/tty)
 SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 export GPG_TTY SSH_AUTH_SOCK
 gpgconf --launch gpg-agent
+
+# Add `~/bin` and `~/.local/bin/` to the `$PATH`
+# Do this at the end to take precedence over things above
+export PATH="$HOME/bin:$PATH";
+export PATH="$HOME/.local/bin:$PATH";
