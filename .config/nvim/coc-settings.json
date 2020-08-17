@@ -54,5 +54,15 @@
     ],
     "eslint.autoFixOnSave": true,
     "jest.watchman": true,
-    "jest.forceExit": true
+    "jest.forceExit": true,
+    "languageserver": {
+      "sorbet": {
+        "command": "srb",
+        "args": ["tc", "--lsp", "--enable-all-experimental-lsp-features"],
+        "filetypes": ["ruby"],
+        "rootPatterns": ["sorbet/config"],
+        "initializationOptions": {},
+        "settings": {}
+      }
+    }
 }
