@@ -21,7 +21,7 @@ export HISTCONTROL=ignoreboth:erasedups
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+for file in ~/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 unset file;
@@ -62,9 +62,6 @@ complete -W "NSGlobalDomain" defaults;
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
-# Enable AutoJump
-[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
-
 # Add fzf to Bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 complete -F _fzf_file_completion -o default -o bashdefault rspec
@@ -94,6 +91,8 @@ GPG_TTY=$(/usr/bin/tty)
 SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 export GPG_TTY SSH_AUTH_SOCK
 gpgconf --launch gpg-agent
+
+command -v starship &> /dev/null && eval "$(starship init bash)"
 
 # Add `~/bin` and `~/.local/bin/` to the `$PATH`
 # Do this at the end to take precedence over things above

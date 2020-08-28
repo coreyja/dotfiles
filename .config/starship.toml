@@ -1,0 +1,51 @@
+[aws]
+displayed_items="profile"
+symbol = " "
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 30
+style = "bold yellow"
+
+[character]
+symbol = "🚀"
+error_symbol = "💩"
+use_symbol_for_status = true
+
+[directory]
+fish_style_pwd_dir_length = 1
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+only_detached=false
+
+[git_state]
+progress_divider = " of "
+cherry_pick = "🍒 PICKING"
+merge = " MERGING"
+
+[cmd_duration]
+min_time=300
+
+[hostname]
+prefix = "⟪"
+suffix = "⟫"
+
+[nodejs]
+symbol=" "
+
+[python]
+symbol=" "
+
+[ruby]
+symbol=" "
+
+[time]
+disabled = false
+format = "[%R]"
+style = "yellow"

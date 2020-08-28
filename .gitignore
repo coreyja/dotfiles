@@ -11,6 +11,7 @@
 !.config/pet/**/*
 !.config/tmux/
 !.config/tmux/**/*
+!.config/starship.toml
 !.git_template/
 !.git_template/**/*
 !.gnupg/
