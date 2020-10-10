@@ -280,7 +280,7 @@ map <Leader><Leader> :write<CR>
 
 " Config ALE
 let g:ale_fixers = {
-\   'ruby': ['rubocop'],
+\   'ruby': ['standardrb', 'rubocop'],
 \   'typescript': ['eslint'],
 \   'javascript': ['eslint'],
 \}

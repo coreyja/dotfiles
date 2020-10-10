@@ -90,7 +90,7 @@ brew 'vale'
 brew 'python'
 
 # TLDR Man Pages
-brew 'tldr'
+brew 'tealdeer'
 
 brew 'nnn'
 
