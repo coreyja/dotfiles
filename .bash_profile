@@ -98,3 +98,6 @@ command -v starship &> /dev/null && eval "$(starship init bash)"
 # Do this at the end to take precedence over things above
 export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.local/bin:$PATH";
+
+# Haskell
+source "$HOME/.ghcup/env"
