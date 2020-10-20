@@ -63,6 +63,7 @@
 !.editorconfig
 !.exports
 !.functions
+!.gitattributes
 !.gitconfig
 !.gitignore
 !.gitignore.global
