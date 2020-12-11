@@ -62,7 +62,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
-Plug 'mcchrish/nnn.vim'
 
 Plug 'editorconfig/editorconfig-vim'
 
@@ -113,6 +112,8 @@ let g:blamer_relative_time = 1
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 let g:typescript_indent_disable = 1
+
+Plug 'mcchrish/nnn.vim'
 
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
@@ -464,10 +465,6 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 let g:ruby_host_prog = 'RBENV_VERSION=$(cat ~/.ruby-version) ~/.rbenv/shims/ruby'
 let g:nodejs_host_prog = 'NODENV_VERSION=$(cat ~/.node-version) ~/.nodenv/shims/node'
 
-" nnn Config
-let g:nnn#command = 'nnn -l'
-let g:nnn#layout = { 'left': '~20%' }
-nnoremap <leader>m :NnnPicker '%:p:h'<CR>
 
 " test.vim config
 let test#strategy = "dispatch"
@@ -487,3 +484,7 @@ function! FindAndReplace( ... )
   execute printf('argdo %%substitute/%s/%s/g | update', a:1, a:2)
 endfunction
 command! -nargs=+ Jangle call FindAndReplace(<f-args>)
+
+" NNN Config
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
+nnoremap <leader>m :NnnPicker %:p:h<CR>
