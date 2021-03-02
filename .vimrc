@@ -102,12 +102,12 @@ let g:silicon = {
       \ 'theme': '/Users/coreyja/themer-theme/output/sublime-text/themer-sublime-text-dark.tmTheme',
       \ }
 
-Plug 'APZelos/blamer.nvim'
-let g:blamer_enabled = 1
-let g:blamer_delay = 250
-let g:blamer_prefix = '    '
-let g:blamer_show_in_visual_modes = 0
-let g:blamer_relative_time = 1
+" Plug 'APZelos/blamer.nvim'
+" let g:blamer_enabled = 1
+" let g:blamer_delay = 250
+" let g:blamer_prefix = '    '
+" let g:blamer_show_in_visual_modes = 0
+" let g:blamer_relative_time = 1
 
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
@@ -167,7 +167,7 @@ let g:tmuxline_preset = {
 command! -bang -nargs=* Rg call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 command! -bang -nargs=* Rgrex call fzf#vim#grep('rg --column --line-number --no-heading --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
-set grepprg=rg\ --vimgrep
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
 set backspace=indent,eol,start
 
@@ -281,7 +281,7 @@ map <Leader><Leader> :write<CR>
 
 " Config ALE
 let g:ale_fixers = {
-\   'ruby': ['standardrb', 'rubocop'],
+\   'ruby': ['standardrb', 'rubocop', 'prettier'],
 \   'typescript': ['eslint'],
 \   'javascript': ['eslint'],
 \}

@@ -35,6 +35,9 @@
     # Publish a branch to origin
     publish = !"git push --set-upstream origin $(git current-branch)"
 
+    # Force push a branch with passion (but also a bit of safety)
+    yeet = push --force-with-lease
+
     # Clone a repository including all submodules
     c = clone --recursive
 
