@@ -1,6 +1,8 @@
 [aws]
-displayed_items="profile"
-symbol = " "
+disabled = true
+
+[gcloud]
+disabled = true
 
 [[battery.display]]
 threshold = 10
@@ -11,9 +13,8 @@ threshold = 30
 style = "bold yellow"
 
 [character]
-symbol = "🚀"
+success_symbol = "🚀"
 error_symbol = "💩"
-use_symbol_for_status = true
 
 [directory]
 fish_style_pwd_dir_length = 1
@@ -25,7 +26,7 @@ symbol = " "
 only_detached=false
 
 [git_state]
-progress_divider = " of "
+format = '\([$state( $progress_current of $progress_total)]($style)\) '
 cherry_pick = "🍒 PICKING"
 merge = " MERGING"
 
@@ -33,8 +34,7 @@ merge = " MERGING"
 min_time=300
 
 [hostname]
-prefix = "⟪"
-suffix = "⟫"
+format = "⟪[$hostname]⟫"
 
 [nodejs]
 symbol=" "
@@ -47,5 +47,6 @@ symbol=" "
 
 [time]
 disabled = false
-format = "[%R]"
+format = '[\[$time\]]($style) '
+time_format = "%R"
 style = "yellow"
