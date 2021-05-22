@@ -84,7 +84,6 @@ brew 'pinentry-mac'
 
 # Vim Stuff
 brew 'nvim'
-brew 'ctags'
 brew 'editorconfig'
 brew 'vale'
 brew 'python'
