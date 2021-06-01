@@ -26,3 +26,6 @@ Thumbs.db
 .solargraph.yml
 
 tags*
+
+# Since my homedir is under git I need to do some stuff to make it NOT watch my whole home dir
+.watchmanconfig

@@ -215,10 +215,23 @@
 [include]
     path = ./.gitconfig.local
 
-[hub]
-    protocol = git
-
 [tag]
 	forceSignAnnotated = true
+
 [pull]
 	rebase = true
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    side-by-side = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[difftool "delta-always-page"]
+    cmd = "DELTA_PAGER=\"less -+F\" git diff"
