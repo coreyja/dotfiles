@@ -30,7 +30,7 @@
 !.tmuxinator/octobox.yml
 !.tmuxinator/package-tracker.yml
 !.tmuxinator/rubocop-coreyja.yml
-!.tmuxtinator/sleet.yml
+!.tmuxinator/sleet.yml
 !.vim/
 !.vim/spell/
 !.vim/spell/*.add
