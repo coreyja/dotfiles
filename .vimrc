@@ -120,6 +120,9 @@ Plug 'mcchrish/nnn.vim'
 
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
+Plug 'kamykn/spelunker.vim' " Spellcheck in code
+Plug 'kamykn/popup-menu.nvim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 

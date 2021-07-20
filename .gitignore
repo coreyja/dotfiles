@@ -30,7 +30,10 @@
 !.tmuxinator/octobox.yml
 !.tmuxinator/package-tracker.yml
 !.tmuxinator/rubocop-coreyja.yml
-!.tmuxinator/sleet.yml
+!.tmuxtinator/sleet.yml
+!.vim/
+!.vim/spell/
+!.vim/spell/*.add
 !bash_completion.d/
 !bash_completion.d/**/*
 !bin/
