@@ -65,6 +65,7 @@
 !.bash_profile
 !.bash_prompt
 !.bashrc
+!.bash-preexec.sh
 !.editorconfig
 !.exports
 !.functions
