@@ -6,7 +6,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " Plugins will be downloaded under the specified directory.
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Declare the list of plugins.
 Plug 'alvan/vim-closetag'
@@ -24,7 +24,6 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
-Plug 'vim-ruby/vim-ruby'
 Plug 'dbeniamine/todo.txt-vim'
 
 Plug 'kana/vim-textobj-user'
@@ -51,7 +50,6 @@ Plug 'neoclide/coc-jest', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
-
 
 Plug 'janko/vim-test'
 
@@ -83,11 +81,7 @@ Plug 'thiagoalessio/rainbow_levels.vim'
 
 Plug 'w0rp/ale'
 
-Plug 'jparise/vim-graphql'
-
 Plug 'itspriddle/vim-marked'
-
-Plug 'blindFS/vim-taskwarrior'
 
 Plug 'unblevable/quick-scope'
 
@@ -95,9 +89,8 @@ Plug 'meain/vim-package-info', { 'do': 'npm install' }
 
 Plug 'stefandtw/quickfix-reflector.vim'
 
-Plug 'sheerun/vim-polyglot'
-let g:polyglot_disabled = ['typescript', 'javascript']
-Plug 'google/vim-jsonnet'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'gisphm/vim-gitignore'
 
 Plug 'segeljakt/vim-silicon'
 let g:silicon = {
@@ -112,16 +105,15 @@ let g:silicon = {
 " let g:blamer_show_in_visual_modes = 0
 " let g:blamer_relative_time = 1
 
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-let g:typescript_indent_disable = 1
-
 Plug 'mcchrish/nnn.vim'
-
-Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
 Plug 'kamykn/spelunker.vim' " Spellcheck in code
 Plug 'kamykn/popup-menu.nvim'
+
+" Github CoPilot
+Plug 'github/copilot.vim'
+
+Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -465,7 +457,6 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 """""""" END COC.nvim
 
-let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 let g:ruby_host_prog = 'RBENV_VERSION=$(cat ~/.ruby-version) ~/.rbenv/shims/ruby'
