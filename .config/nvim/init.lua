@@ -8,9 +8,10 @@ require'nvim-treesitter.configs'.setup {
 }
 
 
----------------- Setup Rust LSP ----------------
--- nvim_lsp object
+---------------- Setup LSP ---------------
 local nvim_lsp = require'lspconfig'
+
+---------------- Setup Rust LSP ----------------
 
 local opts = {
     tools = {
@@ -45,11 +46,14 @@ local opts = {
     },
 }
 
-
 require('rust-tools').setup(opts)
 
 ---------------- Typescript LSP Setup ---------------
 nvim_lsp.tsserver.setup {}
+
+---------------- Ruby LSP Setup ---------------
+nvim_lsp.solargraph.setup{}
+nvim_lsp.sorbet.setup{}
 
 ---------------- LSP Keybindings ----------------
 -- Code navigation shortcuts
@@ -63,6 +67,8 @@ vim.cmd('nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>')
 vim.cmd('nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>')
 vim.cmd('nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
 vim.cmd('nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>')
+
+vim.cmd('nnoremap <silent> <leader>r     <cmd>lua vim.lsp.buf.rename()<CR>')
 
 ----------- Setup Completion
 ----------- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
@@ -117,8 +123,9 @@ vim.cmd('set completeopt=menuone,noinsert,noselect')
 -- Avoid showing extra messages when using completion
 vim.cmd('set shortmess+=c')
 
--- Set updatetime for CursorHold
--- 300ms of no cursor movement to trigger CursorHold
-vim.cmd('set updatetime=300')
--- Show diagnostic popup on cursor hover
-vim.cmd('autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()')
+-- I didn't like this so turning it off
+-- -- Set updatetime for CursorHold
+-- -- N ms of no cursor movement to trigger CursorHold
+-- vim.cmd('set updatetime=1000')
+-- -- Show diagnostic popup on cursor hover
+-- vim.cmd('autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()')

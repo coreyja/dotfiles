@@ -60,7 +60,7 @@ Plug 'coreyja/fzf.devicon.vim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
 
@@ -184,8 +184,8 @@ set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 set backspace=indent,eol,start
 
 " NerdTree Toggle
-" map <C-n> :NERDTreeToggle<CR>
-" map <C-m> :NERDTreeFind<CR>
+map <C-n> :NERDTreeToggle<CR>
+map <C-m> :NERDTreeFind<CR>
 
 " Insert mode completion
 imap <c-x><c-k> <plug>(fzf-complete-word)
