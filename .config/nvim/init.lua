@@ -45,9 +45,11 @@ local opts = {
     },
 }
 
-vim.cmd('set signcolumn=yes')
 
 require('rust-tools').setup(opts)
+
+---------------- Typescript LSP Setup ---------------
+nvim_lsp.tsserver.setup {}
 
 ---------------- LSP Keybindings ----------------
 -- Code navigation shortcuts
@@ -74,6 +76,8 @@ cmp.setup({
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
     -- Add tab support
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
     ['<Tab>'] = cmp.mapping.select_next_item(),
@@ -82,8 +86,8 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Insert,
-      select = true,
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = false,
     }),
   },
 
@@ -94,7 +98,14 @@ cmp.setup({
     { name = 'buffer' },
     { name = 'vsnip', priority = -10 },
   },
+
+  -- This repeats some of the vim config but lets see if it helps
+  completion = {
+    completeopt = 'menu,menuone,noinsert,noselect',
+  },
 })
+
+vim.cmd('set signcolumn=yes')
 
 -- Set completeopt to have a better completion experience
 -- :help completeopt
@@ -105,3 +116,9 @@ vim.cmd('set completeopt=menuone,noinsert,noselect')
 
 -- Avoid showing extra messages when using completion
 vim.cmd('set shortmess+=c')
+
+-- Set updatetime for CursorHold
+-- 300ms of no cursor movement to trigger CursorHold
+vim.cmd('set updatetime=300')
+-- Show diagnostic popup on cursor hover
+vim.cmd('autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()')
