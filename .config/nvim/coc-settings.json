@@ -65,5 +65,7 @@
       "settings": {}
     }
   },
-  "rust-analyzer.checkOnSave.command": "clippy"
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true
 }
