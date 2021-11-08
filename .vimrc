@@ -79,8 +79,6 @@ Plug 'flrnprz/plastic.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'thiagoalessio/rainbow_levels.vim'
 
-Plug 'w0rp/ale'
-
 Plug 'itspriddle/vim-marked'
 
 Plug 'unblevable/quick-scope'
@@ -301,22 +299,6 @@ let g:rspec_command = "Dispatch rspec {spec}"
 
 " Double Space to Save
 map <Leader><Leader> :write<CR>
-
-" Config ALE
-let g:ale_fixers = {
-\   'ruby': ['standardrb', 'rubocop', 'prettier'],
-\}
-let g:ale_linters = {
-\   'eruby': [],
-\   'javascript': [],
-\   'typescript': [],
-\   'json': [],
-\}
-map <Leader>c :ALEFix<CR>
-let g:ale_sign_column_always = 1
-let g:airline#extensions#ale#enabled = 1
-" let g:ale_sign_error = '❌'
-" let g:ale_sign_warning = '⚠️'
 
 " Spellcheck
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
