@@ -95,6 +95,7 @@ Plug 'gisphm/vim-gitignore'
 " LSP Config
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/rust-tools.nvim'
+Plug 'nvim-lua/lsp-status.nvim'
 
 " Autocompletion framework
 Plug 'hrsh7th/nvim-cmp'
@@ -153,11 +154,17 @@ colorscheme ThemerVim
 
 " Lightline Config
 let g:lightline = {
+  \ 'component_function': {
+  \   'lspstatus': 'LspStatus',
+  \ },
   \   'colorscheme': 'ThemerVimLightline',
   \   'active': {
-  \     'right': [ [ 'lineinfo' ],
+  \     'right': [
+  \                [ 'lineinfo' ],
   \                [ 'percent' ],
-  \                [ 'fileformat', 'fileencoding', 'filetype' ] ]
+  \                [ 'fileformat', 'fileencoding', 'filetype' ],
+  \                [ 'lspstatus' ],
+  \              ],
   \   },
   \   'separator': { 'left': '', 'right': '' },
   \   'subseparator': { 'left': '', 'right': '' },

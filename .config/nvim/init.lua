@@ -7,9 +7,41 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
 }
 
+---------------- Helpers ----------------
+local function merge(...)
+  local result = {}
+  -- For each source table
+  for _, t in ipairs{...} do
+    -- For each pair in t
+    for k, v in pairs(t) do
+      result[k] = v
+    end
+  end
+  return result
+end
+
+
+
+---------------- Setup Status Line ---------------
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
+
+vim.cmd([[
+function! LspStatus() abort
+  if luaeval('#vim.lsp.buf_get_clients() > 0')
+    return luaeval("require('lsp-status').status()")
+  endif
+
+  return ''
+endfunction
+]])
 
 ---------------- Setup LSP ---------------
 local nvim_lsp = require'lspconfig'
+local default_options = {
+    on_attach = lsp_status.on_attach,
+    capabilities = lsp_status.capabilities,
+}
 
 ---------------- Setup Rust LSP ----------------
 
@@ -46,14 +78,22 @@ local opts = {
     },
 }
 
-require('rust-tools').setup(opts)
+require('rust-tools').setup(merge(default_options, opts))
 
 ---------------- Typescript LSP Setup ---------------
-nvim_lsp.tsserver.setup {}
+nvim_lsp.tsserver.setup(default_options)
 
 ---------------- Ruby LSP Setup ---------------
-nvim_lsp.solargraph.setup{}
-nvim_lsp.sorbet.setup{}
+local solargraph_opts = {
+  settings = {
+    solargraph = {
+      use_bundler = true,
+    },
+  },
+}
+
+nvim_lsp.solargraph.setup(merge(default_options, solargraph_opts))
+nvim_lsp.sorbet.setup(default_options)
 
 ---------------- LSP Keybindings ----------------
 -- Code navigation shortcuts
@@ -68,7 +108,8 @@ vim.cmd('nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>')
 vim.cmd('nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
 vim.cmd('nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>')
 
-vim.cmd('nnoremap <silent> <leader>r     <cmd>lua vim.lsp.buf.rename()<CR>')
+vim.cmd('nnoremap <silent> <leader>r      <cmd>lua vim.lsp.buf.rename()<CR>')
+vim.cmd('nnoremap <silent> <leader>ca     <cmd>lua vim.lsp.buf.code_action()<CR>')
 
 ----------- Setup Completion
 ----------- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
@@ -84,9 +125,11 @@ cmp.setup({
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
     ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-    -- Add tab support
-    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-    ['<Tab>'] = cmp.mapping.select_next_item(),
+    -- Add tab support -- WARNING this breaks copilot so lets leave it off right now
+    -- What I think I need to do is only have these mapping apply when completion is active
+    -- But not sure how to do that
+    -- ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    -- ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
