@@ -114,6 +114,12 @@ local json_opts = {
 
 nvim_lsp.jsonls.setup(merge(default_options, json_opts))
 
+---------------- Bash LSP Setup ---------------
+require'lspconfig'.bashls.setup{}
+
+---------------- TailwindCss LSP Setup ---------------
+require'lspconfig'.tailwindcss.setup{}
+
 ---------------- LSP Keybindings ----------------
 -- Code navigation shortcuts
 -- as found in :help lsp
