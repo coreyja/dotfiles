@@ -122,6 +122,10 @@ let g:silicon = {
 
 Plug 'mcchrish/nnn.vim'
 
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+let g:typescript_indent_disable = 1
+
 Plug 'kamykn/spelunker.vim' " Spellcheck in code
 Plug 'kamykn/popup-menu.nvim' " Even though we also have the lua popup plugin we still need this one for the spelunker plugin to work right
 
@@ -301,11 +305,12 @@ map <Leader><Leader> :write<CR>
 " Config ALE
 let g:ale_fixers = {
 \   'ruby': ['standardrb', 'rubocop', 'prettier'],
-\   'typescript': ['eslint'],
-\   'javascript': ['eslint'],
 \}
 let g:ale_linters = {
 \   'eruby': [],
+\   'javascript': [],
+\   'typescript': [],
+\   'json': [],
 \}
 map <Leader>c :ALEFix<CR>
 let g:ale_sign_column_always = 1

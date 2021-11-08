@@ -3,6 +3,7 @@
     "@swc/cli": "^0.1.51",
     "@swc/core": "^1.2.95",
     "@tailwindcss/language-server": "^0.0.4",
+    "bash-language-server": "^2.0.0",
     "eslint_d": "^11.0.0",
     "espruino": "^0.1.37",
     "neovim": "^4.10.0",

@@ -120,6 +120,24 @@ require'lspconfig'.bashls.setup{}
 ---------------- TailwindCss LSP Setup ---------------
 require'lspconfig'.tailwindcss.setup{}
 
+---------------- ESLint LSP Setup ---------------
+local function eslint_on_attach(client, bufnr)
+  -- TODO: Figure out how to get this to work on save correctly
+  -- Right now if I save fast with this is breaks things
+  -- vim.cmd('autocmd BufWritePre <buffer> :EslintFixAll')
+
+  lsp_status.on_attach(client, bufnr)
+end
+
+local eslint_opts = {
+  settings = {
+    packageManager = "yarn",
+  },
+  on_attach = eslint_on_attach,
+}
+
+require'lspconfig'.eslint.setup(merge(default_options, eslint_opts))
+
 ---------------- LSP Keybindings ----------------
 -- Code navigation shortcuts
 -- as found in :help lsp
@@ -135,7 +153,8 @@ vim.cmd('nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>')
 
 vim.cmd('nnoremap <silent> <leader>r      <cmd>lua vim.lsp.buf.rename()<CR>')
 vim.cmd('nnoremap <silent> <leader>ca     <cmd>lua vim.lsp.buf.code_action()<CR>')
-vim.cmd('nnoremap <silent> <leader>f     <cmd>lua vim.lsp.buf.formatting()<CR>')
+vim.cmd('nnoremap <silent> <leader>f      <cmd>lua vim.lsp.buf.formatting()<CR>')
+vim.cmd('nnoremap <silent> <leader>ff     <cmd>EslintFixAll<CR>')
 
 ----------- Setup Completion
 ----------- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
