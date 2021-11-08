@@ -63,6 +63,11 @@
 !.muxed/
 !.muxed/dotfiles.yml
 
+!.config/
+!.config/yarn/
+!.config/yarn/global/
+!.config/yarn/global/package.json
+
 
 !.aliases
 !.bash_profile
