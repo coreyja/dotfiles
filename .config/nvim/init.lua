@@ -95,6 +95,25 @@ local solargraph_opts = {
 nvim_lsp.solargraph.setup(merge(default_options, solargraph_opts))
 nvim_lsp.sorbet.setup(default_options)
 
+---------------- JSON LSP Setup ---------------
+local json_capabilities = vim.lsp.protocol.make_client_capabilities()
+json_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+json_capabilities = merge(lsp_status.capabilities, json_capabilities)
+
+local json_opts = {
+  capabilities = json_capabilities,
+  commands = {
+    Format = {
+      function()
+        vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
+      end
+    }
+  },
+}
+
+nvim_lsp.jsonls.setup(merge(default_options, json_opts))
+
 ---------------- LSP Keybindings ----------------
 -- Code navigation shortcuts
 -- as found in :help lsp
@@ -110,6 +129,7 @@ vim.cmd('nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>')
 
 vim.cmd('nnoremap <silent> <leader>r      <cmd>lua vim.lsp.buf.rename()<CR>')
 vim.cmd('nnoremap <silent> <leader>ca     <cmd>lua vim.lsp.buf.code_action()<CR>')
+vim.cmd('nnoremap <silent> <leader>f     <cmd>lua vim.lsp.buf.formatting()<CR>')
 
 ----------- Setup Completion
 ----------- See https://github.com/hrsh7th/nvim-cmp#basic-configuration
