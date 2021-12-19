@@ -127,6 +127,8 @@ let g:typescript_indent_disable = 1
 Plug 'kamykn/spelunker.vim' " Spellcheck in code
 Plug 'kamykn/popup-menu.nvim' " Even though we also have the lua popup plugin we still need this one for the spelunker plugin to work right
 
+Plug 'nicwest/vim-http'
+
 " Github CoPilot
 Plug 'github/copilot.vim'
 
