@@ -303,9 +303,6 @@ autocmd! BufRead,BufNewFile,BufEnter retail/spec/system/*.rb let b:rspecEnvVars=
 " let g:rspec_command = "execute 'compiler rspec | let &makeprg=\"env ' . get(b:, 'rspecEnvVars', '') . ' spring\" | Make rspec {spec}'"
 let g:rspec_command = "Dispatch rspec {spec}"
 
-" Double Space to Save
-map <Leader><Leader> :write<CR>
-
 " Spellcheck
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
 autocmd FileType gitcommit setlocal spell spelllang=en_us

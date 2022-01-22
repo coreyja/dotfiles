@@ -154,6 +154,7 @@ vim.cmd('nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>')
 
 vim.cmd('nnoremap <silent> <leader>r      <cmd>lua vim.lsp.buf.rename()<CR>')
 vim.cmd('nnoremap <silent> <leader>ca     <cmd>lua vim.lsp.buf.code_action()<CR>')
+vim.cmd('nnoremap <silent> <leader><leader>     <cmd>lua vim.lsp.buf.code_action()<CR>')
 vim.cmd('nnoremap <silent> <leader>f      <cmd>lua vim.lsp.buf.formatting()<CR>')
 vim.cmd('nnoremap <silent> <leader>ff     <cmd>EslintFixAll<CR>')
 
