@@ -148,6 +148,8 @@ vnoremap <leader>i :call investigate#Investigate('v')<CR>
 " Theme
 set termguicolors
 colorscheme ThemerVim
+" Comments are italics to look fun with Victor Mono
+highlight Comment cterm=italic gui=italic
 
 " Airline Config
 " if !has('nvim')
