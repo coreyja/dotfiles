@@ -101,6 +101,7 @@ brew 'knqyf263/pet/pet'
 brew 'yarn'
 brew 'task'
 brew 'tasksh'
+brew 'atuin'
 
 tap 'brianp/homebrew-muxed'
 brew 'brianp/homebrew-muxed/muxed_bin'

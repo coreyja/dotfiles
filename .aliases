@@ -210,3 +210,5 @@ alias run_last_until_fail="while !!; do :; done"
 alias lab='vim ~/journal/$(date -I).md'
 
 alias firefox='open -a "Firefox Developer Edition"'
+
+alias yarn-global-install='pushd $(yarn global dir); yarn install; popd'

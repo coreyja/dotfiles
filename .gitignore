@@ -9,6 +9,9 @@
 !.config/iterm/**/*
 !.config/nvim/
 !.config/nvim/**/*
+# We DO want to ignore the plugged directories, since they contain other git repos and is used for vim plugin management
+.config/nvim/plugged/
+.config/nvim/plugged/**
 !.config/pet/
 !.config/pet/**/*
 !.config/starship.toml
@@ -59,6 +62,11 @@
 !pub/**/*
 !.muxed/
 !.muxed/dotfiles.yml
+
+!.config/
+!.config/yarn/
+!.config/yarn/global/
+!.config/yarn/global/package.json
 
 
 !.aliases

@@ -104,6 +104,9 @@ source "$HOME/.ghcup/env"
 
 source /Users/coreyja/.config/broot/launcher/bash/br
 
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
+
 # git diff before commit
 function gg {
     PAGER="less -+F" br --conf ~/.config/broot/git-diff-conf.toml --git-status
