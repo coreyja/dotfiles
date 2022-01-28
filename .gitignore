@@ -7,16 +7,18 @@
 !.config/broot/**/*
 !.config/iterm/
 !.config/iterm/**/*
+!.config/kitty/
+!.config/kitty/**/*
 !.config/nvim/
 !.config/nvim/**/*
-# We DO want to ignore the plugged directories, since they contain other git repos and is used for vim plugin management
-.config/nvim/plugged/
-.config/nvim/plugged/**
 !.config/pet/
 !.config/pet/**/*
 !.config/starship.toml
 !.config/tmux/
 !.config/tmux/**/*
+# We DO want to ignore the plugged directories, since they contain other git repos and is used for vim plugin management
+.config/nvim/plugged/
+.config/nvim/plugged/**
 !.git_template/
 !.git_template/**/*
 !.gnupg/
