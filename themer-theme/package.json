@@ -18,11 +18,12 @@
     "@themer/wallpaper-trianglify": "^1.0.4",
     "convert-svg-to-png": "^0.5.0",
     "themer": "^3.1.6",
+    "themer-kitty": "^1.0.1",
     "themer-tmux": "^1.0.4",
     "web-ext": "^4.2.0"
   },
   "scripts": {
-    "build": "rm -rf output && themer -c ./colors.js -t @themer/alfred -t @themer/chrome -t @themer/iterm -t @themer/alacritty -t @themer/terminal -t @themer/slack -t themer-tmux -t @themer/vim -t @themer/sublime-text -t @themer/vim-lightline -t @themer/firefox-color -t @themer/firefox-addon -t @themer/wallpaper-block-wave --themer-wallpaper-block-wave-size 3840x2160 -t @themer/wallpaper-octagon --themer-wallpaper-octagon-size 3840x2160 -t @themer/wallpaper-triangles --themer-wallpaper-triangles-size 3840x2160 -t @themer/wallpaper-trianglify --themer-wallpaper-trianglify-size 3840x2160 -t @themer/vim-lightline -o output && convert-svg-to-png output/*wallpaper*/**/*.svg && mkdir -p output/wallpapers && ln output/**/*.png output/wallpapers/ && web-ext build --source-dir 'output/firefox-addon/Themer Dark/' --overwrite-dest"
+    "build": "rm -rf output && themer -c ./colors.js -t @themer/alfred -t @themer/chrome -t @themer/iterm -t @themer/alacritty -t @themer/terminal -t @themer/slack -t themer-tmux -t @themer/vim -t @themer/sublime-text -t @themer/vim-lightline -t @themer/firefox-color -t @themer/firefox-addon -t themer-kitty -t @themer/wallpaper-block-wave --themer-wallpaper-block-wave-size 3840x2160 -t @themer/wallpaper-octagon --themer-wallpaper-octagon-size 3840x2160 -t @themer/wallpaper-triangles --themer-wallpaper-triangles-size 3840x2160 -t @themer/wallpaper-trianglify --themer-wallpaper-trianglify-size 3840x2160 -t @themer/vim-lightline -o output && convert-svg-to-png output/*wallpaper*/**/*.svg && mkdir -p output/wallpapers && ln output/**/*.png output/wallpapers/ && web-ext build --source-dir 'output/firefox-addon/Themer Dark/' --overwrite-dest"
   },
   "devDependencies": {
     "eslint": "^6.0.1",

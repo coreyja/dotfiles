@@ -28,7 +28,7 @@ Simply open the files to import them into Alfred. Either double-click them in Fi
 ## terminal
 
 1. Launch Terminal.app and open the preferences (`cmd`-`,`)
-2. Click Profile > (gear icon) > Import...
+2. Click Profile > (...) icon > Import...
 3. Choose the generated file (`terminal/themer-dark.terminal`)
 
 ## slack
