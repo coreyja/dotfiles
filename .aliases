@@ -172,9 +172,8 @@ alias de="docker-compose exec --user '$(id -u):$(id -g)'"
 
 # Rails Developing Aliases
 alias be="bundle exec"
-alias bes="bundle exec spring"
-alias besr="bundle exec spring rspec"
 alias kill-pry-remote="while (echo 'exit' | pry-remote > /dev/null 2>&1); do echo $'\u2620 Killed'; done"
+alias rspec-next="bundle exec rspec --only-failures --fail-fast --seed 1"
 
 # Merge specified branch into current branch. Pulls given branch first for up to date version
 function merge () {

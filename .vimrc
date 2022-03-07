@@ -51,7 +51,7 @@ Plug 'pest-parser/pest.vim'
 " Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 " Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 
-Plug 'janko/vim-test'
+Plug 'vim-test/vim-test'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -133,6 +133,13 @@ Plug 'nicwest/vim-http'
 Plug 'github/copilot.vim'
 
 Plug 'Pocco81/AutoSave.nvim'
+
+Plug 'AndrewRadev/switch.vim'
+Plug 'AndrewRadev/splitjoin.vim'
+let g:splitjoin_ruby_hanging_args = 0
+let g:splitjoin_ruby_curly_braces = 0
+
+Plug 'adelarsq/vim-matchit'
 
 Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plugins
 
@@ -292,16 +299,6 @@ fun! RunFromGemfileDir(function)
   call RunFromDir(gemfile_dir, a:function)
 endfun
 
-" RSpec.vim mappings
-map <Leader>t :call RunFromGemfileDir(function('RunCurrentSpecFile'))<CR>
-map <Leader>s :call RunFromGemfileDir(function('RunNearestSpec'))<CR>
-map <Leader>l :call RunFromGemfileDir(function('RunLastSpec'))<CR>
-map <Leader>a :call RunFromGemfileDir(function('RunAllSpecs'))<CR>
-
-autocmd! BufRead,BufNewFile,BufEnter retail/spec/features/*.rb let b:rspecEnvVars="FEATURES=1"
-autocmd! BufRead,BufNewFile,BufEnter retail/spec/system/*.rb let b:rspecEnvVars="SYSTEM=1"
-" let g:rspec_command = "execute 'compiler rspec | let &makeprg=\"env ' . get(b:, 'rspecEnvVars', '') . ' spring\" | Make rspec {spec}'"
-let g:rspec_command = "Dispatch rspec {spec}"
 
 " Spellcheck
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
@@ -343,11 +340,12 @@ let g:nodejs_host_prog = 'NODENV_VERSION=$(cat ~/.node-version) ~/.nodenv/shims/
 
 " test.vim config
 let test#strategy = "dispatch"
+let g:test#runner_commands = ['RSpec']
 nmap <silent> tn :TestNearest<CR>
 nmap <silent> tf :TestFile<CR>
 nmap <silent> ts :TestSuite<CR>
 nmap <silent> tl :TestLast<CR>
-nmap <silent> tg :TestVisit<CR>
+nmap <silent> tv :TestVisit<CR>
 
 " Find and Replace in all files
 function! FindAndReplace( ... )
