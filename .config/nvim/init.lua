@@ -125,7 +125,7 @@ require'lspconfig'.tailwindcss.setup{}
 local function eslint_on_attach(client, bufnr)
   -- TODO: Figure out how to get this to work on save correctly
   -- Right now if I save fast with this is breaks things
-  -- vim.cmd('autocmd BufWritePre <buffer> :EslintFixAll')
+  vim.cmd('autocmd BufWritePre <buffer> :EslintFixAll')
 
   lsp_status.on_attach(client, bufnr)
 end
