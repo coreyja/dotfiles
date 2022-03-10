@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+chosen_project=$(~/bin/muxed ls -1 | fzf-tmux -p --preview='tmux capture-pane -pe -t {+1} 2>/dev/null || echo "{} Session not open"' | cut -d '*' -f 1)
+
+[ $chosen_project ] && ~/bin/muxed load $chosen_project
+

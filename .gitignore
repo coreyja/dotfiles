@@ -44,6 +44,7 @@
 !bin/
 !bin/subl
 !bin/ripper-tags-ctags.sh
+!bin/fuzzy_muxed
 !.rbenv/
 !.rbenv/default-gems
 !.vim/
