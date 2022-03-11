@@ -1,3 +1,5 @@
+let mapleader = ' '
+
 " Install vim-plugged in needed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -136,6 +138,10 @@ Plug 'Pocco81/AutoSave.nvim'
 
 Plug 'AndrewRadev/switch.vim'
 Plug 'AndrewRadev/splitjoin.vim'
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nnoremap <Leader>j :SplitjoinJoin<cr>
+nnoremap <Leader>s :SplitjoinSplit<cr>
 let g:splitjoin_ruby_hanging_args = 0
 let g:splitjoin_ruby_curly_braces = 0
 
@@ -146,11 +152,9 @@ Plug 'ryanoasis/vim-devicons' " This needs to go last to it can alter other plug
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-let mapleader = ' '
-
 let g:investigate_use_dash=1
-nnoremap <leader>i :call investigate#Investigate('n')<CR>
-vnoremap <leader>i :call investigate#Investigate('v')<CR>
+nnoremap <Leader>i :call investigate#Investigate('n')<CR>
+vnoremap <Leader>i :call investigate#Investigate('v')<CR>
 
 " Theme
 set termguicolors
@@ -360,4 +364,4 @@ command! -nargs=+ Jangle call FindAndReplace(<f-args>)
 
 " NNN Config
 let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Debug' } }
-nnoremap <leader>m :NnnPicker %:p:h<CR>
+nnoremap <Leader>m :NnnPicker %:p:h<CR>
