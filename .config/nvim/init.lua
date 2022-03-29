@@ -123,8 +123,6 @@ require'lspconfig'.tailwindcss.setup{}
 
 ---------------- ESLint LSP Setup ---------------
 local function eslint_on_attach(client, bufnr)
-  -- TODO: Figure out how to get this to work on save correctly
-  -- Right now if I save fast with this is breaks things
   vim.cmd('autocmd BufWritePre <buffer> :EslintFixAll')
 
   lsp_status.on_attach(client, bufnr)
@@ -241,3 +239,30 @@ autosave.setup(
         debounce_delay = 135
     }
 )
+
+-- Telescope --
+require('telescope').setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+require('telescope').load_extension('fzf')
+require("telescope").load_extension('emoji')
+
+
+-- NvimTree - File navigator sidebar
+local remap = vim.api.nvim_set_keymap
+function nnoremap(from, to)
+  remap('n', from, to, {noremap = true})
+end
+require('nvim-tree').setup()
+nnoremap('<C-n>', ':NvimTreeToggle<CR>')
+nnoremap('<C-m>', ':NvimTreeFindFile<CR>')
+nnoremap('<leader>m', ':NvimTreeFindFile<CR>')
+nnoremap('<leader>r', ':NvimTreeRefresh<CR>')

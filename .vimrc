@@ -58,11 +58,17 @@ Plug 'vim-test/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'coreyja/fzf.devicon.vim'
-" Plug '~/Projects/fzf.devicon.vim'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'xiyaowong/telescope-emoji.nvim'
 
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'scrooloose/nerdtree'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-eunuch'
 
@@ -209,21 +215,16 @@ set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
 set backspace=indent,eol,start
 
-" NerdTree Toggle
-map <C-n> :NERDTreeToggle<CR>
-map <C-m> :NERDTreeFind<CR>
-
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
 " " Open fzf Files
 map <C-f> :FilesWithDevicons<CR>
 map <C-d> :GFilesWithDevicons?<CR>
 map <C-g> :GFilesWithDevicons<CR>
 map <C-b> :Buffers<CR>
+map <Leader><C-f> :Telescope find_files<CR>
+map <Leader><C-d> :Telescope git_status<CR>
+map <Leader><C-g> :Telescope git_files<CR>
+map <Leader><C-b> :Telescope buffers<CR>
+map <Leader>e :Telescope emoji<CR>
 
 " Enable Mouse Mode (in Tmux)
 if !has('nvim')
@@ -340,7 +341,6 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 
 let g:ruby_host_prog = 'RBENV_VERSION=$(cat ~/.ruby-version) ~/.rbenv/shims/ruby'
 let g:nodejs_host_prog = 'NODENV_VERSION=$(cat ~/.node-version) ~/.nodenv/shims/node'
-
 
 " test.vim config
 let test#strategy = "dispatch"
