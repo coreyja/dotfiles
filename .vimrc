@@ -84,7 +84,6 @@ Plug 'skielbasa/vim-material-monokai'
 Plug 'flrnprz/plastic.vim'
 " Plug 'coreyja/vim-material-monokai', { 'dir': '~/Projects/vim-material-monokai' }
 
-Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'thiagoalessio/rainbow_levels.vim'
 
 Plug 'itspriddle/vim-marked'
@@ -96,6 +95,8 @@ Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'stefandtw/quickfix-reflector.vim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'p00f/nvim-ts-rainbow'
+
 Plug 'gisphm/vim-gitignore'
 
 " LSP Config
