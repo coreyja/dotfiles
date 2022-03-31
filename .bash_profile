@@ -105,12 +105,12 @@ export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.local/bin:$PATH";
 
 # Haskell
-source "$HOME/.ghcup/env"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
-source /Users/coreyja/.config/broot/launcher/bash/br
+[ -f "/Users/coreyja/.config/broot/launcher/bash/br" ] && source /Users/coreyja/.config/broot/launcher/bash/br
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
+command -v atuin &> /dev/null && eval "$(atuin init bash)"
 
 # git diff before commit
 function gg {
