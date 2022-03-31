@@ -338,7 +338,7 @@ nnoremap <Del><Del> :call DeleteCurrentFile()<CR>
 " Rust
 let g:rustfmt_autosave = 1
 
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '$(brew prefix)/bin/python3'
 
 let g:ruby_host_prog = 'RBENV_VERSION=$(cat ~/.ruby-version) ~/.rbenv/shims/ruby'
 let g:nodejs_host_prog = 'NODENV_VERSION=$(cat ~/.node-version) ~/.nodenv/shims/node'

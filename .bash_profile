@@ -1,17 +1,22 @@
 [ -n "$PS1" ] && source ~/.bashrc;
 
+# Export both brew paths
 export PATH="/usr/local/bin:$PATH";
+export PATH="/opt/homebrew/bin:$PATH";
+
+
+BREW_PREFIX=$(brew --prefix)
+
 # Add GnuCoreUtils to the Path
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnubin:$MANPATH"
+export PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$MANPATH"
 # Add grep to the Path
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/grep/libexec/gnubin:$MANPATH"
+export PATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$PATH"
+export MANPATH="$BREW_PREFIX/opt/grep/libexec/gnubin:$MANPATH"
 # Add sed to the Path
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="$BREW_PREFIX/opt/gnu-sed/libexec/gnubin:$PATH"
+export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 # Add Cargo to Path
-export PATH="$HOME/.cargo/bin:$PATH"
 # Add Go bin dir to path
 export PATH=$PATH:$(go env GOPATH)/bin
 
@@ -43,12 +48,12 @@ for option in autocd globstar; do
 done;
 
 # Add tab completion for many Bash commands
-if command -v brew &> /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-	source "$(brew --prefix)/share/bash-completion/bash_completion";
+if command -v brew &> /dev/null && [ -f "$BREW_PREFIX/share/bash-completion/bash_completion" ]; then
+	source "$BREW_PREFIX/share/bash-completion/bash_completion";
 fi;
 
 # Enable tab completion for `g` by marking it as an alias for `git`
-if type _git &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+if type _git &> /dev/null && [ -f "$BREW_PREFIX/etc/bash_completion.d/git-completion.bash" ]; then
 	complete -o default -o nospace -F _git g;
 fi;
 
@@ -69,7 +74,7 @@ complete -F _fzf_file_completion -o default -o bashdefault rake
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" 2> /dev/null'
 
 # Add Tmux and tmuxinator bash completion
-[ -f /usr/local/etc/bash_completion.d/tmux ] && source /usr/local/etc/bash_completion.d/tmux
+[ -f "$BREW_PREFIX/etc/bash_completion.d/tmux" ] && source "$BREW_PREFIX/etc/bash_completion.d/tmux"
 [ -f ~/bash_completion.d/tmuxinator.bash ] && source ~/bash_completion.d/tmuxinator.bash
 [ -f ~/bash_completion.d/muxed.bash ] && source ~/bash_completion.d/muxed.bash
 
@@ -111,3 +116,4 @@ eval "$(atuin init bash)"
 function gg {
     PAGER="less -+F" br --conf ~/.config/broot/git-diff-conf.toml --git-status
 }
+. "$HOME/.cargo/env"
