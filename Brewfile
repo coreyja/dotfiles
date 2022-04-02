@@ -54,6 +54,11 @@ brew 'asciinema'
 brew 'blink1'
 brew 'ncdu'
 brew 'httpie'
+brew 'flyctl'
+
+# Needed for Rustc
+brew 'cmake'
+brew 'ninja'
 
 tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
 brew 'ripgrep-bin'

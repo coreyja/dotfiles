@@ -6,6 +6,7 @@ vim.cmd('source ~/.vimrc')
 ---------------- Tree Sitter ----------------
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "all",
+  ignore_install = { "phpdoc" },
   highlight = {
     enable = true,
   },
