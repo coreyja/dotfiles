@@ -5,11 +5,7 @@ if [ "$TERM" == "xterm-256color" ] || [ "$TERM" == "alacritty" ] || [ "$TERM" ==
   hash tmux && [ "$INPUTRC" != "~/.fig/nop" ] && [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit; }
 fi
 
-
-
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
