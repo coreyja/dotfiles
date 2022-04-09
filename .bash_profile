@@ -4,7 +4,6 @@
 export PATH="/usr/local/bin:$PATH";
 export PATH="/opt/homebrew/bin:$PATH";
 
-
 BREW_PREFIX=$(brew --prefix)
 
 # Add GnuCoreUtils to the Path
@@ -75,7 +74,6 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 # Add Tmux and tmuxinator bash completion
 [ -f "$BREW_PREFIX/etc/bash_completion.d/tmux" ] && source "$BREW_PREFIX/etc/bash_completion.d/tmux"
-[ -f ~/bash_completion.d/tmuxinator.bash ] && source ~/bash_completion.d/tmuxinator.bash
 [ -f ~/bash_completion.d/muxed.bash ] && source ~/bash_completion.d/muxed.bash
 
 # Init RBenv, pyenv and nodenv
@@ -99,21 +97,18 @@ gpgconf --launch gpg-agent
 
 command -v starship &> /dev/null && eval "$(starship init bash)"
 
-# Add `~/bin` and `~/.local/bin/` to the `$PATH`
-# Do this at the end to take precedence over things above
-export PATH="$HOME/bin:$PATH";
-export PATH="$HOME/.local/bin:$PATH";
-
 # Haskell
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 [ -f "/Users/coreyja/.config/broot/launcher/bash/br" ] && source /Users/coreyja/.config/broot/launcher/bash/br
-
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-command -v atuin &> /dev/null && eval "$(atuin init bash)"
 
 # git diff before commit
 function gg {
     PAGER="less -+F" br --conf ~/.config/broot/git-diff-conf.toml --git-status
 }
 . "$HOME/.cargo/env"
+
+# Add `~/bin` and `~/.local/bin/` to the `$PATH`
+# Do this at the end to take precedence over things above
+export PATH="$HOME/bin:$PATH";
+export PATH="$HOME/.local/bin:$PATH";

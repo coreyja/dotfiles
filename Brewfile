@@ -104,8 +104,8 @@ brew 'knqyf263/pet/pet'
 
 brew 'yarn'
 brew 'task'
-brew 'tasksh'
-brew 'atuin'
+
+brew 'gh'
 
 tap 'brianp/homebrew-muxed'
 brew 'brianp/homebrew-muxed/muxed_bin'
@@ -118,6 +118,11 @@ cask 'alacritty'
 cask 'kitty'
 cask 'pock'
 cask 'dash'
+cask 'ngrok'
+
+cask 'obs-websocket'
+
+cask 'obsidian'
 
 # Install Hack Nerd Font
 tap 'homebrew/cask-fonts'

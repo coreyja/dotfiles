@@ -33,9 +33,6 @@ merge = " MERGING"
 [cmd_duration]
 min_time=300
 
-[hostname]
-format = "⟪[$hostname]⟫"
-
 [nodejs]
 symbol=" "
 
