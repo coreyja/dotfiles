@@ -126,6 +126,8 @@ cask 'obs-websocket'
 
 cask 'obsidian'
 
+cask '1password-cli'
+
 # Install Hack Nerd Font
 tap 'homebrew/cask-fonts'
 cask 'homebrew/cask-fonts/font-hack-nerd-font'
