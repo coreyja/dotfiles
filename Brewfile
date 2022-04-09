@@ -32,6 +32,7 @@ brew 'git'
 
 brew 'gitsh'
 brew 'git-lfs'
+brew 'git-delta'
 brew 'imagemagick'
 brew 'lua'
 brew 'p7zip'
