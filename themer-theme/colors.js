@@ -24,7 +24,6 @@ module.exports.colors = {
     // for you.
     shade0: '#1a1a1a',
     shade7: '#f8f8f2',
-
   },
 
   // Same as above, except that shade0 should be the lightest and shade7 should

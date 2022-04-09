@@ -56,6 +56,7 @@ brew 'blink1'
 brew 'ncdu'
 brew 'httpie'
 brew 'flyctl'
+brew 'pango'
 
 # Needed for Rustc
 brew 'cmake'

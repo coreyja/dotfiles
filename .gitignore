@@ -16,26 +16,13 @@
 !.config/starship.toml
 !.config/tmux/
 !.config/tmux/**/*
-# We DO want to ignore the plugged directories, since they contain other git repos and is used for vim plugin management
-.config/nvim/plugged/
-.config/nvim/plugged/**
+!.config/blink/
+!.config/blink/**/*
 !.git_template/
 !.git_template/**/*
 !.gnupg/
 !.gnupg/gpg-agent.conf
 !.gnupg/gpg.conf
-!.tmuxinator/
-!.tmuxinator/coreyja-blog.yml
-!.tmuxinator/dev.to.yml
-!.tmuxinator/devicon-lookup.yml
-!.tmuxinator/dotfiles.yml
-!.tmuxinator/glassbambi-blog.yml
-!.tmuxinator/glassy-collections.yml
-!.tmuxinator/hacking.yml
-!.tmuxinator/octobox.yml
-!.tmuxinator/package-tracker.yml
-!.tmuxinator/rubocop-coreyja.yml
-!.tmuxinator/sleet.yml
 !.vim/
 !.vim/spell/
 !.vim/spell/*.add
@@ -100,5 +87,10 @@
 !Cargofile
 !LICENSE.txt
 !README.md
+
+
+# We DO want to ignore the plugged directories, since they contain other git repos and is used for vim plugin management
+.config/nvim/plugged/
+.config/nvim/plugged/**
 
 **/.DS_Store
