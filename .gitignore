@@ -52,6 +52,7 @@
 !pub/**/*
 !.muxed/
 !.muxed/dotfiles.yml
+!.muxed/.template.yml
 
 !.config/
 !.config/yarn/
