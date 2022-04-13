@@ -109,6 +109,9 @@ brew 'task'
 
 brew 'gh'
 
+brew 'hurl'
+brew 'glow'
+
 tap 'brianp/homebrew-muxed'
 brew 'brianp/homebrew-muxed/muxed_bin'
 
