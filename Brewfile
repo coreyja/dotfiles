@@ -1,56 +1,66 @@
+def group(_name, &block)
+  yield
+end
+
 cask_args appdir: "~/Applications"
 
 tap 'thoughtbot/formulae'
 
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
-brew 'coreutils'
-brew 'gnu-sed'
-brew 'grep'
+group 'GNU core utilities and replacements' do
+  brew 'coreutils'
+  brew 'gnu-sed'
+  brew 'grep'
+  brew 'moreutils'
+  brew 'findutils'
 
-# Install some other useful utilities like `sponge`.
-brew 'moreutils'
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
-brew 'findutils'
-# Install Bash 4.
-# running `chsh`.
+  tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
+  brew 'ripgrep-bin'
+
+  brew 'fd' # Find replacement
+
+  brew 'gcal'
+end
+
+group 'Git utilities' do
+  brew 'git'
+  brew 'gitsh'
+  brew 'git-lfs'
+  brew 'git-delta'
+  brew 'gh'
+end
+
+group 'Version Managers' do
+  brew 'rbenv'
+  brew 'nodenv'
+  brew 'pyenv'
+  brew 'asdf'
+  brew 'tig'
+end
+
 brew 'bash'
-
 brew 'bash-completion2'
 
-# Install `wget` with IRI support.
 brew 'wget'
 
-# Install more recent versions of some macOS tools.
 brew 'grep'
 brew 'openssh'
 brew 'screen'
 
-# Install other useful binaries.
 brew 'ack'
-brew 'git'
-
-brew 'gitsh'
-brew 'git-lfs'
-brew 'git-delta'
 brew 'imagemagick'
 brew 'lua'
 brew 'p7zip'
 brew 'pigz'
 brew 'webkit2png'
-brew 'rbenv'
-brew 'nodenv'
-brew 'pyenv'
-brew 'asdf'
 brew 'tree'
-brew 'tig'
 brew 'pgcli'
 brew 'ffmpeg'
 brew 'awscli'
 brew 'direnv'
 brew 'bat'
 brew 'hyperfine' # Benchmarking tool
-brew 'fd' # Find replacement
 brew 'asciinema'
 brew 'blink1'
 brew 'ncdu'
@@ -62,11 +72,7 @@ brew 'pango'
 brew 'cmake'
 brew 'ninja'
 
-tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
-brew 'ripgrep-bin'
-
 # GNU Calendar to replace cal
-brew 'gcal'
 
 # FZF
 brew 'fzf'
@@ -106,8 +112,6 @@ brew 'knqyf263/pet/pet'
 
 brew 'yarn'
 brew 'task'
-
-brew 'gh'
 
 brew 'hurl'
 brew 'glow'
