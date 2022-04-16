@@ -112,3 +112,8 @@ function gg {
 # Do this at the end to take precedence over things above
 export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.local/bin:$PATH";
+
+# McFly for better history search
+eval "$(mcfly init bash)"
+export MCFLY_KEY_SCHEME=vim
+export MCFLY_FUZZY=5

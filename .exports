@@ -28,3 +28,5 @@ export LESS_TERMCAP_md="${yellow}";
 
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
+
+export ENCHIRIDION_DIR="${HOME}/Library/Mobile Documents/iCloud~md~obsidian/Documents/The Enchiridion";
