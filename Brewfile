@@ -119,6 +119,8 @@ brew 'glow'
 tap 'brianp/homebrew-muxed'
 brew 'brianp/homebrew-muxed/muxed_bin'
 
+brew 'caddy'
+
 cask 'paintbrush'
 cask 'alfred'
 cask 'vlc'
