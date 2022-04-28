@@ -139,6 +139,8 @@ cask '1password-cli'
 
 cask 'docker'
 
+cask 'notunes'
+
 # Install Hack Nerd Font
 tap 'homebrew/cask-fonts'
 cask 'homebrew/cask-fonts/font-hack-nerd-font'
