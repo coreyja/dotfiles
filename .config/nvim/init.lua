@@ -149,7 +149,8 @@ require'lspconfig'.eslint.setup(merge(default_options, eslint_opts))
 ---------------- LSP Keybindings ----------------
 -- Code navigation shortcuts
 -- as found in :help lsp
-vim.cmd('nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>')
+vim.cmd('nnoremap <silent> <c-[> <cmd>lua vim.diagnostic.goto_prev()<CR>')
+vim.cmd('nnoremap <silent> <c-]> <cmd>lua vim.diagnostic.goto_next()<CR>')
 vim.cmd('nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>')
 vim.cmd('nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>')
 vim.cmd('nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
