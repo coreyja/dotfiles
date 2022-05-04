@@ -120,6 +120,7 @@ tap 'brianp/homebrew-muxed'
 brew 'brianp/homebrew-muxed/muxed_bin'
 
 brew 'caddy'
+brew 'nss'
 
 cask 'paintbrush'
 cask 'alfred'
