@@ -146,6 +146,9 @@ local eslint_opts = {
 
 require'lspconfig'.eslint.setup(merge(default_options, eslint_opts))
 
+---------------- Go LSP Setup ---------------
+nvim_lsp.gopls.setup{}
+
 ---------------- LSP Keybindings ----------------
 -- Code navigation shortcuts
 -- as found in :help lsp
