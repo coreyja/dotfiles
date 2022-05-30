@@ -32,6 +32,7 @@ group 'Git utilities' do
 end
 
 group 'Version Managers' do
+  brew 'ruby-build'
   brew 'rbenv'
   brew 'nodenv'
   brew 'pyenv'
@@ -108,6 +109,8 @@ brew 'nnn'
 brew 'rustup'
 
 brew 'go'
+brew 'gopls'
+
 brew 'knqyf263/pet/pet'
 
 brew 'yarn'
