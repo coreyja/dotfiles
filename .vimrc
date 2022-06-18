@@ -104,6 +104,13 @@ Plug 'gisphm/vim-gitignore'
 Plug 'neovim/nvim-lspconfig'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'nvim-lua/lsp-status.nvim'
+" Using this for Vale
+Plug 'jose-elias-alvarez/null-ls.nvim'
+" Makes sure themes have lsp colors
+Plug 'folke/lsp-colors.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+" Diagnostic viewer thingy
+Plug 'folke/trouble.nvim'
 
 " Autocompletion framework
 Plug 'hrsh7th/nvim-cmp'

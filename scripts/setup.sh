@@ -18,4 +18,7 @@ pushd "$HOME"
   ./scripts/install_from_cargo.sh
 
   nvim-update
+
+  mkdir -p .config/vale/styles
+  vale sync
 popd

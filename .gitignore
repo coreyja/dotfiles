@@ -84,6 +84,7 @@
 !.ruby-version
 !.tmux.conf
 !.vimrc
+!.vale.ini
 !Brewfile
 !Cargofile
 !LICENSE.txt
