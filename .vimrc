@@ -95,6 +95,7 @@ Plug 'meain/vim-package-info', { 'do': 'npm install' }
 Plug 'stefandtw/quickfix-reflector.vim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'p00f/nvim-ts-rainbow'
 
 Plug 'gisphm/vim-gitignore'
