@@ -34,6 +34,7 @@ end
 group 'Version Managers' do
   brew 'ruby-build'
   brew 'rbenv'
+  brew 'node-build'
   brew 'nodenv'
   brew 'pyenv'
   brew 'asdf'
