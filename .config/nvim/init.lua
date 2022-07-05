@@ -104,6 +104,7 @@ local solargraph_opts = {
 
 nvim_lsp.solargraph.setup(merge(default_options, solargraph_opts))
 nvim_lsp.sorbet.setup(default_options)
+nvim_lsp.ruby_lsp.setup(default_options)
 
 ---------------- JSON LSP Setup ---------------
 local json_capabilities = vim.lsp.protocol.make_client_capabilities()

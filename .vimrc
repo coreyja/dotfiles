@@ -101,7 +101,7 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'gisphm/vim-gitignore'
 
 " LSP Config
-Plug 'neovim/nvim-lspconfig'
+Plug 'coreyja/nvim-lspconfig', { 'branch': 'ca/main/ruby-lsp' }
 Plug 'simrat39/rust-tools.nvim'
 Plug 'nvim-lua/lsp-status.nvim'
 " Using this for Vale
