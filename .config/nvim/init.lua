@@ -262,22 +262,12 @@ vim.cmd('set shortmess+=c')
 
 
 -- Auto Save Config
-local autosave = require("autosave")
+local autosave = require("auto-save")
 
 autosave.setup(
     {
         enabled = true,
-        execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-        events = {"InsertLeave", "TextChanged"},
-        conditions = {
-            exists = true,
-            filename_is_not = {},
-            filetype_is_not = {},
-            modifiable = true
-        },
-        write_all_buffers = false,
-        on_off_commands = true,
-        clean_command_line_interval = 0,
+        trigger_events = {"InsertLeave", "TextChanged"},
         debounce_delay = 135
     }
 )

@@ -149,7 +149,7 @@ Plug 'nicwest/vim-http'
 " Github CoPilot
 Plug 'github/copilot.vim'
 
-Plug 'Pocco81/AutoSave.nvim'
+Plug 'pocco81/auto-save.nvim'
 
 Plug 'AndrewRadev/switch.vim'
 Plug 'AndrewRadev/splitjoin.vim'
