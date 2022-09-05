@@ -147,7 +147,7 @@ Plug 'kamykn/popup-menu.nvim' " Even though we also have the lua popup plugin we
 Plug 'nicwest/vim-http'
 
 " Github CoPilot
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 
 Plug 'pocco81/auto-save.nvim'
 
