@@ -133,3 +133,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Add `code` to the `$PATH` for VS Code
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
