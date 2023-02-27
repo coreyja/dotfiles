@@ -19,6 +19,9 @@ export MANPATH="$BREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 # Add Go bin dir to path
 export PATH=$PATH:$(go env GOPATH)/bin
 
+# Add OpenJDK to the Path
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 # No more dups in History
 export HISTCONTROL=ignoreboth:erasedups
 

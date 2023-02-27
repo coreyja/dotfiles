@@ -1,0 +1,166 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.startupEditor": "welcomePageInEmptyWorkbench",
+    "editor.suggestSelection": "first",
+    "editor.inlineSuggest.enabled": true,
+    "go.toolsManagement.autoUpdate": true,
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 300,
+    "files.insertFinalNewline": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+    },
+    "git.confirmSync": false,
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "git.branchProtection": [
+        "main"
+    ],
+    "git.branchRandomName.dictionary": [
+        "adjectives",
+        "animals",
+        "colors"
+    ],
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Victor Mono', 'Font Awesome 6 Sharp', 'VictorMono Nerd Font'",
+    "editor.fontSize": 16,
+    "editor.fontWeight": "500",
+    "editor.tabSize": 2,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    //following will be in italic (=FlottFlott)
+                    "comment",
+                    "entity.name.type.class", //class names
+                    "keyword", //import, export, return…
+                    "constant", //String, Number, Boolean…, this, super
+                    "storage.modifier", //static keyword
+                    "storage.type.class.js", //class keyword
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": [
+                    //following will be excluded from italics (VSCode has some defaults for italics)
+                    "invalid",
+                    "keyword.operator",
+                    "constant.numeric.css",
+                    "keyword.other.unit.px.css",
+                    "constant.numeric.decimal.js",
+                    "constant.numeric.json"
+                ],
+                "settings": {
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "terminal.integrated.fontSize": 16,
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.procMacro.attributes.enable": true,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.currentLine.enabled": false,
+    "git.enableSmartCommit": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "twitchChat.oauth": "0lrgb5l56oys1fkxcr6sdg5ejx1fm0",
+    "twitchChat.username": "coreyja",
+    "twitchChat.channel": "coreyja",
+    "twitchChat.historysize": 20,
+    "twitch.channel": "coreyja",
+    "twitch.oauth": "oauth:0lrgb5l56oys1fkxcr6sdg5ejx1fm0",
+    "twitch.username": "coreyja",
+    "twitch.fontSize": "16px",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.inlayHints.padding": true,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "githubPullRequests.fileListLayout": "tree",
+    "testExplorer.useNativeTesting": true,
+    "solargraph.formatting": true,
+    "solargraph.useBundler": true,
+    "rubyTestExplorer.logpanel": true,
+    "ruby.languageServer": {},
+    "ruby.useLanguageServer": true,
+    "solargraph.diagnostics": true,
+    "tailwindCSS.includeLanguages": {
+        "rust": "html"
+    },
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "files.associations": {
+        ".env.*": "env"
+    },
+    "window.titleBarStyle": "custom",
+    "githubPullRequests.pullBranch": "never",
+    "githubPullRequests.defaultMergeMethod": "squash",
+    "github.gitAuthentication": false,
+    "gitProjectManager.baseProjectsFolders": [
+        "~/Projects"
+    ],
+    "playground.launch.ruby": "/Users/coreyja/.rbenv/shims/ruby ${file}",
+    "rust-analyzer.cargo.buildScripts.enable": true,
+    "terminal.integrated.macOptionClickForcesSelection": true,
+    "eslint.format.enable": true,
+    "colorInfo.languages": [
+        {
+            "selector": "css",
+            "colors": "css"
+        },
+        {
+            "selector": "sass",
+            "colors": "css"
+        },
+        {
+            "selector": "scss",
+            "colors": "css"
+        },
+        {
+            "selector": "less",
+            "colors": "css"
+        },
+        {
+            "selector": "js",
+            "colors": "css"
+        },
+        {
+            "selector": "ts",
+            "colors": "css"
+        }
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "window.zoomLevel": 2,
+    "terminal.integrated.copyOnSelection": true,
+    "redhat.telemetry.enabled": false,
+    "yaml.customTags": [
+        "!And",
+        "!If",
+        "!Not",
+        "!Equals",
+        "!Or",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Join sequence"
+    ],
+    "git.autofetch": false,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+}
