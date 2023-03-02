@@ -95,6 +95,7 @@ brew 'rainbarf'
 # Security/Yubikey Stuff
 brew 'gpg'
 brew 'pinentry-mac'
+brew 'ykman'
 
 # Vim Stuff
 brew 'nvim'

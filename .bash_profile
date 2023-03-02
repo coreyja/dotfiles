@@ -86,6 +86,8 @@ command -v pyenv &> /dev/null && eval "$(pyenv init -)" && export PYENV_ROOT="$(
 
 command -v nodenv &> /dev/null && eval "$(nodenv init -)"
 
+command -v jenv &> /dev/null && eval "$(jenv init -)"
+
 # Init DirEnv
 command -v direnv &> /dev/null && eval "$(direnv hook bash)"
 
