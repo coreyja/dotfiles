@@ -91,14 +91,14 @@ command -v jenv &> /dev/null && eval "$(jenv init -)"
 # Init DirEnv
 command -v direnv &> /dev/null && eval "$(direnv hook bash)"
 
- # Since v2.1 GnuPG have changed the method a daemon starts. They are all started
- # on demand now. For more information see:
- #   https://www.gnupg.org/faq/whats-new-in-2.1.html#autostart
- # Found this: https://www.linuxquestions.org/questions/slackware-14/gpg-agent-write-env-file-obsolete-4175608513/
-GPG_TTY=$(/usr/bin/tty)
-SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
-export GPG_TTY SSH_AUTH_SOCK
-gpgconf --launch gpg-agent
+#  # Since v2.1 GnuPG have changed the method a daemon starts. They are all started
+#  # on demand now. For more information see:
+#  #   https://www.gnupg.org/faq/whats-new-in-2.1.html#autostart
+#  # Found this: https://www.linuxquestions.org/questions/slackware-14/gpg-agent-write-env-file-obsolete-4175608513/
+# GPG_TTY=$(/usr/bin/tty)
+# SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+# export GPG_TTY SSH_AUTH_SOCK
+# gpgconf --launch gpg-agent
 
 command -v starship &> /dev/null && eval "$(starship init bash)"
 
