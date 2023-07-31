@@ -8,10 +8,11 @@ pushd "$HOME"
   printf "We are now in your home directory which is %s" "$(pwd)"
 
   git init
+  git symbolic-ref HEAD refs/heads/💜
   git remote add origin https://github.com/coreyja/dotfiles.git
 
-  git fetch origin master
-  git reset --hard origin/master
+  git fetch origin 💜 
+  git reset --hard origin/💜 
 
   ./scripts/setup.sh # This is idempotent, so breaking it out to a new script
 popd
