@@ -99,6 +99,7 @@ command -v direnv &> /dev/null && eval "$(direnv hook bash)"
 # SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
 # export GPG_TTY SSH_AUTH_SOCK
 # gpgconf --launch gpg-agent
+export SSH_AUTH_SOCK="/Users/coreyja/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh"
 
 command -v starship &> /dev/null && eval "$(starship init bash)"
 
