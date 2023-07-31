@@ -42,7 +42,7 @@ group 'Version Managers' do
 end
 
 brew 'bash'
-brew 'bash-completion2'
+# brew 'bash-completion2'
 
 brew 'wget'
 
