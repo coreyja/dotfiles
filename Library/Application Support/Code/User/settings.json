@@ -163,4 +163,19 @@
     "[python]": {
         "editor.formatOnType": true
     },
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "/opt/homebrew/bin/bash",
+            "args": [
+                "-l"
+            ],
+            "icon": "terminal-bash"
+        },
+        "tmux": {
+            "path": "/opt/homebrew/bin/tmux",
+            "icon": "terminal-tmux"
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "bash"
 }

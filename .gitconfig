@@ -4,7 +4,7 @@
 [user]
     name = Corey Alexander
     email = coreyja@gmail.com
-    signingkey = 6CE33F86461BAF1DDDEC19C62803A46741DF1405
+	signingkey = "/Users/coreyja/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/36723cbf28608cc1a6b5dcb91bdde605.pub"
 [alias]
 
     # View abbreviated SHA, description, and history graph of the latest 20 commits
@@ -236,3 +236,5 @@
 
 [difftool "delta-always-page"]
     cmd = "DELTA_PAGER=\"less -+F\" git diff"
+[gpg]
+	format = ssh

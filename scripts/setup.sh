@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -x
 
 pushd "$HOME"
   brew update
@@ -17,7 +17,7 @@ pushd "$HOME"
   rustup-init -y
   ./scripts/install_from_cargo.sh
 
-  nvim-update
+  # nvim-update
 
   mkdir -p .config/vale/styles
   vale sync
