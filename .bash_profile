@@ -118,10 +118,12 @@ function gg {
 export PATH="$HOME/bin:$PATH";
 export PATH="$HOME/.local/bin:$PATH";
 
-# McFly for better history search
-eval "$(mcfly init bash)"
-export MCFLY_KEY_SCHEME=vim
-export MCFLY_FUZZY=5
+# # McFly for better history search
+# eval "$(mcfly init bash)"
+# export MCFLY_KEY_SCHEME=vim
+# export MCFLY_FUZZY=5
+
+command -v atuin &> /dev/null && eval "$(atuin init bash)"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

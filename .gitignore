@@ -91,11 +91,11 @@
 !README.md
 
 
-!Library/
-!Library/Application\ Support/
-!Library/Application\ Support/Code/
-!Library/Application\ Support/Code/User/
-!Library/Application\ Support/Code/User/settings.json
+# !Library/
+# !Library/Application\ Support/
+# !Library/Application\ Support/Code/
+# !Library/Application\ Support/Code/User/
+# !Library/Application\ Support/Code/User/settings.json
 
 
 # We DO want to ignore the plugged directories, since they contain other git repos and is used for vim plugin management
