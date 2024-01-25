@@ -111,8 +111,7 @@ command -v starship &> /dev/null && eval "$(starship init bash)"
 function gg {
     PAGER="less -+F" br --conf ~/.config/broot/git-diff-conf.toml --git-status
 }
-. "$HOME/.cargo/env"
-
+[ -f "$HOME/.cargo/env" ] && 
 # Add `~/bin` and `~/.local/bin/` to the `$PATH`
 # Do this at the end to take precedence over things above
 export PATH="$HOME/bin:$PATH";

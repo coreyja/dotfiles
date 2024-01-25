@@ -15,8 +15,7 @@ group 'GNU core utilities and replacements' do
   brew 'moreutils'
   brew 'findutils'
 
-  tap 'burntsushi/ripgrep', 'https://github.com/BurntSushi/ripgrep.git'
-  brew 'ripgrep-bin'
+  brew 'ripgrep'
 
   brew 'fd' # Find replacement
 
@@ -25,7 +24,6 @@ end
 
 group 'Git utilities' do
   brew 'git'
-  brew 'gitsh'
   brew 'git-lfs'
   brew 'git-delta'
   brew 'gh'
