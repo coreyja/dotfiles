@@ -32,6 +32,7 @@
 !bin/subl
 !bin/ripper-tags-ctags.sh
 !bin/fuzzy_muxed
+!bin/auto-pr.sh
 !.rbenv/
 !.rbenv/default-gems
 !.vim/

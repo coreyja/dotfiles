@@ -7,3 +7,15 @@ export PATH="/opt/homebrew/bin:$PATH";
 
 # bun
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+. "$HOME/.cargo/env"
+
+# pnpm
+export PNPM_HOME="/Users/coreyja/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# pnpm end
+alias claude="/Users/coreyja/.claude/local/claude"
+source ~/.local/share/blesh/ble.sh

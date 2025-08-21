@@ -214,3 +214,6 @@ alias firefox='open -a "Firefox Developer Edition"'
 alias yarn-global-install='pushd $(yarn global dir); yarn install; popd'
 
 alias ia="open $1 -a 'iA Writer'"
+
+alias claude="command claude --dangerously-skip-permissions"
+alias claude-safe="command claude"

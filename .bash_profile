@@ -141,3 +141,11 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
+
+export PATH="/Users/coreyja/.savvy/bin:$PATH"
+eval "$(savvy init bash)"
+
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/coreyja/Library/Application Support/JetBrains/Toolbox/scripts"
+
