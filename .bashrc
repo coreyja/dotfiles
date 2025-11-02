@@ -17,5 +17,4 @@ case ":$PATH:" in
 esac
 
 # pnpm end
-alias claude="/Users/coreyja/.claude/local/claude"
 source ~/.local/share/blesh/ble.sh
