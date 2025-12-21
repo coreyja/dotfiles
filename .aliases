@@ -215,5 +215,5 @@ alias yarn-global-install='pushd $(yarn global dir); yarn install; popd'
 
 alias ia="open $1 -a 'iA Writer'"
 
-alias claude="command claude --dangerously-skip-permissions"
+alias claude='command claude --dangerously-skip-permissions --append-system-prompt "$(mnemon system-prompt)"'
 alias claude-safe="command claude"
