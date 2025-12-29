@@ -2,7 +2,7 @@
   "permissions": {
     "defaultMode": "default"
   },
-  "model": "opus",
+  "model": "claude-opus-4-5-20251101",
   "hooks": {
     "SessionStart": [
       {
@@ -27,8 +27,8 @@
       }
     ]
   },
-  "alwaysThinkingEnabled": true,
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true
-  }
+  },
+  "alwaysThinkingEnabled": true
 }

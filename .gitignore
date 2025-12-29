@@ -102,6 +102,8 @@
 !.claude/settings.json
 !.claude/skills/
 !.claude/skills/*
+!.claude/skills/**/
+!.claude/skills/**/*
 !.claude/agents/
 !.claude/agents/*
 !.claude/prompts/

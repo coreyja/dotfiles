@@ -79,14 +79,8 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 [ -f "$BREW_PREFIX/etc/bash_completion.d/tmux" ] && source "$BREW_PREFIX/etc/bash_completion.d/tmux"
 [ -f ~/bash_completion.d/muxed.bash ] && source ~/bash_completion.d/muxed.bash
 
-# Init RBenv, pyenv and nodenv
-command -v rbenv &> /dev/null && eval "$(rbenv init -)"
-
-command -v pyenv &> /dev/null && eval "$(pyenv init -)" && export PYENV_ROOT="$(pyenv root)"
-
-command -v nodenv &> /dev/null && eval "$(nodenv init -)"
-
-command -v jenv &> /dev/null && eval "$(jenv init -)"
+# Init mise (replaces rbenv, pyenv, nodenv, jenv)
+command -v mise &> /dev/null && eval "$(mise activate bash)"
 
 # Init DirEnv
 command -v direnv &> /dev/null && eval "$(direnv hook bash)"

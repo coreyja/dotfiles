@@ -21,7 +21,7 @@ Plug 'tpope/vim-dispatch'
 " Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rbenv'
+" Plug 'tpope/vim-rbenv' " Removed - using mise now
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
@@ -348,8 +348,8 @@ let g:rustfmt_autosave = 1
 
 let g:python3_host_prog = '$(brew prefix)/bin/python3'
 
-let g:ruby_host_prog = 'RBENV_VERSION=$(cat ~/.ruby-version) ~/.rbenv/shims/ruby'
-let g:nodejs_host_prog = 'NODENV_VERSION=$(cat ~/.node-version) ~/.nodenv/shims/node'
+let g:ruby_host_prog = '~/.local/share/mise/shims/ruby'
+let g:nodejs_host_prog = '~/.local/share/mise/shims/node'
 
 " test.vim config
 let test#strategy = "dispatch"
